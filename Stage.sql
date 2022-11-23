@@ -39,85 +39,85 @@ GO
 
 
 CREATE TABLE [dbo].[CasesReport_Stage](
-	[Outcome] [varchar](50) NULL,
-	[Age] [varchar](50) NULL,
-	[Gender] [varchar](50) NULL,
-	[ReportingPHU] [varchar](250) NULL,
-	[SpecimenDate] [varchar](50) NULL,
-	[CaseReportedDate] [varchar](50) NULL,
-	[PHUCity] [varchar](50) NULL,
-	[TestReportedDate] [varchar](50) NULL,
-	[CaseAcquisitionInfo] [varchar](50) NULL,
-	[AccurateEpisodeDt] [varchar](50) NULL,
-	[PHUAddress] [varchar](50) NULL,
-	[PHUWebsite] [varchar](250) NULL,
-	[OutbreakRelated] [varchar](50) NULL,
-	[PHULatitude] [varchar](50) NULL,
-	[PHULongitude] [varchar](50) NULL,
-	[PHUPostalCode] [varchar](50) NULL,
-	[CreatedDate] [varchar](50) NULL,
-	[UpdatedDate] [varchar](50) NULL
+	[Outcome] [nvarchar](255) NULL,
+	[Age] [nvarchar](255) NULL,
+	[Gender] [nvarchar](255) NULL,
+	[ReportingPHU] [nvarchar](255) NULL,
+	[SpecimenDate] [nvarchar](50) NULL,
+	[CaseReportedDate] [nvarchar](50) NULL,
+	[PHUCity] [nvarchar](255) NULL,
+	[TestReportedDate] [nvarchar](50) NULL,
+	[CaseAcquisitionInfo] [nvarchar](255) NULL,
+	[AccurateEpisodeDt] [nvarchar](50) NULL,
+	[PHUAddress] [nvarchar](255) NULL,
+	[PHUWebsite] [nvarchar](255) NULL,
+	[OutbreakRelated] [nvarchar](255) NULL,
+	[PHULatitude] [nvarchar](50) NULL,
+	[PHULongitude] [nvarchar](50) NULL,
+	[PHUPostalCode] [nvarchar](255) NULL,
+	[CreatedDate] [nvarchar](50) NULL,
+	[UpdatedDate] [nvarchar](50) NULL
 )
 GO
 
 CREATE TABLE [dbo].[CompileCovid19CaseDetailsCanada_Stage](
-	[ObjectId] [varchar](50) NOT NULL PRIMARY KEY,
-	[RowId] [varchar](50) NULL,
-	[DateReported] [varchar](50) NULL,
-	[HealthRegion] [varchar](250) NULL,
-	[AgeGroup] [varchar](50) NULL,
-	[Gender] [varchar](50) NULL,
-	[Exposure] [varchar](50) NULL,
-	[CaseStatus] [varchar](50) NULL,
-	[Province] [varchar](50) NULL,
-	[CreatedDate] [varchar](50) NULL,
-	[UpdatedDate] [varchar](50) NULL
+	[ObjectId] [nvarchar](50) NOT NULL PRIMARY KEY,
+	[RowId] [nvarchar](50) NULL,
+	[DateReported] [nvarchar](50) NULL,
+	[HealthRegion] [nvarchar](255) NULL,
+	[AgeGroup] [nvarchar](255) NULL,
+	[Gender] [nvarchar](255) NULL,
+	[Exposure] [nvarchar](255) NULL,
+	[CaseStatus] [nvarchar](255) NULL,
+	[Province] [nvarchar](255) NULL,
+	[CreatedDate] [nvarchar](50) NULL,
+	[UpdatedDate] [nvarchar](50) NULL
 )
 GO
 
 CREATE TABLE [dbo].[OngoingOutbreaksPHU_Stage](
-	[Date] [varchar](50) NULL,
-	[PHUNum] [varchar](50) NULL,
-	[OutbreakGroup] [varchar](50) NULL,
-	[NumberOngoingOutbreaks] [varchar](50) NULL,
-	[CreatedDate] [varchar](50) NULL,
-	[UpdatedDate] [varchar](50) NULL
+	[Date] [nvarchar](50) NULL,
+	[PHUNum] [nvarchar](50) NULL,
+	[OutbreakGroup] [nvarchar](255) NULL,
+	[NumberOngoingOutbreaks] [nvarchar](50) NULL,
+	[CreatedDate] [nvarchar](50) NULL,
+	[UpdatedDate] [nvarchar](50) NULL
 ) 
 GO
 
 CREATE TABLE [dbo].[PublicHealthUnit_Stage](
-	[PHUID] [varchar](50) NOT NULL PRIMARY KEY,
-	[ReportingPHU] [varchar](250) NULL,
-	[ReportingPHUAddress] [varchar](50) NULL,
-	[ReportingPHUCity] [varchar](50) NULL,
-	[ReportingPHUPostalCode] [varchar](50) NULL,
-	[ReportingPHUWebsite] [varchar](250) NULL,
-	[ReportingPHULatitude] [varchar](50) NULL,
-	[ReportingPHULongitude] [varchar](50) NULL,
-	[CreatedDate] [varchar](50) NULL,
-	[UpdatedDate] [varchar](50) NULL
+	[PHUID] [nvarchar](50) NOT NULL PRIMARY KEY,
+	[ReportingPHU] [nvarchar](255) NULL,
+	[ReportingPHUAddress] [nvarchar](255) NULL,
+	[ReportingPHUCity] [nvarchar](255) NULL,
+	[ReportingPHUPostalCode] [nvarchar](255) NULL,
+	[ReportingPHUWebsite] [nvarchar](255) NULL,
+	[ReportingPHULatitude] [nvarchar](50) NULL,
+	[ReportingPHULongitude] [nvarchar](50) NULL,
+	[CreatedDate] [nvarchar](50) NULL,
+	[UpdatedDate] [nvarchar](50) NULL
 ) 
 GO
 
 CREATE TABLE [dbo].[PublicHealthUnitsGroup_Stage](
-	[PHUGroup] [varchar](50) NULL,
-	[PHUCity] [varchar](50) NOT NULL PRIMARY KEY,
-	[PHURegion] [varchar](250) NULL,
-	[CreatedDate] [varchar](50) NULL,
-	[UpdatedDate] [varchar](50) NULL
+	[PHUGroup] [nvarchar](50) NULL,
+	[PHUCity] [nvarchar](50) NOT NULL PRIMARY KEY,
+	[PHURegion] [nvarchar](255) NULL,
+	[CreatedDate] [nvarchar](50) NULL,
+	[UpdatedDate] [nvarchar](50) NULL
 ) 
 GO
 
 CREATE TABLE [dbo].[VaccinesByAgePHU_Stage](
-	[Date] [varchar](50) NULL,
-	[PHUID] [varchar](50) NULL,
-	[AgeGroup] [varchar](50) NULL,
-	[At_least_one_dose_cumulative] [varchar](50) NULL,
-	[Second_dose_cumulative] [varchar](50) NULL,
-	[fully_vaccinated_cumulative] [varchar](50) NULL,
-	[third_dose_cumulative] [varchar](50) NULL,
-	[CreatedDate] [varchar](50) NULL,
-	[UpdatedDate] [varchar](50) NULL
+	[Date] [nvarchar](50) NULL,
+	[PHUID] [nvarchar](50) NULL,
+	[AgeGroup] [nvarchar](50) NULL,
+	[At_least_one_dose_cumulative] [nvarchar](50) NULL,
+	[Second_dose_cumulative] [nvarchar](50) NULL,
+	[fully_vaccinated_cumulative] [nvarchar](50) NULL,
+	[third_dose_cumulative] [nvarchar](50) NULL,
+	[CreatedDate] [nvarchar](50) NULL,
+	[UpdatedDate] [nvarchar](50) NULL
 ) 
 GO
 
