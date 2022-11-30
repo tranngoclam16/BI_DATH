@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-8ADCC67</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAACAAAAAAAQZgAAAAEAACAAAACqz7ZIL2RCllh8SQsn7ZLn2x7P04YKTKB3BTng2lZFgQAAAAAOgAAAAAIAACAAAAApPWczwttuh/ZWDrUicbxh6gjWKphGPuiRFITYTYdOgpAAAADblbQ4Df5CIjuM2kfsaoq/hhZDjS7ZohBde35feXfOCcksBq1v72mtHvgdWhuzBvkEn6ZDAFOo7TdMe73RQo/3VEph2ME4HITIFynOquKVthXs6Yg/bhcRppxxBJQ2wFv/xS8lgIuMZQukZsCQI/QM/qPJpaIWBT6/AKeoBfg7sG/6YWf8mWj9GMnMo9QpIwBAAAAA2TXUeTyCcZ0fkWaWWoiIzIFAq/7TCzhRV46EAfgrEkGr24nwtWHEqS9jaIyBd5i7Eh2D7gaQHUDtHLgWRFgiMA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAACAAAAAAAQZgAAAAEAACAAAABb35MjM0rpC/8VFV2u6lKgwBjhlPTOSF+sk36LuCzhBwAAAAAOgAAAAAIAACAAAAC+ZN9oUTjsl/3usUrpSsw4KNn4umxeqQyDrngJuH4ln5AAAABfKGlxUrPnfzBVFfTYcidSfmTGbXSv2j/T7K4cf6Nvnp5QKy9sE1epOmRqoeJA0eW0KqN1SNWD/mTc3L8SbzJWpTWdHGOUxTg9Hx2rtrsLEfNnVStuuYyx5mcPg/f6DsQNrqDTO2COmhTy+QVK0RALiP+SOknWFQ6JwXFr13lR6NJnbCsI8vooGO59xkIZOT1AAAAAM951ZLF1CDGmXpZIzeLTwjPp9ntsq/+1aOAlX2Jstmp5+Cqp0lXTFvlrUAFliYF3HWfHKvVlPNJHycCGJm8aqw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -43,10 +43,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">38</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{68D1630E-01E3-4856-95F1-9D691BFCD06E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3B8D6A21-528E-4648-BB54-609E3084045B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1011,7 +1011,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1026,7 +1026,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1041,7 +1041,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.ExcelFilePath">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.ExcelFilePath">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1056,7 +1056,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.FirstRowHasColumnName">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.FirstRowHasColumnName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1071,7 +1071,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.InitialCatalog">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.InitialCatalog">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1085,7 +1085,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.Password">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.Password">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1099,7 +1099,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.RetainSameConnection">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1114,7 +1114,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.ServerName">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.ServerName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1129,7 +1129,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Vaccine.UserName">
+                <SSIS:Parameter SSIS:Name="CM.Vaccines.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -1151,10 +1151,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">20</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C6A2CCC7-E7D7-44C6-B157-42DD226FC3FD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CF5E7B25-88BC-41A8-8FAF-0D9799536378}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

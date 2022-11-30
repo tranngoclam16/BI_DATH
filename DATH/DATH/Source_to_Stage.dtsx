@@ -11,15 +11,15 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{68D1630E-01E3-4856-95F1-9D691BFCD06E}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{3B8D6A21-528E-4648-BB54-609E3084045B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CasesReport]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{1E0145C9-F97E-4A99-A486-21F1A94010C2}"
+      DTS:DTSID="{464F0FF5-4BAD-45B6-BB83-2240965F74AB}"
       DTS:ObjectName="CasesReport">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -31,7 +31,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CompileCovid]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{E945224D-BE44-4B4F-9BC5-FEBBB5C2032F}"
+      DTS:DTSID="{77579C45-2F04-4B45-9A44-3B91D3794251}"
       DTS:ObjectName="CompileCovid">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -53,7 +53,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACbqe1UVu35namCH31TgeHkb3mFSr1unbmti5lSuHyxagAAAAAOgAAAAAIAACAAAADWnMpeazN98eQSLPFz/hoMBPL1G5+/8DY6TUEEmgG6chAAAAAOHzM+eWFIPPwdhGb7/lEIQAAAALCy96Rrn1zMcjop5Nq92ruNJTY3MT6swZIE6CDBhP+2viafr4TYDZlnnOC7J2rKrTE2ySnPnffbsf6p4JR6G6k</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUXJTH7+0L3i9vow0z5uPL7IPkIh2rNmjgLQm8m7nqAwAAAAAOgAAAAAIAACAAAACqyENt4uVzoanJJ/HfM8wX64f0Z1AX2q1wC8OTbDByyxAAAACRvXlAdhQTf1lryaXFj7TMQAAAAD3bBujCT5amaX2EXNQtL+p7XQu1+h4jIIKYEWFjjWsrWYe6clPw/5sr+2cuElFjT1GxldhhRmDCXvCROjHE4/o</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -70,7 +70,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABpdPnBFRjCI3PnnrC4VJVb82wKy4k5voH1ZroMXDNi/QAAAAAOgAAAAAIAACAAAABboo/jEzlw0bMP0QgRtGxRTw0fKoVNCSd7DUAUvF23RhAAAABFdEiTeykofZONoZa4fO/KQAAAAHbYWH2UpNW0Enk+jt2pH23gkJaBz2ls2Vpd7PnLYBG8KdQ6j1VUSb8tdeHTdETHGYUnthn189BzUvOPVdaoaC4</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABXM2Slh8Is4KSbnMY1x9lVHrkZ7WdayRqo7iveyCJlCwAAAAAOgAAAAAIAACAAAADDBqbnNLITverCqXzTE98xgxAYHOF5H4SnUJPFHLm9sxAAAABKCrSVYkCNtEVsMEwMe78rQAAAALZ+/eSzBQf9hW3lv4+6PckREOPJqd9ziJZ66vi0vrLtm+hmlVADH/UfoGfNzpcDdpB4AuluZy9apEYuBNbPEQk</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -111,15 +111,15 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Vaccine]"
+      DTS:refId="Package.ConnectionManagers[Vaccines]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{72818DA6-7D54-45DC-974D-63EB628D583E}"
-      DTS:ObjectName="Vaccine">
+      DTS:DTSID="{7B703552-565C-449C-9F37-B7E43107BBAE}"
+      DTS:ObjectName="Vaccines">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\VaccinesByAgePHU.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\VaccinesByAgePHU.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -148,6 +148,7 @@
       DTS:refId="Package\CasesReport DFT"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{89BC3EE6-3A11-4537-98F4-09E6EDD70455}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -183,7 +184,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Sheet1$] where (CreatedDate &lt; ? and UpdatedDate &gt;= ?) or (CreatedDate &lt; ? and UpdatedDate &gt;= ?)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Sheet1$] where (CreatedDate &lt; ? and CreatedDate &gt;= ?) or (UpdatedDate &lt; ? and UpdatedDate &gt;= ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -383,6 +384,15 @@
                       lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUPostalCode]"
                       name="PHUPostalCode"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[ObjectId]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[ObjectId]"
+                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[ObjectId]"
+                      name="ObjectId"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -468,6 +478,10 @@
                       dataType="wstr"
                       length="255"
                       name="PHUPostalCode" />
+                    <externalMetadataColumn
+                      refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[ObjectId]"
+                      dataType="r8"
+                      name="ObjectId" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -475,6 +489,11 @@
                   isErrorOut="true"
                   name="Excel Source Error Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ObjectId]"
+                      dataType="r8"
+                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ObjectId]"
+                      name="ObjectId" />
                     <outputColumn
                       refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Outcome]"
                       dataType="wstr"
@@ -782,6 +801,12 @@
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ObjectId]"
+                      cachedDataType="r8"
+                      cachedName="ObjectId"
+                      externalMetadataColumnId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ObjectID]"
+                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[ObjectId]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -869,6 +894,10 @@
                       refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       dataType="dbTimeStamp"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ObjectID]"
+                      dataType="i4"
+                      name="ObjectID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -912,6 +941,7 @@
       DTS:refId="Package\CompileCovid DFT"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{908cdfe7-c896-46db-ae20-5fd85b25b122}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1003,15 +1033,6 @@
                       name="ObjectId"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[RowId]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[RowId]"
-                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[RowId]"
-                      name="RowId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[DateReported]"
                       dataType="date"
                       errorOrTruncationOperation="Conversion"
@@ -1096,10 +1117,6 @@
                       dataType="r8"
                       name="ObjectId" />
                     <externalMetadataColumn
-                      refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[RowId]"
-                      dataType="r8"
-                      name="RowId" />
-                    <externalMetadataColumn
                       refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[DateReported]"
                       dataType="date"
                       name="DateReported" />
@@ -1145,11 +1162,6 @@
                       dataType="r8"
                       lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ObjectId]"
                       name="ObjectId" />
-                    <outputColumn
-                      refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[RowId]"
-                      dataType="r8"
-                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[RowId]"
-                      name="RowId" />
                     <outputColumn
                       refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[DateReported]"
                       dataType="date"
@@ -1309,12 +1321,6 @@
                       externalMetadataColumnId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ObjectId]"
                       lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[ObjectId]" />
                     <inputColumn
-                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RowId]"
-                      cachedDataType="r8"
-                      cachedName="RowId"
-                      externalMetadataColumnId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowId]"
-                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[RowId]" />
-                    <inputColumn
                       refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateReported]"
                       cachedDataType="date"
                       cachedName="DateReported"
@@ -1378,13 +1384,8 @@
                       dataType="i4"
                       name="ObjectId" />
                     <externalMetadataColumn
-                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RowId]"
-                      dataType="i4"
-                      name="RowId" />
-                    <externalMetadataColumn
                       refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DateReported]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="dbTimeStamp"
                       name="DateReported" />
                     <externalMetadataColumn
                       refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HealthRegion]"
@@ -1459,11 +1460,12 @@
       DTS:refId="Package\Get CasesReport LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9935180B-0B20-423A-B4B5-B24955C883F2}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CasesReport LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1480,11 +1482,12 @@
       DTS:refId="Package\Get CompileCovid LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9b5c63d7-8ff2-4c06-94c0-17cbccf30d5f}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CompileCovid LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1501,6 +1504,7 @@
       DTS:refId="Package\Get OngoingOutbreaks LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{055f6244-25fd-4eb6-9429-cd8c2115267b}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -1522,6 +1526,7 @@
       DTS:refId="Package\Get PublicHealthUnit LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{f97430e2-86d8-4177-a158-e91637d42148}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -1543,6 +1548,7 @@
       DTS:refId="Package\Get PublicHealthUnitsGroup LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{c21a86e7-bc47-4656-83fa-c0410778ad68}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -1561,13 +1567,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Get Vaccine LSET"
+      DTS:refId="Package\Get Vaccines LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{61877730-e918-4187-b3fa-cb28ca67d7ec}"
+      DTS:DTSID="{5991C5DE-04EC-42AB-BCA7-952B57C71DC3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Get Vaccine LSET"
+      DTS:ObjectName="Get Vaccines LSET"
       DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1585,6 +1591,7 @@
       DTS:refId="Package\OngoingOutbreaks DFT"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{cdf18533-3cf2-4afe-9e1c-f0df07a438fa}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1966,6 +1973,7 @@
       DTS:refId="Package\PublicHealthUnit DFT"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{54ced92e-5601-4ab2-bf5b-22fa4b39f2c9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2481,6 +2489,7 @@
       DTS:refId="Package\PublicHealthUnitsGroup DFT"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{93eb4ccd-26fa-463b-9433-1d42f16ba79f}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2844,11 +2853,12 @@
       DTS:refId="Package\Set CasesReport LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{DE321311-D905-4A4B-8678-AE8A82239D41}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CasesReport LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2888,11 +2898,12 @@
       DTS:refId="Package\Set CompileCovid LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{e4a24b91-3dc0-4223-bb09-e8c44758f2e5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CompileCovid LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2911,6 +2922,7 @@
       DTS:refId="Package\Set OngoingOutbreaks LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{8b2bae27-d3d2-45d3-a47d-4fabd93490be}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -2934,6 +2946,7 @@
       DTS:refId="Package\Set PublicHealthUnit LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{9baecc2d-100f-44bd-ba8e-578edf2b04b8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -2957,6 +2970,7 @@
       DTS:refId="Package\Set PublicHealthUnitsGroup LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{b265b669-e353-4196-bbb5-4d082799b992}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -2977,13 +2991,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Set Vaccine LSET"
+      DTS:refId="Package\Set Vaccines LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{e5053a27-69e2-4be0-af00-69d89bf8b4cd}"
+      DTS:DTSID="{B330EF72-4323-4BBB-801B-437945D75D3D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Set Vaccine LSET"
+      DTS:ObjectName="Set Vaccines LSET"
       DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -3003,11 +3017,12 @@
       DTS:refId="Package\Truncate CasesReport Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C0B237C1-729B-457C-B81B-6F7BB00C4470}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CasesReport Stage"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3019,11 +3034,12 @@
       DTS:refId="Package\Truncate CompileCovid Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{65eb4398-c918-4c69-874a-3a2f4e85a096}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CompileCovid Stage"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3035,6 +3051,7 @@
       DTS:refId="Package\Truncate OngoingOutbreaks Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{5fa4f2ae-1023-4b8b-8ad9-f2f2e89368ac}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -3051,6 +3068,7 @@
       DTS:refId="Package\Truncate PublicHealthUnit Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{405e6cfb-68f9-42a0-aa45-b0109a783335}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -3067,6 +3085,7 @@
       DTS:refId="Package\Truncate PublicHealthUnitsGroup Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{6f6ed288-db66-48c9-af49-1309edddac3c}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -3080,29 +3099,29 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncate Vaccine Stage"
+      DTS:refId="Package\Truncate Vaccines Stage"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{896e2512-f7a1-4693-94d9-53a07e4b0984}"
+      DTS:DTSID="{97D0B4CC-B6BE-4B3F-B7BE-F95AF83B7EF3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate Vaccine Stage"
+      DTS:ObjectName="Truncate Vaccines Stage"
       DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{6DD90B0F-7625-4198-9A40-D9BE0A4338C5}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE VaccinesByAgePHU_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table VaccinesByAgePHU_Stage" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Vaccine DFT"
+      DTS:refId="Package\Vaccines DFT"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{d51b6d51-92a3-42b9-834d-5ee46b7a9196}"
+      DTS:DTSID="{EF4B43F2-3B5F-4A2E-9EC8-60A70139CB86}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Vaccine DFT"
+      DTS:ObjectName="Vaccines DFT"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -3110,7 +3129,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Vaccine DFT\Excel Source"
+              refId="Package\Vaccines DFT\Excel Source"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Excel Source"
@@ -3125,7 +3144,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
+                  name="OpenRowset">Sheet1$</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -3134,7 +3153,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Sheet1$] where (CreatedDate &lt; ? and UpdatedDate &gt;= ?) or (CreatedDate &lt; ? and UpdatedDate &gt;= ?)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [Sheet1$] where (CreatedDate &lt; ? and CreatedDate &gt;= ?) or (UpdatedDate &lt; ? and UpdatedDate &gt;= ?)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3151,208 +3170,217 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Vaccine DFT\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Vaccine]"
-                  connectionManagerRefId="Package.ConnectionManagers[Vaccine]"
+                  refId="Package\Vaccines DFT\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vaccines]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vaccines]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output]"
+                  refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output]"
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUID]"
-                      dataType="r8"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[Date]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[PHUID]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUID]"
-                      name="PHUID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]"
-                      name="CreatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]"
-                      name="UpdatedDate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[Date]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[Date]"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
+                      length="255"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[Date]"
                       name="Date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[AgeGroup]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[PHUID]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUID]"
+                      name="PHUID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[AgeGroup]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[AgeGroup]"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[AgeGroup]"
                       length="255"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[AgeGroup]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[AgeGroup]"
                       name="AgeGroup"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[At_least_one_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[At_least_one_dose_cumulative]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[At_least_one_dose_cumulative]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[At_least_one_dose_cumulative]"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[At_least_one_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[At_least_one_dose_cumulative]"
                       name="At_least_one_dose_cumulative"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[Second_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[Second_dose_cumulative]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Second_dose_cumulative]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[Second_dose_cumulative]"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Second_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[Second_dose_cumulative]"
                       name="Second_dose_cumulative"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[fully_vaccinated_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[fully_vaccinated_cumulative]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[fully_vaccinated_cumulative]"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[fully_vaccinated_cumulative]"
                       length="255"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[fully_vaccinated_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[fully_vaccinated_cumulative]"
                       name="fully_vaccinated_cumulative"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[third_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[third_dose_cumulative]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[third_dose_cumulative]"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[third_dose_cumulative]"
                       length="255"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[third_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[third_dose_cumulative]"
                       name="third_dose_cumulative"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreatedDate]"
+                      length="255"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[UpdatedDate]"
+                      length="255"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[PHUID]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[PHUID]"
                       dataType="r8"
                       name="PHUID" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreatedDate]"
-                      dataType="date"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[UpdatedDate]"
-                      dataType="date"
-                      name="UpdatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Date]"
-                      dataType="date"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[AgeGroup]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[AgeGroup]"
                       dataType="wstr"
                       length="255"
                       name="AgeGroup" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[At_least_one_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[At_least_one_dose_cumulative]"
                       dataType="r8"
                       name="At_least_one_dose_cumulative" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Second_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Second_dose_cumulative]"
                       dataType="r8"
                       name="Second_dose_cumulative" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[fully_vaccinated_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[fully_vaccinated_cumulative]"
                       dataType="wstr"
                       length="255"
                       name="fully_vaccinated_cumulative" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[third_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[third_dose_cumulative]"
                       dataType="wstr"
                       length="255"
                       name="third_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreatedDate]"
+                      dataType="wstr"
+                      length="255"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="wstr"
+                      length="255"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output]"
+                  refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output]"
                   isErrorOut="true"
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
-                      dataType="date"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Date]"
                       name="Date" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[PHUID]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[PHUID]"
                       dataType="r8"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[PHUID]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[PHUID]"
                       name="PHUID" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[AgeGroup]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[AgeGroup]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[AgeGroup]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[AgeGroup]"
                       name="AgeGroup" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[At_least_one_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[At_least_one_dose_cumulative]"
                       dataType="r8"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[At_least_one_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[At_least_one_dose_cumulative]"
                       name="At_least_one_dose_cumulative" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Second_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Second_dose_cumulative]"
                       dataType="r8"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Second_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Second_dose_cumulative]"
                       name="Second_dose_cumulative" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[fully_vaccinated_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[fully_vaccinated_cumulative]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[fully_vaccinated_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[fully_vaccinated_cumulative]"
                       name="fully_vaccinated_cumulative" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[third_dose_cumulative]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[third_dose_cumulative]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[third_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[third_dose_cumulative]"
                       name="third_dose_cumulative" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedDate]"
-                      dataType="date"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedDate]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedDate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedDate]"
                       name="CreatedDate" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[UpdatedDate]"
-                      dataType="date"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[UpdatedDate]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[UpdatedDate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3361,7 +3389,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Vaccine DFT\OLE DB Destination"
+              refId="Package\Vaccines DFT\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -3418,7 +3446,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Vaccine DFT\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Vaccines DFT\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.Stage.sa]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.Stage.sa]"
                   description="The OLE DB runtime connection used to access the database."
@@ -3426,134 +3454,137 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="date"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[Date]" />
                     <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="date"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
-                    <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHUID]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHUID]"
                       cachedDataType="r8"
                       cachedName="PHUID"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUID]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUID]" />
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUID]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUID]" />
                     <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedDataType="date"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AgeGroup]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AgeGroup]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="AgeGroup"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AgeGroup]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[AgeGroup]" />
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AgeGroup]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[AgeGroup]" />
                     <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[At_least_one_dose_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[At_least_one_dose_cumulative]"
                       cachedDataType="r8"
                       cachedName="At_least_one_dose_cumulative"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[At_least_one_dose_cumulative]" />
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[At_least_one_dose_cumulative]" />
                     <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Second_dose_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Second_dose_cumulative]"
                       cachedDataType="r8"
                       cachedName="Second_dose_cumulative"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Second_dose_cumulative]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[Second_dose_cumulative]" />
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Second_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[Second_dose_cumulative]" />
                     <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fully_vaccinated_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fully_vaccinated_cumulative]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="fully_vaccinated_cumulative"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fully_vaccinated_cumulative]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[fully_vaccinated_cumulative]" />
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fully_vaccinated_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[fully_vaccinated_cumulative]" />
                     <inputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[third_dose_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[third_dose_cumulative]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="third_dose_cumulative"
-                      externalMetadataColumnId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
-                      lineageId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output].Columns[third_dose_cumulative]" />
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[third_dose_cumulative]" />
+                    <inputColumn
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUID]"
-                      dataType="i4"
-                      name="PHUID" />
-                    <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AgeGroup]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUID]"
+                      dataType="i4"
+                      name="PHUID" />
+                    <externalMetadataColumn
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AgeGroup]"
                       dataType="wstr"
                       length="255"
                       name="AgeGroup" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
                       dataType="wstr"
                       length="255"
                       name="At_least_one_dose_cumulative" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Second_dose_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Second_dose_cumulative]"
                       dataType="wstr"
                       length="255"
                       name="Second_dose_cumulative" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fully_vaccinated_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fully_vaccinated_cumulative]"
                       dataType="wstr"
                       length="255"
                       name="fully_vaccinated_cumulative" />
                     <externalMetadataColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
                       dataType="wstr"
                       length="255"
                       name="third_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Vaccine DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Vaccines DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Vaccine DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Vaccines DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Vaccine DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Vaccines DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Vaccine DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Vaccines DFT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3564,10 +3595,10 @@
           </components>
           <paths>
             <path
-              refId="Package\Vaccine DFT.Paths[Excel Source Output]"
-              endId="Package\Vaccine DFT\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Vaccines DFT.Paths[Excel Source Output]"
+              endId="Package\Vaccines DFT\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
-              startId="Package\Vaccine DFT\Excel Source.Outputs[Excel Source Output]" />
+              startId="Package\Vaccines DFT\Excel Source.Outputs[Excel Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3623,13 +3654,21 @@
       DTS:ObjectName="Constraint 1 1 2"
       DTS:To="Package\Get PublicHealthUnitsGroup LSET" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 2 1]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
-      DTS:DTSID="{2bd7e7f9-ba06-435d-9faf-0a58466467a3}"
-      DTS:From="Package\Truncate Vaccine Stage"
+      DTS:DTSID="{0596A3C5-2C59-4318-96DC-F24A99F615F8}"
+      DTS:From="Package\Get Vaccines LSET"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1 2 1"
-      DTS:To="Package\Get Vaccine LSET" />
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Vaccines DFT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{9ECCA94A-BBAE-4190-BCBC-BFC0465F9B68}"
+      DTS:From="Package\Vaccines DFT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\Set Vaccines LSET" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -3671,14 +3710,6 @@
       DTS:ObjectName="Constraint 2 1 2"
       DTS:To="Package\PublicHealthUnitsGroup DFT" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{49a2ef72-1cdf-4086-8071-8dfdf8a5659f}"
-      DTS:From="Package\Get Vaccine LSET"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 1 2 1"
-      DTS:To="Package\Vaccine DFT" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
       DTS:DTSID="{2BB29C72-2E8E-4BDE-B1B6-43F31C0AB5F0}"
@@ -3719,14 +3750,6 @@
       DTS:ObjectName="Constraint 3 1 2"
       DTS:To="Package\Set PublicHealthUnitsGroup LSET" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3 1 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{48527839-91c7-4498-b363-39dc3297c75c}"
-      DTS:From="Package\Vaccine DFT"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3 1 2 1"
-      DTS:To="Package\Set Vaccine LSET" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
       DTS:DTSID="{897D2CF3-D5B6-40E7-931A-D908FB266D3B}"
@@ -3761,11 +3784,19 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{D5DA905A-4E02-4B7A-9BBF-670BA0A61688}"
+      DTS:DTSID="{5D4AF47B-317D-47F4-B3A5-ECD423DD9A7D}"
       DTS:From="Package\Set CET"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Truncate Vaccine Stage" />
+      DTS:To="Package\Truncate Vaccines Stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{93AF5A2F-B973-4F20-9EF6-E61D1935A3A1}"
+      DTS:From="Package\Truncate Vaccines Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Get Vaccines LSET" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3806,11 +3837,7 @@
         <NodeLayout
           Size="235.2,41.6"
           Id="Package\Get PublicHealthUnitsGroup LSET"
-          TopLeft="1161.3,208.7" />
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Get Vaccine LSET"
-          TopLeft="1480.1,208.7" />
+          TopLeft="1160.9,208.7" />
         <NodeLayout
           Size="188,41.6"
           Id="Package\OngoingOutbreaks DFT"
@@ -3822,7 +3849,7 @@
         <NodeLayout
           Size="211.2,41.6"
           Id="Package\PublicHealthUnitsGroup DFT"
-          TopLeft="1173.3,310.3" />
+          TopLeft="1172.9,310.3" />
         <NodeLayout
           Size="182.4,41.6"
           Id="Package\Set CasesReport LSET"
@@ -3846,11 +3873,7 @@
         <NodeLayout
           Size="233.6,41.6"
           Id="Package\Set PublicHealthUnitsGroup LSET"
-          TopLeft="1162.1,411.9" />
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Set Vaccine LSET"
-          TopLeft="1480.9,411.9" />
+          TopLeft="1161.7,411.9" />
         <NodeLayout
           Size="212,41.6"
           Id="Package\Truncate CasesReport Stage"
@@ -3870,15 +3893,7 @@
         <NodeLayout
           Size="263.2,41.6"
           Id="Package\Truncate PublicHealthUnitsGroup Stage"
-          TopLeft="1147.3,107.1" />
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Truncate Vaccine Stage"
-          TopLeft="1466.1,107.1" />
-        <NodeLayout
-          Size="136.8,41.6"
-          Id="Package\Vaccine DFT"
-          TopLeft="1492.1,310.3" />
+          TopLeft="1146.9,107.1" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="933.214285714286,47.0999999999998">
@@ -4003,29 +4018,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1 1 2]"
-          TopLeft="1278.9,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1 2 1]"
-          TopLeft="1560.5,148.7">
+          TopLeft="1278.5,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4135,29 +4128,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2 1 2]"
-          TopLeft="1278.9,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 1 2 1]"
-          TopLeft="1560.5,250.3">
+          TopLeft="1278.5,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4267,29 +4238,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3 1 2]"
-          TopLeft="1278.9,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3 1 2 1]"
-          TopLeft="1560.5,351.9">
+          TopLeft="1278.5,351.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4405,9 +4354,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="284.428571428571,59.9999999999999"
+              EndConnector="284.028571428571,59.9999999999999"
               Start="0,0"
-              End="284.428571428571,52.4999999999999">
+              End="284.028571428571,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4418,13 +4367,13 @@
                     Point2="0,22.5278810408922"
                     Point3="4,22.5278810408922" />
                   <mssgle:LineSegment
-                    End="280.428571428571,22.5278810408922" />
+                    End="280.028571428571,22.5278810408922" />
                   <mssgle:CubicBezierSegment
-                    Point1="280.428571428571,22.5278810408922"
-                    Point2="284.428571428571,22.5278810408922"
-                    Point3="284.428571428571,26.5278810408922" />
+                    Point1="280.028571428571,22.5278810408922"
+                    Point2="284.028571428571,22.5278810408922"
+                    Point3="284.028571428571,26.5278810408922" />
                   <mssgle:LineSegment
-                    End="284.428571428571,52.4999999999999" />
+                    End="284.028571428571,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4433,15 +4382,19 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\Truncate Vaccines Stage"
+          TopLeft="1470.7,107.1" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
           TopLeft="1009.78571428571,47.0999999999998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="550.714285714286,59.9999999999999"
+              EndConnector="557.714285714286,59.9999999999999"
               Start="0,0"
-              End="550.714285714286,52.4999999999999">
+              End="557.714285714286,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -4452,13 +4405,91 @@
                     Point2="0,15.0668647845468"
                     Point3="4,15.0668647845468" />
                   <mssgle:LineSegment
-                    End="546.714285714286,15.0668647845468" />
+                    End="553.714285714286,15.0668647845468" />
                   <mssgle:CubicBezierSegment
-                    Point1="546.714285714286,15.0668647845468"
-                    Point2="550.714285714286,15.0668647845468"
-                    Point3="550.714285714286,19.0668647845468" />
+                    Point1="553.714285714286,15.0668647845468"
+                    Point2="557.714285714286,15.0668647845468"
+                    Point3="557.714285714286,19.0668647845468" />
                   <mssgle:LineSegment
-                    End="550.714285714286,52.4999999999999" />
+                    End="557.714285714286,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Get Vaccines LSET"
+          TopLeft="1484.7,208.7" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="1567.5,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Vaccines DFT"
+          TopLeft="1496.7,310.3" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="1567.5,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,41.6"
+          Id="Package\Set Vaccines LSET"
+          TopLeft="1485.5,411.9" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="1567.5,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4478,14 +4509,14 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\CasesReport DFT\OLE DB Destination"
-          TopLeft="342.857148695965,182.764708445559" />
+          TopLeft="335.714291431466,182.764708445559" />
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\CasesReport DFT\Excel Source"
           TopLeft="351.428577413364,82.5882364523865" />
         <EdgeLayout
           Id="Package\CasesReport DFT.Paths[Excel Source Output]"
-          TopLeft="424.342863054665,124.188236452386">
+          TopLeft="420.771434422415,124.188236452386">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4533,7 +4564,7 @@
     design-time-name="Package\CompileCovid DFT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\CompileCovid DFT\OLE DB Destination"
@@ -4561,7 +4592,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4592,7 +4625,7 @@
     design-time-name="Package\OngoingOutbreaks DFT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\OngoingOutbreaks DFT\OLE DB Destination"
@@ -4620,7 +4653,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4651,7 +4686,7 @@
     design-time-name="Package\PublicHealthUnit DFT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\PublicHealthUnit DFT\OLE DB Destination"
@@ -4679,7 +4714,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4689,7 +4726,7 @@
     design-time-name="Package\PublicHealthUnitsGroup DFT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\PublicHealthUnitsGroup DFT\OLE DB Destination"
@@ -4717,7 +4754,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4745,32 +4784,32 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Vaccine DFT">
+    design-time-name="Package\Vaccines DFT">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="138.4,41.6"
-          Id="Package\Vaccine DFT\Excel Source"
-          TopLeft="356,86" />
+          Id="Package\Vaccines DFT\Excel Source"
+          TopLeft="442,98" />
         <NodeLayout
           Size="170.4,41.6"
-          Id="Package\Vaccine DFT\OLE DB Destination"
-          TopLeft="342.857148695965,182.764708445559" />
+          Id="Package\Vaccines DFT\OLE DB Destination"
+          TopLeft="426,201" />
         <EdgeLayout
-          Id="Package\Vaccine DFT.Paths[Excel Source Output]"
-          TopLeft="426.628574347983,127.6">
+          Id="Package\Vaccines DFT.Paths[Excel Source Output]"
+          TopLeft="511.2,139.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.164708445559"
+              EndConnector="0,61.4"
               Start="0,0"
-              End="0,47.664708445559">
+              End="0,53.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.664708445559" />
+                    End="0,53.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4783,15 +4822,20 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Vaccine DFT\Excel Source">
+    design-time-name="Package\Vaccines DFT\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Vaccine DFT\OLE DB Destination">
+    design-time-name="Package\Vaccines DFT\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

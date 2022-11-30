@@ -56,13 +56,13 @@ GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Exposure]') AND type in (N'U'))
 DROP TABLE [dbo].[Exposure]
 GO
-
+/**
 CREATE TABLE [dbo].[CasesReport](
 	[ID] [int] IDENTITY(1, 1) NOT NULL PRIMARY KEY,
 	[CaseStatusID] [int] NULL, --[Outcome] [nvarchar](255) NULL,
 	[PHU_ID] [int] NULL,
 	[ExposureID] [int] NULL, --[CaseAcquisitionInfo] [nvarchar](255) NULL,
-	[AgeID] [nvarchar](255) NULL,
+	[AgeID] [nvarchar](255) NULL, 
 	[Gender] [nvarchar](255) NULL,
 	--[ReportingPHU] [nvarchar](255) NULL,
 	[SpecimenDate] [nvarchar](50) NULL,
@@ -83,7 +83,7 @@ GO
 
 CREATE TABLE [dbo].[CompileCovid19CaseDetailsCanada](
 	[ObjectId] [int] NOT NULL PRIMARY KEY,
-	[RowId] [int] NULL,
+	--[RowId] [int] NULL,
 	[ExposureID] [int] NULL,
 	[PHU_ID] [int] NULL,
 	[CaseStatusID] [int] NULL,
@@ -97,6 +97,26 @@ CREATE TABLE [dbo].[CompileCovid19CaseDetailsCanada](
 	[Province] [nvarchar](255) NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
+)
+GO
+**/
+CREATE TABLE [dbo].[Covid19Cases](
+	[CaseID] [int] IDENTITY(1, 1) NOT NULL PRIMARY KEY
+,	[ObjectID] [int] NOT NULL
+,	[AgeID] [int] NULL
+,	[ExposureID] [int] NULL
+,	[CaseStatus] [int] NULL
+,	[PHU_ID] [int] NULL
+,	[DateReported] [datetime] NULL --,	[CaseReportedDate] [datetime] NULL
+,	[SpecimenDate] [datetime] NULL
+,	[TestReportedDate] [datetime] NULL
+,	[AccurateEpisodeDt] [datetime] NULL
+,	[OutbreakRelated] [nvarchar](255) NULL
+,	[Gender] [nvarchar](255) NULL
+,	[Province] [nvarchar](255) NULL
+,	[CreatedDate] [datetime] NULL
+,	[UpdatedDate] [datetime] NULL
+,	[DataSource] [int] NOT NULL
 )
 GO
 
@@ -117,7 +137,7 @@ CREATE TABLE [dbo].[PublicHealthUnit](
 	[CityID] [int] NULL,
 	[ReportingPHU] [nvarchar](255) NULL, --PHURegion
 	[ReportingPHUAddress] [nvarchar](255) NULL,
-	[ReportingPHUCity] [nvarchar](255) NULL,
+	--[ReportingPHUCity] [nvarchar](255) NULL,
 	[ReportingPHUPostalCode] [nvarchar](255) NULL,
 	[ReportingPHUWebsite] [nvarchar](255) NULL,
 	[ReportingPHULatitude] [nvarchar](50) NULL,

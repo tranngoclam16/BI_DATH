@@ -39,6 +39,7 @@ GO
 
 
 CREATE TABLE [dbo].[CasesReport_Stage](
+	[ObjectID] [int] NOT NULL PRIMARY KEY,	
 	[Outcome] [nvarchar](255) NULL,
 	[Age] [nvarchar](255) NULL,
 	[Gender] [nvarchar](255) NULL,
@@ -62,7 +63,6 @@ GO
 
 CREATE TABLE [dbo].[CompileCovid19CaseDetailsCanada_Stage](
 	[ObjectId] [int] NOT NULL PRIMARY KEY,
-	[RowId] [int] NULL,
 	[DateReported] [datetime] NULL,
 	[HealthRegion] [nvarchar](255) NULL,
 	[AgeGroup] [nvarchar](255) NULL,
