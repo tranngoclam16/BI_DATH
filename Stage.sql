@@ -56,6 +56,7 @@ CREATE TABLE [dbo].[CasesReport_Stage](
 	[PHULatitude] [nvarchar](50) NULL,
 	[PHULongitude] [nvarchar](50) NULL,
 	[PHUPostalCode] [nvarchar](255) NULL,
+	[Status] int null,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 )
@@ -70,6 +71,7 @@ CREATE TABLE [dbo].[CompileCovid19CaseDetailsCanada_Stage](
 	[Exposure] [nvarchar](255) NULL,
 	[CaseStatus] [nvarchar](255) NULL,
 	[Province] [nvarchar](255) NULL,
+	[Status] int null,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 )
@@ -80,6 +82,7 @@ CREATE TABLE [dbo].[OngoingOutbreaksPHU_Stage](
 	[PHUNum] [int] NULL,
 	[OutbreakGroup] [nvarchar](255) NULL,
 	[NumberOngoingOutbreaks] [int] NULL,
+	[Status] int null,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -94,6 +97,7 @@ CREATE TABLE [dbo].[PublicHealthUnit_Stage](
 	[ReportingPHUWebsite] [nvarchar](255) NULL,
 	[ReportingPHULatitude] [nvarchar](50) NULL,
 	[ReportingPHULongitude] [nvarchar](50) NULL,
+	[Status] int null,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -103,6 +107,7 @@ CREATE TABLE [dbo].[PublicHealthUnitsGroup_Stage](
 	[PHUGroup] [nvarchar](255) NULL,
 	[PHUCity] [nvarchar](255) NOT NULL PRIMARY KEY,
 	[PHURegion] [nvarchar](255) NULL,
+	[Status] int null,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -112,10 +117,11 @@ CREATE TABLE [dbo].[VaccinesByAgePHU_Stage](
 	[Date] [datetime] NULL,
 	[PHUID] [int] NULL,
 	[AgeGroup] [nvarchar](255) NULL,
-	[At_least_one_dose_cumulative] [nvarchar](255) NULL,
-	[Second_dose_cumulative] [nvarchar](255) NULL,
-	[fully_vaccinated_cumulative] [nvarchar](255) NULL,
-	[third_dose_cumulative] [nvarchar](255) NULL,
+	[At_least_one_dose_cumulative] [int] NULL,
+	[Second_dose_cumulative] [int] NULL,
+	[fully_vaccinated_cumulative] [int] NULL,
+	[third_dose_cumulative] [int] NULL,
+	[Status] int null,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 

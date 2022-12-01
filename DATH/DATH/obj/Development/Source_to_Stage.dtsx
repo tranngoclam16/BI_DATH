@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{0EB27801-9706-429C-8764-67F4E992697B}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{0AAF48A2-90B7-41F6-A0C9-3BF15E517F36}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -53,7 +53,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADcUVgxFybURMWa1tZUB5mAqF2RaqwaE7w68jbQZv7pSwAAAAAOgAAAAAIAACAAAAC+HQf7az68BkCZ2h38xgM1tkGaOx51I0VygA65ogiJjRAAAADJ7R3FDvFJN2aX8zdIRo1qQAAAAMhjg6r3355HWjjTgMrwmC3MvzzUlkLlwLt6mE42UIAf2Xzaco5mhjrhTE0Pw9JJxFp7ERONmiD/4uLOqS/OCzU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAH8Tge3JxvOfjZpfOZYkniS4CFjGpIEhd2DzQZVjTozwAAAAAOgAAAAAIAACAAAACr2Hdm+dxrY8DEgLlehxCn81wzDI1qlsT6MEmWF+IMKBAAAADLStDWRw7hrs4+9HwUQzwdQAAAANpIavy17XVFAd9+9IlbKw6Y+7sFO0qs6L1JuCioJsoUpxc8E43jfh2ClbBn/HYXgdm6F19cJR0/oKgfSIzbOBk</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -70,7 +70,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABFrR/hiDqk/6J9BCZX33uQxbbAdGy30y33yC7Y9vXB/wAAAAAOgAAAAAIAACAAAABKNP1UHvqYvKmM8CNyCGXCFtkB1UgHJazXbZwDvCP+nBAAAAB2jscnyAo4UsSBHqSQocERQAAAAPa0R7TJsbGitAYRxHlpd+y4lopN+x2k2SgO9WM+Uirwrk6cUNQf+j4fkdbK0fZVzuXva9mf3f+TgkNgrOVudGQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAFu1FeJ7etmsd946z3wrwYFtMXILDEpbdTdKa0h9qV0wAAAAAOgAAAAAIAACAAAABGnRMvtGyxKEkxxfxmh+B9b+y04dj90AtHacykZinMchAAAABtIX4K4NnFyCSOB8SDmeodQAAAAKIB7/ozaMZn7LEctZGOVnYDBFYG1xcEfhG6+9/6mHhE3RLcPTqK3AzRyTQcj1Hf36f3g3NK1XFa//5GdJXGbWY</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -392,6 +392,15 @@
                       lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[ObjectId]"
                       name="ObjectId"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -481,6 +490,10 @@
                       refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[ObjectId]"
                       dataType="r8"
                       name="ObjectId" />
+                    <externalMetadataColumn
+                      refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="r8"
+                      name="Status" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -583,6 +596,11 @@
                       length="255"
                       lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Error Output].Columns[PHUPostalCode]"
                       name="PHUPostalCode" />
+                    <outputColumn
+                      refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="r8"
+                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
                     <outputColumn
                       refId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedDate]"
                       dataType="date"
@@ -806,6 +824,12 @@
                       cachedName="ObjectId"
                       externalMetadataColumnId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ObjectID]"
                       lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[ObjectId]" />
+                    <inputColumn
+                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="r8"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -897,6 +921,10 @@
                       refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ObjectID]"
                       dataType="i4"
                       name="ObjectID" />
+                    <externalMetadataColumn
+                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="i4"
+                      name="Status" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1099,6 +1127,15 @@
                       lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[Province]"
                       name="Province"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1148,6 +1185,10 @@
                       dataType="wstr"
                       length="255"
                       name="Province" />
+                    <externalMetadataColumn
+                      refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="r8"
+                      name="Status" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1201,6 +1242,11 @@
                       length="255"
                       lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Province]"
                       name="Province" />
+                    <outputColumn
+                      refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="r8"
+                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
                     <outputColumn
                       refId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedDate]"
                       dataType="date"
@@ -1366,6 +1412,12 @@
                       cachedName="Province"
                       externalMetadataColumnId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Province]"
                       lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[Province]" />
+                    <inputColumn
+                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="r8"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1415,6 +1467,10 @@
                       dataType="wstr"
                       length="255"
                       name="Province" />
+                    <externalMetadataColumn
+                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="i4"
+                      name="Status" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1462,7 +1518,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CasesReport LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1483,7 +1539,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CompileCovid LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1504,7 +1560,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get OngoingOutbreaks LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1525,7 +1581,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PublicHealthUnit LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1546,7 +1602,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PublicHealthUnitsGroup LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1567,7 +1623,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get VaccinesByAgePHU LSET"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1702,6 +1758,15 @@
                       lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].Columns[NumberOngoingOutbreaks]"
                       name="NumberOngoingOutbreaks"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1730,6 +1795,10 @@
                       refId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[NumberOngoingOutbreaks]"
                       dataType="r8"
                       name="NumberOngoingOutbreaks" />
+                    <externalMetadataColumn
+                      refId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="r8"
+                      name="Status" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1758,6 +1827,11 @@
                       dataType="r8"
                       lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Error Output].Columns[NumberOngoingOutbreaks]"
                       name="NumberOngoingOutbreaks" />
+                    <outputColumn
+                      refId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="r8"
+                      lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
                     <outputColumn
                       refId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedDate]"
                       dataType="date"
@@ -1894,6 +1968,12 @@
                       cachedName="NumberOngoingOutbreaks"
                       externalMetadataColumnId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOngoingOutbreaks]"
                       lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].Columns[NumberOngoingOutbreaks]" />
+                    <inputColumn
+                      refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="r8"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1922,6 +2002,10 @@
                       refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NumberOngoingOutbreaks]"
                       dataType="i4"
                       name="NumberOngoingOutbreaks" />
+                    <externalMetadataColumn
+                      refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="i4"
+                      name="Status" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2123,6 +2207,15 @@
                       lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2171,6 +2264,10 @@
                       refId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[UpdatedDate]"
                       dataType="date"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="r8"
+                      name="Status" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2233,6 +2330,11 @@
                       dataType="date"
                       lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="r8"
+                      lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
                     <outputColumn
                       refId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2387,6 +2489,12 @@
                       cachedName="ReportingPHULongitude"
                       externalMetadataColumnId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReportingPHULongitude]"
                       lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[ReportingPHULongitude]" />
+                    <inputColumn
+                      refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="r8"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2437,6 +2545,10 @@
                       dataType="wstr"
                       length="50"
                       name="ReportingPHULongitude" />
+                    <externalMetadataColumn
+                      refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="i4"
+                      name="Status" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2591,6 +2703,15 @@
                       lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].Columns[PHURegion]"
                       name="PHURegion"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2617,6 +2738,10 @@
                       dataType="wstr"
                       length="255"
                       name="PHURegion" />
+                    <externalMetadataColumn
+                      refId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="r8"
+                      name="Status" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2652,6 +2777,11 @@
                       dataType="date"
                       lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="r8"
+                      lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
                     <outputColumn
                       refId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2774,6 +2904,12 @@
                       cachedName="PHURegion"
                       externalMetadataColumnId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHURegion]"
                       lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].Columns[PHURegion]" />
+                    <inputColumn
+                      refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="r8"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2800,6 +2936,10 @@
                       dataType="wstr"
                       length="255"
                       name="PHURegion" />
+                    <externalMetadataColumn
+                      refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="i4"
+                      name="Status" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2847,7 +2987,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CasesReport LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2891,7 +3031,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CompileCovid LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2914,7 +3054,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set OngoingOutbreaks LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2937,7 +3077,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set PublicHealthUnit LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2960,7 +3100,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set PublicHealthUnitsGroup LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2983,7 +3123,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set VaccinesByAgePHU LSET"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3006,7 +3146,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CasesReport Stage"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3022,7 +3162,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CompileCovid Stage"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3038,7 +3178,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate OngoingOutbreaks Stage"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3054,7 +3194,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PublicHealthUnit Stage"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3070,7 +3210,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PublicHealthUnitsGroup Stage"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3086,7 +3226,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate VaccinesByAgePHU Stage"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3243,6 +3383,15 @@
                       lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]"
                       name="UpdatedDate"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3283,6 +3432,10 @@
                       refId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[UpdatedDate]"
                       dataType="date"
                       name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].ExternalColumns[Status]"
+                      dataType="r8"
+                      name="Status" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3336,6 +3489,11 @@
                       dataType="date"
                       lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Error Output].Columns[UpdatedDate]"
                       name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      dataType="r8"
+                      lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Error Output].Columns[Status]"
+                      name="Status" />
                     <outputColumn
                       refId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -3480,6 +3638,12 @@
                       cachedName="third_dose_cumulative"
                       externalMetadataColumnId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
                       lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].Columns[third_dose_cumulative]" />
+                    <inputColumn
+                      refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Status]"
+                      cachedDataType="r8"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3506,24 +3670,24 @@
                       name="AgeGroup" />
                     <externalMetadataColumn
                       refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i4"
                       name="At_least_one_dose_cumulative" />
                     <externalMetadataColumn
                       refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Second_dose_cumulative]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i4"
                       name="Second_dose_cumulative" />
                     <externalMetadataColumn
                       refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fully_vaccinated_cumulative]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i4"
                       name="fully_vaccinated_cumulative" />
                     <externalMetadataColumn
                       refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i4"
                       name="third_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="i4"
+                      name="Status" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4704,6 +4868,19 @@
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PublicHealthUnit DFT\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
