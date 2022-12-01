@@ -1,3 +1,7 @@
+--USE master
+--GO
+--CREATE DATABASE [NDS]
+--GO
 USE [NDS]
 GO
 
@@ -7,15 +11,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-/****** Drop:  Table [dbo].[CasesReport]*/
-IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CasesReport]') AND type in (N'U'))
-DROP TABLE [dbo].[CasesReport]
+/****** Drop:  Table [dbo].[Covid19Cases]*/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Covid19Cases]') AND type in (N'U'))
+DROP TABLE [dbo].[Covid19Cases]
 GO
 
-/****** Drop:  Table [dbo].[CompileCovid19CaseDetailsCanada]*/
+/****** Drop:  Table [dbo].[CompileCovid19CaseDetailsCanada]
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[CompileCovid19CaseDetailsCanada]') AND type in (N'U'))
 DROP TABLE [dbo].[CompileCovid19CaseDetailsCanada]
-GO
+GO **/
 
 /****** Drop:  Table [dbo].[OngoingOutbreaksPHU]*/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[OngoingOutbreaksPHU]') AND type in (N'U'))
@@ -56,6 +60,17 @@ GO
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Exposure]') AND type in (N'U'))
 DROP TABLE [dbo].[Exposure]
 GO
+
+/****** Drop:  Table [dbo].[Gender]*/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Gender]') AND type in (N'U'))
+DROP TABLE [dbo].[Gender]
+GO
+
+/****** Drop:  Table [dbo].[DataSource]*/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DataSource]') AND type in (N'U'))
+DROP TABLE [dbo].[DataSource]
+GO
+
 /**
 CREATE TABLE [dbo].[CasesReport](
 	[ID] [int] IDENTITY(1, 1) NOT NULL PRIMARY KEY,
@@ -112,8 +127,9 @@ CREATE TABLE [dbo].[Covid19Cases](
 ,	[TestReportedDate] [datetime] NULL
 ,	[AccurateEpisodeDt] [datetime] NULL
 ,	[OutbreakRelated] [nvarchar](255) NULL
-,	[Gender] [nvarchar](255) NULL
+,	[Gender] [int] NULL
 ,	[Province] [nvarchar](255) NULL
+,	[Status] [int] NULL
 ,	[CreatedDate] [datetime] NULL
 ,	[UpdatedDate] [datetime] NULL
 ,	[DataSource] [int] NOT NULL
@@ -127,6 +143,7 @@ CREATE TABLE [dbo].[OngoingOutbreaksPHU](
 	--[PHUNum] [int] NULL,
 	[OutbreakGroup] [nvarchar](255) NULL,
 	[NumberOngoingOutbreaks] [int] NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -142,6 +159,7 @@ CREATE TABLE [dbo].[PublicHealthUnit](
 	[ReportingPHUWebsite] [nvarchar](255) NULL,
 	[ReportingPHULatitude] [nvarchar](50) NULL,
 	[ReportingPHULongitude] [nvarchar](50) NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -156,6 +174,7 @@ CREATE TABLE [dbo].[VaccinesByAgePHU](
 	[Second_dose_cumulative] [nvarchar](255) NULL,
 	[fully_vaccinated_cumulative] [nvarchar](255) NULL,
 	[third_dose_cumulative] [nvarchar](255) NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -164,6 +183,7 @@ GO
 CREATE TABLE [dbo].[PublicHealthUnitsGroup](
 	[GroupID] [int] IDENTITY(1, 1) NOT NULL PRIMARY KEY,
 	[PHUGroup] [nvarchar](255) NOT NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -171,7 +191,7 @@ GO
 
 CREATE TABLE [dbo].[PublicHealthUnitsCity](
 	[CityID] [int] IDENTITY(1, 1) NOT NULL PRIMARY KEY,
-	[GroupID] [nvarchar](255) NULL,
+	[GroupID] [int] NOT NULL,
 	[PHUCity] [nvarchar](255) NOT NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
@@ -202,10 +222,92 @@ CREATE TABLE [dbo].[Exposure](
 ) 
 GO
 
+CREATE TABLE [dbo].[Gender](
+	[GenderID] [int] IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+	[Gender] [nvarchar](255) NOT NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedDate] [datetime] NULL
+)
+GO
 
+CREATE TABLE [dbo].[DataSource](
+	[DataSource] [int] NOT NULL PRIMARY KEY,
+	[DataSourceName] [nvarchar](255) NOT NULL
+)
+GO
 
+INSERT INTO [dbo].DataSource VALUES (1, 'Cases Report'), (2, 'Compile Covid-19 Case Details Canada')
+GO
 
+ALTER TABLE [dbo].[PublicHealthUnitsCity]
+ADD CONSTRAINT [FK_City_Group] FOREIGN KEY ([GroupID]) 
+  REFERENCES [dbo].[PublicHealthUnitsGroup] ([GroupID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
 
+ALTER TABLE [dbo].[VaccinesByAgePHU]
+ADD CONSTRAINT [FK_Vacc_Age] FOREIGN KEY ([AgeID]) 
+  REFERENCES [dbo].[AgeGroup] ([AgeID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[VaccinesByAgePHU]
+ADD CONSTRAINT [FK_Vacc_PHU] FOREIGN KEY ([PHU_ID]) 
+  REFERENCES [dbo].[PublicHealthUnit] ([PHUID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[OngoingOutbreaksPHU]
+ADD CONSTRAINT [FK_Outbreaks_PHU] FOREIGN KEY ([PHU_ID]) 
+  REFERENCES [dbo].[PublicHealthUnit] ([PHUID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[PublicHealthUnit]
+ADD CONSTRAINT [FK_PHU_City] FOREIGN KEY ([CityID]) 
+  REFERENCES [dbo].[PublicHealthUnitsCity] ([CityID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Covid19Cases]
+ADD CONSTRAINT [FK_CC_Age] FOREIGN KEY ([AgeID]) 
+  REFERENCES [dbo].[AgeGroup] ([AgeID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Covid19Cases]
+ADD CONSTRAINT [FK_CC_Exposure] FOREIGN KEY ([ExposureID]) 
+  REFERENCES [dbo].[Exposure] ([ExposureID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Covid19Cases]
+ADD CONSTRAINT [FK_CC_CaseStatus] FOREIGN KEY ([CaseStatus]) 
+  REFERENCES [dbo].[CaseStatus] ([CaseStatusID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Covid19Cases]
+ADD CONSTRAINT [FK_CC_Gender] FOREIGN KEY ([Gender]) 
+  REFERENCES [dbo].[Gender] ([GenderID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Covid19Cases]
+ADD CONSTRAINT [FK_CC_PHU] FOREIGN KEY ([PHU_ID]) 
+  REFERENCES [dbo].[PublicHealthUnit] ([PHUID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
 
 
 
