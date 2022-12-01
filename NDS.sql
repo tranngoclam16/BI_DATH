@@ -129,6 +129,7 @@ CREATE TABLE [dbo].[Covid19Cases](
 ,	[OutbreakRelated] [nvarchar](255) NULL
 ,	[Gender] [int] NULL
 ,	[Province] [nvarchar](255) NULL
+,	[Status] [int] NULL
 ,	[CreatedDate] [datetime] NULL
 ,	[UpdatedDate] [datetime] NULL
 ,	[DataSource] [int] NOT NULL
@@ -142,6 +143,7 @@ CREATE TABLE [dbo].[OngoingOutbreaksPHU](
 	--[PHUNum] [int] NULL,
 	[OutbreakGroup] [nvarchar](255) NULL,
 	[NumberOngoingOutbreaks] [int] NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -157,6 +159,7 @@ CREATE TABLE [dbo].[PublicHealthUnit](
 	[ReportingPHUWebsite] [nvarchar](255) NULL,
 	[ReportingPHULatitude] [nvarchar](50) NULL,
 	[ReportingPHULongitude] [nvarchar](50) NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -171,6 +174,7 @@ CREATE TABLE [dbo].[VaccinesByAgePHU](
 	[Second_dose_cumulative] [nvarchar](255) NULL,
 	[fully_vaccinated_cumulative] [nvarchar](255) NULL,
 	[third_dose_cumulative] [nvarchar](255) NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
@@ -179,6 +183,7 @@ GO
 CREATE TABLE [dbo].[PublicHealthUnitsGroup](
 	[GroupID] [int] IDENTITY(1, 1) NOT NULL PRIMARY KEY,
 	[PHUGroup] [nvarchar](255) NOT NULL,
+	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
 	[UpdatedDate] [datetime] NULL
 ) 
