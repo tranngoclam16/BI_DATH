@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DATH_OLAP", "DATH_OLAP\DATH_OLAP.dwproj", "{A735F826-92DD-4DA1-8046-6C138FD1ADFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A735F826-92DD-4DA1-8046-6C138FD1ADFC}.Development|Default.ActiveCfg = Development
+		{A735F826-92DD-4DA1-8046-6C138FD1ADFC}.Development|Default.Build.0 = Development
+		{A735F826-92DD-4DA1-8046-6C138FD1ADFC}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {093BDDDD-D53A-4EAE-95B0-0443D8B58ACD}
+	EndGlobalSection
+EndGlobal

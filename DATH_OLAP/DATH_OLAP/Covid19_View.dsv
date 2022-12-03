@@ -1,0 +1,316 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8fa2bef1-884b-459d-bedb-d878e9108194" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Covid19_View</ID>
+  <Name>Covid19_View</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Covid19</DataSourceID>
+  <Schema>
+    <xs:schema id="Covid19_View" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Covid19_View" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="0680f0a9-2fc4-4847-982a-dceeb7ec35af">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimAge" msprop:design-time-name="5ee66449-91b7-4191-95cd-7ac79f031184" msprop:DbTableName="DimAge" msprop:FriendlyName="DimAge" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AgeID" msprop:design-time-name="f38368f7-3444-459f-a550-d1c0ac15724f" msprop:DbColumnName="AgeID" msprop:FriendlyName="AgeID" type="xs:int" />
+                  <xs:element name="Age" msprop:design-time-name="fc3bf544-c857-470f-827d-6344ee7624fa" msprop:DbColumnName="Age" msprop:FriendlyName="Age" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDate" msprop:design-time-name="a76e1c0b-300b-4fa0-82de-22cc98d547f3" msprop:DbTableName="DimDate" msprop:FriendlyName="DimDate" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DateID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="76ab55e8-540c-4db7-8805-2b8347b6b74a" msprop:DbColumnName="DateID" msprop:FriendlyName="DateID" type="xs:int" />
+                  <xs:element name="Date" msprop:design-time-name="c35c3b45-7e5b-46df-80df-09abe432e014" msprop:DbColumnName="Date" msprop:FriendlyName="Date" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Year" msprop:design-time-name="d6ba7f4a-45f1-4c00-930c-e5491ad533ca" msprop:DbColumnName="Year" msprop:FriendlyName="Year" type="xs:int" minOccurs="0" />
+                  <xs:element name="Quarter" msprop:design-time-name="216bfff8-984a-4a18-b725-fa16d9e5f4c2" msprop:DbColumnName="Quarter" msprop:FriendlyName="Quarter" type="xs:int" minOccurs="0" />
+                  <xs:element name="Month" msprop:design-time-name="0cb3dd40-9831-42ce-9a64-f3551767e605" msprop:DbColumnName="Month" msprop:FriendlyName="Month" type="xs:int" minOccurs="0" />
+                  <xs:element name="MonthName" msprop:design-time-name="372e123e-bae6-458f-bdaf-52dd9d3a89e8" msprop:DbColumnName="MonthName" msprop:FriendlyName="MonthName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="30" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Day" msprop:design-time-name="580a8356-b84e-4096-a513-6a320435021e" msprop:DbColumnName="Day" msprop:FriendlyName="Day" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimExposure" msprop:design-time-name="52875da1-63e6-4d54-b2e7-de31bd726b67" msprop:DbTableName="DimExposure" msprop:FriendlyName="DimExposure" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ExposureID" msprop:design-time-name="fca9deeb-04c3-4533-9080-2d2a95de78ac" msprop:DbColumnName="ExposureID" msprop:FriendlyName="ExposureID" type="xs:int" />
+                  <xs:element name="ExposureName" msprop:design-time-name="6bffc252-2d27-4424-bf49-72a25bb896e3" msprop:DbColumnName="ExposureName" msprop:FriendlyName="ExposureName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimGender" msprop:design-time-name="94e42fed-71cd-4e56-8088-2547a62ce1ac" msprop:DbTableName="DimGender" msprop:FriendlyName="DimGender" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="GenderID" msprop:design-time-name="0f52a0e8-bd98-4b6b-ab9c-855862713117" msprop:DbColumnName="GenderID" msprop:FriendlyName="GenderID" type="xs:int" />
+                  <xs:element name="Gender" msprop:design-time-name="b84cc850-1c73-4735-ad38-e0c486fb476a" msprop:DbColumnName="Gender" msprop:FriendlyName="Gender" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimOutcome" msprop:design-time-name="0daf95a9-7bec-48db-95fa-7468ad27e3c2" msprop:DbTableName="DimOutcome" msprop:FriendlyName="DimOutcome" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="OutcomeID" msprop:design-time-name="0ea91514-0f34-4578-8b1c-49cbe7c9d91b" msprop:DbColumnName="OutcomeID" msprop:FriendlyName="OutcomeID" type="xs:int" />
+                  <xs:element name="Outcome" msprop:design-time-name="0590f522-b061-4794-b7c9-9684cac0d794" msprop:DbColumnName="Outcome" msprop:FriendlyName="Outcome" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimPHU" msprop:design-time-name="1141531a-3820-4db3-832c-13be7396954b" msprop:DbTableName="DimPHU" msprop:FriendlyName="DimPHU" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PHUID_SK" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="9b4c591c-5baa-43e1-9b1e-ab125b0f4127" msprop:DbColumnName="PHUID_SK" msprop:FriendlyName="PHUID_SK" type="xs:int" />
+                  <xs:element name="PHUID" msprop:design-time-name="7d04aba3-a712-4b43-8402-534e37675b09" msprop:DbColumnName="PHUID" msprop:FriendlyName="PHUID" type="xs:int" />
+                  <xs:element name="PHUName" msprop:design-time-name="dd5cfdb6-106f-4804-a257-2d7f0fe38196" msprop:DbColumnName="PHUName" msprop:FriendlyName="PHUName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PHUAddress" msprop:design-time-name="175e02ff-30e0-4cb7-82b9-684b0002f743" msprop:DbColumnName="PHUAddress" msprop:FriendlyName="PHUAddress" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PHUWebsite" msprop:design-time-name="0a155208-f405-4a38-b7fb-9eff7ae3c4ee" msprop:DbColumnName="PHUWebsite" msprop:FriendlyName="PHUWebsite" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PHULatitude" msprop:design-time-name="ce5ee3b4-e741-4558-8afb-07ded157bca8" msprop:DbColumnName="PHULatitude" msprop:FriendlyName="PHULatitude" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="PHULongitude" msprop:design-time-name="6be223c1-d32b-4421-87c6-c992b6861c92" msprop:DbColumnName="PHULongitude" msprop:FriendlyName="PHULongitude" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CityID" msprop:design-time-name="1062f77f-3d4f-4802-92cf-cb7a374aed06" msprop:DbColumnName="CityID" msprop:FriendlyName="CityID" type="xs:int" minOccurs="0" />
+                  <xs:element name="CityName" msprop:design-time-name="63554b9d-9110-4d2a-b53d-be5d5ad8c10d" msprop:DbColumnName="CityName" msprop:FriendlyName="CityName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="GroupID" msprop:design-time-name="f08ea813-3b9b-45b3-bb77-f7fe9fd481d8" msprop:DbColumnName="GroupID" msprop:FriendlyName="GroupID" type="xs:int" minOccurs="0" />
+                  <xs:element name="GroupName" msprop:design-time-name="5bc02218-eb8d-41e7-b534-006ee23118ab" msprop:DbColumnName="GroupName" msprop:FriendlyName="GroupName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Status" msprop:design-time-name="c2b28c64-9e92-4c2f-9d41-6585dc5c57cd" msprop:DbColumnName="Status" msprop:FriendlyName="Status" type="xs:int" minOccurs="0" />
+                  <xs:element name="EffectiveDate" msprop:design-time-name="3f3e5981-8f00-4631-8122-2e9e3df66d91" msprop:DbColumnName="EffectiveDate" msprop:FriendlyName="EffectiveDate" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="ExpiryDate" msprop:design-time-name="4403bfd2-925d-47f8-a669-d1968c8c2dac" msprop:DbColumnName="ExpiryDate" msprop:FriendlyName="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimSeverity" msprop:design-time-name="c2bd405b-c4df-4f85-9600-e7b20694e292" msprop:DbTableName="DimSeverity" msprop:FriendlyName="DimSeverity" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SeverityID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="f053f6de-979b-420f-b77e-f9d3573e92f3" msprop:DbColumnName="SeverityID" msprop:FriendlyName="SeverityID" type="xs:int" />
+                  <xs:element name="Severity" msprop:design-time-name="9b8769b9-2529-4879-8b18-5e6d5842f277" msprop:DbColumnName="Severity" msprop:FriendlyName="Severity" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactCaseDetail" msprop:design-time-name="308bfd9c-7a60-4806-a5a0-1dbfacf7951c" msprop:DbTableName="FactCaseDetail" msprop:FriendlyName="FactCaseDetail" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="PHUID" msprop:design-time-name="76cbdbd5-5fe2-4328-bca8-a2a6e0ff62b0" msprop:DbColumnName="PHUID" msprop:FriendlyName="PHUID" type="xs:int" />
+                  <xs:element name="DateID" msprop:design-time-name="456e857a-ae88-4ef7-9a0a-2e93fd266c20" msprop:DbColumnName="DateID" msprop:FriendlyName="DateID" type="xs:int" />
+                  <xs:element name="GenderID" msprop:design-time-name="5c1b8802-0983-4ab8-8ec8-67d6a5c87cb9" msprop:DbColumnName="GenderID" msprop:FriendlyName="GenderID" type="xs:int" />
+                  <xs:element name="ExposureID" msprop:design-time-name="17d65c2c-cb89-429e-9390-6b6ab28a4727" msprop:DbColumnName="ExposureID" msprop:FriendlyName="ExposureID" type="xs:int" />
+                  <xs:element name="AgeID" msprop:design-time-name="7be93fe4-e181-4a40-9b7a-d96caea1eb84" msprop:DbColumnName="AgeID" msprop:FriendlyName="AgeID" type="xs:int" />
+                  <xs:element name="OutcomeID" msprop:design-time-name="3014ba4f-0eb5-4b1a-88ca-10539cce294a" msprop:DbColumnName="OutcomeID" msprop:FriendlyName="OutcomeID" type="xs:int" />
+                  <xs:element name="SeverityID" msprop:design-time-name="5f09f873-f68f-4ac2-ba48-b3eebeacf0fc" msprop:DbColumnName="SeverityID" msprop:FriendlyName="SeverityID" type="xs:int" />
+                  <xs:element name="TotalCase" msprop:design-time-name="ffe6be38-fbba-464b-bea9-804f8bdff813" msprop:DbColumnName="TotalCase" msprop:FriendlyName="TotalCase" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactVaccineDetail" msprop:design-time-name="0616d5b9-d9b0-46c3-86cf-310e882e7eb3" msprop:DbTableName="FactVaccineDetail" msprop:FriendlyName="FactVaccineDetail" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DateID" msprop:design-time-name="479a15a1-441c-469a-8620-1834d51a4893" msprop:DbColumnName="DateID" msprop:FriendlyName="DateID" type="xs:int" />
+                  <xs:element name="PHUID" msprop:design-time-name="ae921714-3f13-4b31-9a95-5064e82c3b1f" msprop:DbColumnName="PHUID" msprop:FriendlyName="PHUID" type="xs:int" />
+                  <xs:element name="AgeID" msprop:design-time-name="ff1b937a-7820-4284-97db-24649aa42c35" msprop:DbColumnName="AgeID" msprop:FriendlyName="AgeID" type="xs:int" />
+                  <xs:element name="OneDoseCumulative" msprop:design-time-name="b0db43d8-c0e1-4e6e-85a4-0f15d6dd6092" msprop:DbColumnName="OneDoseCumulative" msprop:FriendlyName="OneDoseCumulative" type="xs:int" minOccurs="0" />
+                  <xs:element name="SecondDoseCumulative" msprop:design-time-name="ce6b95bf-8d16-41b4-b0f1-1acea6c1f2ca" msprop:DbColumnName="SecondDoseCumulative" msprop:FriendlyName="SecondDoseCumulative" type="xs:int" minOccurs="0" />
+                  <xs:element name="FullyVaccinated" msprop:design-time-name="60165e9f-3696-4ccf-ae5a-5f3c02df87d6" msprop:DbColumnName="FullyVaccinated" msprop:FriendlyName="FullyVaccinated" type="xs:int" minOccurs="0" />
+                  <xs:element name="ThirdDoseCumulative" msprop:design-time-name="ee59bc7a-2422-41b5-99fb-197000ca7614" msprop:DbColumnName="ThirdDoseCumulative" msprop:FriendlyName="ThirdDoseCumulative" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimAge" />
+          <xs:field xpath="AgeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDate_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDate" />
+          <xs:field xpath="DateID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimExposure_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimExposure" />
+          <xs:field xpath="ExposureID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimGender_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimGender" />
+          <xs:field xpath="GenderID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimOutcome_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimOutcome" />
+          <xs:field xpath="OutcomeID" />
+        </xs:unique>
+        <xs:unique name="dbo_DimPHU_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimPHU" />
+          <xs:field xpath="PHUID_SK" />
+        </xs:unique>
+        <xs:unique name="dbo_DimSeverity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimSeverity" />
+          <xs:field xpath="SeverityID" />
+        </xs:unique>
+        <xs:unique name="dbo_FactCaseDetail_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="PHUID" />
+          <xs:field xpath="DateID" />
+          <xs:field xpath="GenderID" />
+          <xs:field xpath="ExposureID" />
+          <xs:field xpath="AgeID" />
+          <xs:field xpath="OutcomeID" />
+          <xs:field xpath="SeverityID" />
+        </xs:unique>
+        <xs:unique name="dbo_FactVaccineDetail_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactVaccineDetail" />
+          <xs:field xpath="DateID" />
+          <xs:field xpath="PHUID" />
+          <xs:field xpath="AgeID" />
+        </xs:unique>
+        <xs:keyref name="FK_FactVaccineDetail_DimAge" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactVaccineDetail" />
+          <xs:field xpath="AgeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactVaccineDetail_DimDate" refer="dbo_DimDate_Constraint1">
+          <xs:selector xpath=".//dbo_FactVaccineDetail" />
+          <xs:field xpath="DateID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactVaccineDetail_DimPHU" refer="dbo_DimPHU_Constraint1">
+          <xs:selector xpath=".//dbo_FactVaccineDetail" />
+          <xs:field xpath="PHUID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactCaseDetail_DimSeverity" refer="dbo_DimSeverity_Constraint1">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="SeverityID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactCaseDetail_DimPHU" refer="dbo_DimPHU_Constraint1">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="PHUID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactCaseDetail_DimDate" refer="dbo_DimDate_Constraint1">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="DateID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactCaseDetail_DimExposure" refer="dbo_DimExposure_Constraint1">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="ExposureID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactCaseDetail_DimOutcome" refer="dbo_DimOutcome_Constraint1">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="OutcomeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactCaseDetail_DimAge" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="AgeID" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactCaseDetail_DimGender" refer="dbo_DimGender_Constraint1">
+          <xs:selector xpath=".//dbo_FactCaseDetail" />
+          <xs:field xpath="GenderID" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Covid19_View xmlns="" />
+  </Schema>
+</DataSourceView>

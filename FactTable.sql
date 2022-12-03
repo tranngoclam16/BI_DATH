@@ -1,9 +1,12 @@
+use DDS
+go
 ---- Fact Case Detail
-insert into FactCaseDetail(PHUID, DateID, GenderID, AgeID, OutcomeID, SeverityID, TotalCase)
-select l.PHUID, l.DateID, l.GenderID, l.AgeID, l.OutcomeID, ds.SeverityID, l.TotalCase from DimSeverity ds left join 
+insert into FactCaseDetail(PHUID, DateID, GenderID, ExposureID, AgeID, OutcomeID, SeverityID, TotalCase)
+select l.PHUID, l.DateID, l.GenderID, l.ExposureID, l.AgeID, l.OutcomeID, ds.SeverityID, l.TotalCase from DimSeverity ds left join 
 (select dp.PHUID as PHUID
 , dd.DateID as DateID
 , dg.GenderID as GenderID
+, de.ExposureID as ExposureID
 , da.AgeID as AgeID
 , do.OutcomeID as OutcomeID
 , count(cc.CaseID) as TotalCase
@@ -24,6 +27,7 @@ select l.PHUID, l.DateID, l.GenderID, l.AgeID, l.OutcomeID, ds.SeverityID, l.Tot
 from NDS.dbo.Covid19Cases cc
 	left join DimPHU dp on dp.PHUID = cc.PHU_ID
 	left join DimDate dd on dd.[Date] = convert(date,cc.DateReported)
+	left join DimExposure de on de.ExposureID = cc.ExposureID
 	left join DimAge da on da.AgeID = cc.AgeID
 	left join DimOutcome do on do.OutcomeID = cc.CaseStatus
 	left join DimGender dg on dg.GenderID = cc.Gender
@@ -39,15 +43,15 @@ select AgeID, CAST(reverse(Left(
              PatIndex('%[^0-9]%', SubString(reverse(AgeGroup), PatIndex('%[0-9]%', reverse(AgeGroup)), 8000) + 'X')-1)) as INT) as Age
 from nds.dbo.AgeGroup) as t) k on k.AgeID = da.AgeID
 where dp.[Status] = 1 and dp.ExpiryDate IS NULL
-group by dp.PHUID, dd.DateID, dg.GenderID, da.AgeID, do.OutcomeID, cc.CaseID, do.Outcome, k.[Weight]) as l
+group by dp.PHUID, dd.DateID, dg.GenderID, de.ExposureID, da.AgeID, do.OutcomeID, cc.CaseID, do.Outcome, k.[Weight]) as l
 on ds.Severity = l.Severity
 where l.Severity IS NOT NULL AND
-	NOT EXISTS (SELECT PHUID, DateID, GenderID, AgeID, OutcomeID, SeverityID FROM FactCaseDetail f where f.PHUID = l.PHUID and f.DateID = l.DateID and
-																									f.GenderID = l.GenderID and f.AgeID = l.AgeID and
+	NOT EXISTS (SELECT PHUID, DateID, GenderID, ExposureID, AgeID, OutcomeID, SeverityID FROM FactCaseDetail f where f.PHUID = l.PHUID and f.DateID = l.DateID and f.ExposureID = l.ExposureID and
+																									f.GenderID = l.GenderID and f.AgeID =	 l.AgeID and
 																									f.OutcomeID = l.OutcomeID and ds.SeverityID = f.SeverityID)
-group by l.PHUID, l.DateID, l.GenderID, l.AgeID, l.OutcomeID, ds.SeverityID, l.TotalCase
+group by l.PHUID, l.DateID, l.GenderID, l.ExposureID, l.AgeID, l.OutcomeID, ds.SeverityID, l.TotalCase
 order by l.DateID
-
+go
 
 ---- FactVaccineDetail
 

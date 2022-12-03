@@ -93,11 +93,12 @@ CREATE TABLE [dbo].[FactCaseDetail](
 	PHUID int not null
 ,	DateID int not null
 ,	GenderID int not null
+,	ExposureID int not null
 ,	AgeID int not null
 ,	OutcomeID int not null
 ,	SeverityID int not null
 ,	TotalCase int null
-,	primary key (PHUID, DateID, GenderID, AgeID, OutcomeID, SeverityID)
+,	primary key (PHUID, DateID, GenderID, ExposureID, AgeID, OutcomeID, SeverityID)
 )
 
 CREATE TABLE [dbo].[FactVaccineDetail](
@@ -143,3 +144,59 @@ src AS
 SELECT IDENTITY(int, 1,1) as DateID, * INTO DimDate FROM src 
   ORDER BY [Date]
   OPTION (MAXRECURSION 0);
+
+GO
+alter table DimDate
+add primary key (DateID);
+
+GO
+ALTER TABLE [dbo].[FactCaseDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactCaseDetail_DimAge] FOREIGN KEY([AgeID])
+REFERENCES [dbo].[DimAge] ([AgeID])
+GO
+ALTER TABLE [dbo].[FactCaseDetail] CHECK CONSTRAINT [FK_FactCaseDetail_DimAge]
+GO
+ALTER TABLE [dbo].[FactCaseDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactCaseDetail_DimDate] FOREIGN KEY([DateID])
+REFERENCES [dbo].[DimDate] ([DateID])
+GO
+ALTER TABLE [dbo].[FactCaseDetail] CHECK CONSTRAINT [FK_FactCaseDetail_DimDate]
+GO
+ALTER TABLE [dbo].[FactCaseDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactCaseDetail_DimExposure] FOREIGN KEY([ExposureID])
+REFERENCES [dbo].[DimExposure] ([ExposureID])
+GO
+ALTER TABLE [dbo].[FactCaseDetail] CHECK CONSTRAINT [FK_FactCaseDetail_DimExposure]
+GO
+ALTER TABLE [dbo].[FactCaseDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactCaseDetail_DimGender] FOREIGN KEY([GenderID])
+REFERENCES [dbo].[DimGender] ([GenderID])
+GO
+ALTER TABLE [dbo].[FactCaseDetail] CHECK CONSTRAINT [FK_FactCaseDetail_DimGender]
+GO
+ALTER TABLE [dbo].[FactCaseDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactCaseDetail_DimOutcome] FOREIGN KEY([OutcomeID])
+REFERENCES [dbo].[DimOutcome] ([OutcomeID])
+GO
+ALTER TABLE [dbo].[FactCaseDetail] CHECK CONSTRAINT [FK_FactCaseDetail_DimOutcome]
+GO
+ALTER TABLE [dbo].[FactCaseDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactCaseDetail_DimPHU] FOREIGN KEY([PHUID])
+REFERENCES [dbo].[DimPHU] ([PHUID_SK])
+GO
+ALTER TABLE [dbo].[FactCaseDetail] CHECK CONSTRAINT [FK_FactCaseDetail_DimPHU]
+GO
+ALTER TABLE [dbo].[FactCaseDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactCaseDetail_DimSeverity] FOREIGN KEY([SeverityID])
+REFERENCES [dbo].[DimSeverity] ([SeverityID])
+GO
+ALTER TABLE [dbo].[FactCaseDetail] CHECK CONSTRAINT [FK_FactCaseDetail_DimSeverity]
+GO
+ALTER TABLE [dbo].[FactVaccineDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactVaccineDetail_DimAge] FOREIGN KEY([AgeID])
+REFERENCES [dbo].[DimAge] ([AgeID])
+GO
+ALTER TABLE [dbo].[FactVaccineDetail] CHECK CONSTRAINT [FK_FactVaccineDetail_DimAge]
+GO
+ALTER TABLE [dbo].[FactVaccineDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactVaccineDetail_DimDate] FOREIGN KEY([DateID])
+REFERENCES [dbo].[DimDate] ([DateID])
+GO
+ALTER TABLE [dbo].[FactVaccineDetail] CHECK CONSTRAINT [FK_FactVaccineDetail_DimDate]
+GO
+ALTER TABLE [dbo].[FactVaccineDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactVaccineDetail_DimPHU] FOREIGN KEY([PHUID])
+REFERENCES [dbo].[DimPHU] ([PHUID_SK])
+GO
+ALTER TABLE [dbo].[FactVaccineDetail] CHECK CONSTRAINT [FK_FactVaccineDetail_DimPHU]
+GO
