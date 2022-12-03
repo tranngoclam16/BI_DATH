@@ -3,7 +3,7 @@ go
 ---- Fact Case Detail
 insert into FactCaseDetail(PHUID, DateID, GenderID, ExposureID, AgeID, OutcomeID, SeverityID, TotalCase)
 select l.PHUID, l.DateID, l.GenderID, l.ExposureID, l.AgeID, l.OutcomeID, ds.SeverityID, l.TotalCase from DimSeverity ds left join 
-(select dp.PHUID as PHUID
+(select dp.PHUID_SK as PHUID
 , dd.DateID as DateID
 , dg.GenderID as GenderID
 , de.ExposureID as ExposureID
@@ -43,7 +43,7 @@ select AgeID, CAST(reverse(Left(
              PatIndex('%[^0-9]%', SubString(reverse(AgeGroup), PatIndex('%[0-9]%', reverse(AgeGroup)), 8000) + 'X')-1)) as INT) as Age
 from nds.dbo.AgeGroup) as t) k on k.AgeID = da.AgeID
 where dp.[Status] = 1 and dp.ExpiryDate IS NULL
-group by dp.PHUID, dd.DateID, dg.GenderID, de.ExposureID, da.AgeID, do.OutcomeID, cc.CaseID, do.Outcome, k.[Weight]) as l
+group by dp.PHUID_SK, dd.DateID, dg.GenderID, de.ExposureID, da.AgeID, do.OutcomeID, cc.CaseID, do.Outcome, k.[Weight]) as l
 on ds.Severity = l.Severity
 where l.Severity IS NOT NULL AND
 	NOT EXISTS (SELECT PHUID, DateID, GenderID, ExposureID, AgeID, OutcomeID, SeverityID FROM FactCaseDetail f where f.PHUID = l.PHUID and f.DateID = l.DateID and f.ExposureID = l.ExposureID and
