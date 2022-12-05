@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{0AAF48A2-90B7-41F6-A0C9-3BF15E517F36}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{B7F296C1-47E3-4F1F-9A64-0F8E80E7277A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -53,7 +53,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAH8Tge3JxvOfjZpfOZYkniS4CFjGpIEhd2DzQZVjTozwAAAAAOgAAAAAIAACAAAACr2Hdm+dxrY8DEgLlehxCn81wzDI1qlsT6MEmWF+IMKBAAAADLStDWRw7hrs4+9HwUQzwdQAAAANpIavy17XVFAd9+9IlbKw6Y+7sFO0qs6L1JuCioJsoUpxc8E43jfh2ClbBn/HYXgdm6F19cJR0/oKgfSIzbOBk</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB0+eZuPNCGurYUynjzKcZIRvTGoURzv8bgK1reSQeEqgAAAAAOgAAAAAIAACAAAACD2/K0BqVoLccrnP4/GLnaRwt80eeOQc+rh5wbZAiB9hAAAAB/m5Oe+JTRU9+vTLq5mQQlQAAAAGsJXneBAXnboiYBaU8/qCKMZDiXALaiebBhHOSezVqRms2bNafAk/SCdXPKwItJdhYVaOpq89JflJLFNJLLuJg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -70,7 +70,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAFu1FeJ7etmsd946z3wrwYFtMXILDEpbdTdKa0h9qV0wAAAAAOgAAAAAIAACAAAABGnRMvtGyxKEkxxfxmh+B9b+y04dj90AtHacykZinMchAAAABtIX4K4NnFyCSOB8SDmeodQAAAAKIB7/ozaMZn7LEctZGOVnYDBFYG1xcEfhG6+9/6mHhE3RLcPTqK3AzRyTQcj1Hf36f3g3NK1XFa//5GdJXGbWY</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD2jrwPr+AvLw/TVrJBEuZz7Ct4U05B9Hw75Lg95haJiQAAAAAOgAAAAAIAACAAAAA+oRoqPwYQxGFdOm1NzGUqSnY4djB/QHr6HZti8+b2wRAAAAD/TOdeXwrA/jGenfleAWuOQAAAAG5uGj8Hwu2bwkg1yxEYzIT3Unmo/sC+p3cIRzBc/GEgoEQd/cNsS7IA6//TtCILwNIfYBonFyeZdfPl2PWMMDE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1518,7 +1518,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CasesReport LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1539,7 +1539,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CompileCovid LSET"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1560,7 +1560,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get OngoingOutbreaks LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1581,7 +1581,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PublicHealthUnit LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1623,7 +1623,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get VaccinesByAgePHU LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -2987,7 +2987,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CasesReport LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3031,7 +3031,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CompileCovid LSET"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3054,7 +3054,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set OngoingOutbreaks LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3077,7 +3077,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set PublicHealthUnit LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3123,7 +3123,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set VaccinesByAgePHU LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3146,7 +3146,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CasesReport Stage"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3162,7 +3162,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CompileCovid Stage"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3178,7 +3178,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate OngoingOutbreaks Stage"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3194,7 +3194,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PublicHealthUnit Stage"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3226,7 +3226,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate VaccinesByAgePHU Stage"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData

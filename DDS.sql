@@ -1,3 +1,7 @@
+use master
+go
+create database DDS
+go
 use DDS
 go
 
@@ -53,16 +57,6 @@ CREATE TABLE [dbo].[DimPHU] (
 ,	EffectiveDate datetime null
 ,	ExpiryDate datetime null
 )
-
---CREATE TABLE [dbo].[DimDate] (
---	DateID int not null primary key
---,	[Date] date not null
---,	[Year] int null
---,	[Quarter] int null
---,	[Month] int null
---,	[MonthName] nvarchar(255) null
---,	[Day] int null
---)
 
 CREATE TABLE [dbo].[DimGender](
 	GenderID int not null primary key
