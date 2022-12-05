@@ -1,7 +1,7 @@
---USE master
---GO
---CREATE DATABASE [NDS]
---GO
+USE master
+GO
+CREATE DATABASE [NDS]
+GO
 USE [NDS]
 GO
 
@@ -305,6 +305,13 @@ GO
 ALTER TABLE [dbo].[Covid19Cases]
 ADD CONSTRAINT [FK_CC_PHU] FOREIGN KEY ([PHU_ID]) 
   REFERENCES [dbo].[PublicHealthUnit] ([PHUID]) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[Covid19Cases]
+ADD CONSTRAINT [FK_DS_Datasource] FOREIGN KEY ([DataSource]) 
+  REFERENCES [dbo].[DataSource] ([DataSource]) 
   ON UPDATE NO ACTION
   ON DELETE NO ACTION
 GO
