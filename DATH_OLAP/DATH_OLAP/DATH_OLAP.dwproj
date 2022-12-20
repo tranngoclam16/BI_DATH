@@ -60,6 +60,12 @@
       <FullPath>Covid19_View.dsv</FullPath>
     </ProjectItem>
   </DataSourceViews>
+  <MiningModels>
+    <ProjectItem>
+      <Name>CasePattern.dmm</Name>
+      <FullPath>CasePattern.dmm</FullPath>
+    </ProjectItem>
+  </MiningModels>
   <Configurations>
     <Configuration>
       <Name>Development</Name>

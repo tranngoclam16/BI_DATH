@@ -1,0 +1,37 @@
+﻿//1. Thống kê Số ca nhiễm, số ca tử vong, số ca phục hồi của dịch Covid-19 theo từng PHU trong từng năm. 
+select non empty [Measures].[Total Case] on columns,
+	non empty crossjoin ([Dim Date].[Year].[Year], [Dim PHU].[PHU Name].[PHU Name],[Dim Outcome].[Outcome].[Outcome]) on rows
+from [Covid19_Cube];
+//2. Thống kê Mức Độ Nghiêm Trọng (tiêu chí nghiêm trọng sinh viên tự định nghĩa) của dịch Covid-19 theo PHU và theo các Quý trong từng năm.
+select non empty [Measures].[Total Case] on columns,
+	non empty crossjoin ([Dim Date].[Date Hierarchy].[Year], [Dim Date].[Quarter].[Quarter], [Dim PHU].[PHU Name].[PHU Name],[Dim Severity].[Severity].[Severity]) on rows
+from [Covid19_Cube];
+//3. Thống kê tổng số người tử vong theo Giới Tính và Nhóm Tuổi theo các năm.
+select non empty [Measures].[Total Case] on columns,
+	non empty crossjoin ([Dim Date].[Year].[Year], [Dim Age].[Age].[Age], [Dim Gender].[Gender].[Gender], [Dim Outcome].[Outcome].&[Deceased]) on rows
+from [Covid19_Cube];
+
+select non empty [Measures].[Total Case] on columns,
+	non empty crossjoin ([Dim Date].[Date Hierarchy].[Month Name], [Dim Age].[Age].[Age], [Dim Gender].[Gender].[Gender], [Dim Outcome].[Outcome].&[Deceased]) on rows
+from [Covid19_Cube];
+//4. Thống kê số ca nhiễm, tử vong theo Mức Độ Nghiêm Trọng theo Ngày Trong Tháng của các năm.
+select non empty [Measures].[Total Case] on columns,
+	non empty crossjoin ([Dim Date].[Year].[Year], [Dim Date].[Month Name].[Month Name],[Dim Date].[Day].[Day], {[Dim Outcome].[Outcome], [Dim Outcome].[Outcome].&[Deceased]}) on rows
+from [Covid19_Cube];
+//5. Thống kê số ca nhiễm, tử vong theo Mức Độ Nghiêm Trọng, khu vực (PHU_Group, City), và số người đã được tiêm vaccin trong các năm.
+select non empty [Measures].[Total Case] on columns,
+	non empty crossjoin ([Dim PHU].[GeographyNameHierarchy].[Group Name], [Dim PHU].[City Name].[City Name], [Dim Severity].[Severity].[Severity], {[Dim Outcome].[Outcome], [Dim Outcome].[Outcome].&[Deceased]}) on rows
+from [Covid19_Cube];
+WITH MEMBER Measures.x AS Max   
+   ([Dim Date].[Year].CurrentMember*[Dim Date].[Month Name].Members*[Dim Date].[Day].[Day]
+      , [Measures].[Fully Vaccinated]
+   )  
+SELECT Measures.x ON 0  
+,NON EMPTY [Dim Date].[Year].[Year]
+ON 1  
+FROM [Covid19_Cube];
+//6. Thống kê số ca nhiễm theo Mức Độ Nghiêm Trọng, nhóm bùng phát của từng khu vực trong các năm
+select non empty [Measures].[Total Case] on columns,
+	non empty crossjoin ([Dim Date].[Year].[Year], [Dim PHU].[Group Name].[Group Name], [Dim Severity].[Severity].[Severity]) on rows
+from [Covid19_Cube]
+where [Dim Exposure].[Exposure Name].&[OB];
