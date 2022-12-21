@@ -9,10 +9,10 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="NDS_to_DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{09372909-2D4E-4081-81D5-22A5C0A734C2}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{8FC66FD5-E721-4BE9-A858-4230AEF585F4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABoYXmAyKrVqPpPjZzLUvyFYzeVeIsdkMLw9ElQIXsiBQAAAAAOgAAAAAIAACAAAAAuFsrPrMUKcWVYo8y+JSS8oDC3K+KpV+NeXn1yI/RJ9xAAAADbESJ5ODN8h7IeMncr9PK0QAAAAKv4DABuP0Dk4dJ0B0d3inPoWSti38Iok5QunOG1xpOerVNVcmweucEpMzQIjQXkLcX00QLiMdtwUsr7u8Qab54</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADXmDn9r7Vfzg/s3GqklfAw5B2i8YgALmw8OvxMmpR+YAAAAAAOgAAAAAIAACAAAADZD+luv1b6jkQOlPXmSR8lA0T8jOwHONYhRl+evG+V6RAAAAC/RKDKFjAkNefEiycbF9sEQAAAAIBt1lxPU/SeVNuk7LPWC69mM9brp8cvZbyIqiMZ0rvnbqUI3MOOOfaxQhgzPcC4FyshQxmLPlEangx41dnCyS0</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -46,7 +46,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA9ijpLlu6g86HyA/02i27qbju5AawJ2cxfAcagkrZ9LgAAAAAOgAAAAAIAACAAAABWdqWp5MJU5yM+BAEZcCF60BvZ4oNQUADLc5W3LF73LBAAAABXnjPvMn4g2G8Q4UOClObuQAAAACVEgHNoQP0cGz+1QhLLJ0mNAETfck+Ce6L3Vm8lQ95DVLKQzSVEvQU0txebQLgCGGrby5F/J81fj1D5pqxq4oU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABBVBli6Ko4IU6OEpOkxuBUo/DkjAH5ht4tqiq3KTcleQAAAAAOgAAAAAIAACAAAAAfXrrpajbTJsi5MCEBOp3Oec1n/xiXKCPI737F8s46pxAAAADdau5zghTMP7P7jCBjfEfrQAAAABYx3Pl6ZE2/V/kclwEsTn/pDQ0RqPWjP7cqcmCmXsxW6+hPo+cbXlaSn4LGpbp0BPMBQbA0fOYS6UgurFYes2Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACJoYIWI8WQD9wFLRK91r1E0PBNm+cS6adENw6HWFE8vQAAAAAOgAAAAAIAACAAAACEWIZqMKJfVGr51FjpoMzWGSxHzjY7nYz0A/pWVsvDuhAAAAAQn9mP3lBOCQAR/xaRXYP8QAAAADhNxmeajNBUqKLFdMexImunwOTvKwfn7/4sPhUcWvz5LovOEGCwE9zt6Bh1MSAj4c0jRNmdjRBXjCuInmqIOFk</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACXwZ/98/oPY5hnovt6RCkq3QgUWD1tyr7wzGqpxU6gkQAAAAAOgAAAAAIAACAAAAC3xk8u8x5/cYeqqyKGvTxXC+HWu6VKAnetnXnkMJ6hkxAAAADFrNu1VgkeN4xTdfyTd5jgQAAAAAqUpUPembvUmTyQ46Zak6/XIFVZDGFn8yWzIGk3NfPjwvghjVFPmRa6Dryke7GY6NZSTJXMrzZAh6kbqEzeyDE</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -133,7 +133,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Age LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -154,7 +154,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Exposure LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -175,7 +175,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Gender LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -196,7 +196,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Outcome LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -217,7 +217,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PHU LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5042,7 +5042,7 @@ where [refTable].[GroupID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Populate Fact Case Detail"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5058,7 +5058,7 @@ where [refTable].[GroupID] = ?</property>
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Populate Fact Vaccine Detail"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -5076,7 +5076,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Age LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5120,7 +5120,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Exposure LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5143,7 +5143,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Gender LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5166,7 +5166,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Outcome LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6338,7 +6338,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6507,7 +6509,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6676,7 +6680,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

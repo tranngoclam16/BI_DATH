@@ -9,10 +9,10 @@
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Source_to_Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{B7F296C1-47E3-4F1F-9A64-0F8E80E7277A}">
+  DTS:VersionBuild="57"
+  DTS:VersionGUID="{BB0BCE40-FEB7-48CE-A543-784D4490CE57}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -53,7 +53,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACvFB5q3gf37xSwn0u+O7NTtco1X+1v4uHxdtOLQQ4EIQAAAAAOgAAAAAIAACAAAABrdlWc9UldrvBjKvna0UdPQdlLSPzJ+QkrXp9dKOp/RxAAAADuGjkxBVQzAPU/9/6ta8kIQAAAAO/e6iW+VhaG4yFzvLZQTmMDuozqSEqVP7Oleof7ohPEcaeqeRH7ggqt3A3k2ibDNrl5VJkzad8Gh8bfuQVWioQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABj82yzqqkK+KZDtGRCblKoG71Bg72wV1YUgibIuVJZ5QAAAAAOgAAAAAIAACAAAAArvD7e8eJ6q6DaRmBZ++MgXbxWMJ9PEvopsDvwGRGEqBAAAAASkP1NBdg44ICi4ZKl02lPQAAAAOyQVEJeL0GxCgVDE82D1tj7nuSl5a7SZ+N1amsdUuhROxjzeX0mh+LYNvzl9WsDUCaQNhihZtJ28WYunpQc1KA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -70,7 +70,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADEyFYsiqmuIOCiiIqvujkKIqik1aer8/+lG5uSFnCtiQAAAAAOgAAAAAIAACAAAABC6aznqsjUNjIkLc5nMvmHPAcW5iwaXype5WqtpFPQ0RAAAADrGmMoHNM5FS+eP4V0SxPlQAAAAIoAzbfzq0zlyCcxiCsEVrdTCtqO0THg7Ew7DgA+yWFyOIWkJjYcIS4tsxYSuo9/aoUw8z075P2E+x0A0AAJ8CU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACv//0VfX0/O4npgQ5roOKCkqolqe9+86SLivNfs6oZRAAAAAAOgAAAAAIAACAAAAB7JARbSsxqpw+6bdBwVLzaAIiV5tJCJpX9R4bplF19+hAAAAB7/HWcudA7knoaNxEpi2HmQAAAAOOZzYX78KMLqe8LY8/51KI1uEFesv7Ap/aqG1mVuF/EqRoiH15hH0w7YzwV2FXAQiNLrF9ak1rx3+m4JikWBs8</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -807,18 +807,6 @@
                       externalMetadataColumnId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUPostalCode]"
                       lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[PHUPostalCode]" />
                     <inputColumn
-                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="date"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="date"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\CasesReport DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
-                    <inputColumn
                       refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ObjectId]"
                       cachedDataType="r8"
                       cachedName="ObjectId"
@@ -909,14 +897,6 @@
                       dataType="wstr"
                       length="255"
                       name="PHUPostalCode" />
-                    <externalMetadataColumn
-                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\CasesReport DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ObjectID]"
                       dataType="i4"
@@ -1347,18 +1327,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="date"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="date"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\CompileCovid DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
-                    <inputColumn
                       refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ObjectId]"
                       cachedDataType="r8"
                       cachedName="ObjectId"
@@ -1421,14 +1389,6 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\CompileCovid DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ObjectId]"
                       dataType="i4"
@@ -1518,7 +1478,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CasesReport LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1539,7 +1499,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get CompileCovid LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1560,7 +1520,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get OngoingOutbreaks LSET"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1581,7 +1541,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PublicHealthUnit LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1602,7 +1562,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PublicHealthUnitsGroup LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1623,7 +1583,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get VaccinesByAgePHU LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1932,18 +1892,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="date"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="date"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\OngoingOutbreaks DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
-                    <inputColumn
                       refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
                       cachedDataType="date"
                       cachedName="Date"
@@ -1977,14 +1925,6 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\OngoingOutbreaks DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
@@ -2432,18 +2372,6 @@
                       externalMetadataColumnId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReportingPHU]"
                       lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[ReportingPHU]" />
                     <inputColumn
-                      refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="date"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="date"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\PublicHealthUnit DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
-                    <inputColumn
                       refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHUID]"
                       cachedDataType="r8"
                       cachedName="PHUID"
@@ -2503,14 +2431,6 @@
                       dataType="wstr"
                       length="255"
                       name="ReportingPHU" />
-                    <externalMetadataColumn
-                      refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\PublicHealthUnit DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUID]"
                       dataType="i4"
@@ -2872,18 +2792,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="date"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="date"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\PublicHealthUnitsGroup DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
-                    <inputColumn
                       refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHUGroup]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -2913,14 +2821,6 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\PublicHealthUnitsGroup DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUGroup]"
                       dataType="wstr"
@@ -2987,7 +2887,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CasesReport LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3031,7 +2931,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CompileCovid LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3054,7 +2954,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set OngoingOutbreaks LSET"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3077,7 +2977,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set PublicHealthUnit LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3100,7 +3000,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set PublicHealthUnitsGroup LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3123,7 +3023,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set VaccinesByAgePHU LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3146,7 +3046,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CasesReport Stage"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3162,7 +3062,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate CompileCovid Stage"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3178,7 +3078,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate OngoingOutbreaks Stage"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3194,7 +3094,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PublicHealthUnit Stage"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3210,7 +3110,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate PublicHealthUnitsGroup Stage"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3226,7 +3126,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate VaccinesByAgePHU Stage"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3549,7 +3449,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -3583,18 +3483,6 @@
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
-                    <inputColumn
-                      refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
-                      cachedDataType="date"
-                      cachedName="CreatedDate"
-                      externalMetadataColumnId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].Columns[CreatedDate]" />
-                    <inputColumn
-                      refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
-                      cachedDataType="date"
-                      cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      lineageId="Package\VaccinesByAgePHU DFT\Excel Source.Outputs[Excel Source Output].Columns[UpdatedDate]" />
                     <inputColumn
                       refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
                       cachedDataType="date"
@@ -3647,14 +3535,6 @@
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
-                      dataType="dbTimeStamp"
-                      name="CreatedDate" />
-                    <externalMetadataColumn
-                      refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdatedDate" />
                     <externalMetadataColumn
                       refId="Package\VaccinesByAgePHU DFT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
@@ -4772,13 +4652,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\OngoingOutbreaks DFT\OLE DB Destination"
-          TopLeft="342.857148695965,182.764708445559" />
-        <NodeLayout
           Size="138.4,41.6"
           Id="Package\OngoingOutbreaks DFT\Excel Source"
           TopLeft="356,86" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\OngoingOutbreaks DFT\OLE DB Destination"
+          TopLeft="342.857148695965,182.764708445559" />
         <EdgeLayout
           Id="Package\OngoingOutbreaks DFT.Paths[Excel Source Output]"
           TopLeft="426.628574347983,127.6">
@@ -4949,13 +4829,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\VaccinesByAgePHU DFT\Excel Source"
-          TopLeft="356,86" />
-        <NodeLayout
           Size="170.4,41.6"
           Id="Package\VaccinesByAgePHU DFT\OLE DB Destination"
           TopLeft="342.857148695965,182.764708445559" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\VaccinesByAgePHU DFT\Excel Source"
+          TopLeft="356,86" />
         <EdgeLayout
           Id="Package\VaccinesByAgePHU DFT.Paths[Excel Source Output]"
           TopLeft="426.628574347983,127.6">
