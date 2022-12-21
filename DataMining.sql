@@ -6,7 +6,7 @@ AS
 		, DP.CityName
 		, DP.GroupName
 		, DD.Date
-		,'Q' + CAST(DD.Quarter AS varchar) + '/' + CAST(DD.Year AS varchar) AS TPeriod
+		,'Q' + CAST(DD.Quarter AS varchar) + '/' + CAST(DD.Year AS varchar) AS TimePeriod
 		, DD.Year
 		, DG.GenderID
 		, DG.Gender
