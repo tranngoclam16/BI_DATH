@@ -1,6 +1,6 @@
 ﻿<Infos>
   <Item name="DATH_OLAP.database">
-    <Time>638058672450402136</Time>
+    <Time>638055647086713925</Time>
     <Hash length="20">
       <b>207</b>
       <b>159</b>
@@ -25,7 +25,7 @@
     </Hash>
   </Item>
   <Item name="Dim Gender.dim">
-    <Time>638070659662659109</Time>
+    <Time>638072095420932589</Time>
     <Hash length="20">
       <b>106</b>
       <b>98</b>
@@ -50,7 +50,7 @@
     </Hash>
   </Item>
   <Item name="Dim Age.dim">
-    <Time>638070659663016505</Time>
+    <Time>638072095420832220</Time>
     <Hash length="20">
       <b>234</b>
       <b>130</b>
@@ -75,7 +75,7 @@
     </Hash>
   </Item>
   <Item name="Dim Severity.dim">
-    <Time>638070659385978289</Time>
+    <Time>638072095421012711</Time>
     <Hash length="20">
       <b>145</b>
       <b>234</b>
@@ -100,32 +100,32 @@
     </Hash>
   </Item>
   <Item name="Covid19_View.dsv">
-    <Time>638069562617039383</Time>
+    <Time>638072296000408230</Time>
     <Hash length="20">
+      <b>216</b>
       <b>45</b>
-      <b>179</b>
-      <b>213</b>
-      <b>204</b>
-      <b>204</b>
-      <b>133</b>
-      <b>197</b>
-      <b>127</b>
-      <b>95</b>
-      <b>73</b>
-      <b>87</b>
-      <b>181</b>
-      <b>88</b>
-      <b>115</b>
-      <b>38</b>
-      <b>42</b>
-      <b>132</b>
-      <b>71</b>
-      <b>230</b>
-      <b>38</b>
+      <b>20</b>
+      <b>248</b>
+      <b>190</b>
+      <b>153</b>
+      <b>129</b>
+      <b>110</b>
+      <b>222</b>
+      <b>248</b>
+      <b>77</b>
+      <b>241</b>
+      <b>19</b>
+      <b>249</b>
+      <b>145</b>
+      <b>112</b>
+      <b>174</b>
+      <b>91</b>
+      <b>135</b>
+      <b>14</b>
     </Hash>
   </Item>
   <Item name="Dim Exposure.dim">
-    <Time>638071741425891549</Time>
+    <Time>638072095420922593</Time>
     <Hash length="20">
       <b>226</b>
       <b>15</b>
@@ -150,7 +150,7 @@
     </Hash>
   </Item>
   <Item name="Dim Outcome.dim">
-    <Time>638070659663131426</Time>
+    <Time>638072095420972484</Time>
     <Hash length="20">
       <b>229</b>
       <b>255</b>
@@ -175,32 +175,32 @@
     </Hash>
   </Item>
   <Item name="Covid19.ds">
-    <Time>638068935254068917</Time>
+    <Time>638072276391678311</Time>
     <Hash length="20">
-      <b>160</b>
-      <b>49</b>
-      <b>118</b>
-      <b>123</b>
-      <b>189</b>
-      <b>142</b>
-      <b>18</b>
-      <b>147</b>
-      <b>143</b>
-      <b>70</b>
-      <b>44</b>
-      <b>213</b>
-      <b>186</b>
-      <b>187</b>
       <b>101</b>
-      <b>234</b>
-      <b>219</b>
-      <b>96</b>
-      <b>23</b>
-      <b>237</b>
+      <b>45</b>
+      <b>175</b>
+      <b>183</b>
+      <b>243</b>
+      <b>87</b>
+      <b>92</b>
+      <b>84</b>
+      <b>70</b>
+      <b>64</b>
+      <b>109</b>
+      <b>203</b>
+      <b>37</b>
+      <b>20</b>
+      <b>157</b>
+      <b>218</b>
+      <b>210</b>
+      <b>20</b>
+      <b>171</b>
+      <b>230</b>
     </Hash>
   </Item>
   <Item name="Covid19_Cube.cube">
-    <Time>638071741426261626</Time>
+    <Time>638072095420670529</Time>
     <Hash length="20">
       <b>53</b>
       <b>217</b>
@@ -225,7 +225,7 @@
     </Hash>
   </Item>
   <Item name="Dim Date.dim">
-    <Time>638070904021198849</Time>
+    <Time>638072095420882123</Time>
     <Hash length="20">
       <b>214</b>
       <b>185</b>
@@ -250,7 +250,7 @@
     </Hash>
   </Item>
   <Item name="Dim PHU.dim">
-    <Time>638058672450422150</Time>
+    <Time>638055751473229811</Time>
     <Hash length="20">
       <b>231</b>
       <b>156</b>
@@ -275,7 +275,7 @@
     </Hash>
   </Item>
   <Item name="CasePattern.dmm">
-    <Time>638069554982282622</Time>
+    <Time>638072095420472970</Time>
     <Hash length="20">
       <b>84</b>
       <b>172</b>
@@ -300,7 +300,7 @@
     </Hash>
   </Item>
   <Item name="Covid19_Cube.partitions">
-    <Time>638058672450392136</Time>
+    <Time>638055741016838034</Time>
     <Hash length="20">
       <b>149</b>
       <b>206</b>

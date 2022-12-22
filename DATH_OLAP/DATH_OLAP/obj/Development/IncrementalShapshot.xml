@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>Default</ProcessingOption>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,77 +19,77 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>oDF2e72OEpOPRizVurtl6ttgF+0=12/17/2022 5:05:25 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>ZS2vt/NXXFRGQG3LJRSd2tIUq+Y=12/21/2022 1:53:59 PM12/2/2022 8:02:22 AM</TimeStamp>
         <ID>
           <String>Covid19</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>LbPVzMyFxX9fSVe1WHMmKoRH5iY=12/18/2022 10:31:01 AM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>2C0U+L6ZgW7e+E3xE/mRcK5bhw4=12/21/2022 2:26:40 PM12/2/2022 10:26:43 AM</TimeStamp>
         <ID>
           <String>Covid19_View</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>amLBX0lZOJnyXmkk3swVk48hYLk=12/19/2022 4:59:26 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>amLBX0lZOJnyXmkk3swVk48hYLk=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim Gender</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>6oJIZs3xA4Pr3r7BOh9EF2y3KZQ=12/19/2022 4:59:26 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>6oJIZs3xA4Pr3r7BOh9EF2y3KZQ=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim Age</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>5f+a/KpNDiNjswqDkghlui/jjxU=12/19/2022 4:59:26 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>5f+a/KpNDiNjswqDkghlui/jjxU=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim Outcome</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>4g8m3LmcHYKly7MkQllSRtkr22c=12/20/2022 11:02:22 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>4g8m3LmcHYKly7MkQllSRtkr22c=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim Exposure</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>1rle8LUbD1s5ixGXntf47xAJzH8=12/19/2022 11:46:42 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>1rle8LUbD1s5ixGXntf47xAJzH8=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>55wrnBiCKGW7ZyA/D+M2yIGq+Uk=12/5/2022 8:00:45 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>55wrnBiCKGW7ZyA/D+M2yIGq+Uk=12/2/2022 10:52:27 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim PHU</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ker171cH2PIwAgNNPFY3m25YkGw=12/19/2022 4:58:58 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>ker171cH2PIwAgNNPFY3m25YkGw=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim Severity</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>NdnEYTejeHB7fpDIFe17QiINUxw=12/20/2022 11:02:22 PM12/5/2022 8:00:45 PMlc7VIzUKzOBuBIOGp7OdIjWHlRg=12/5/2022 8:00:45 PM12/5/2022 8:00:45 PM</TimeStamp>
+        <TimeStamp>NdnEYTejeHB7fpDIFe17QiINUxw=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AMlc7VIzUKzOBuBIOGp7OdIjWHlRg=12/2/2022 10:35:01 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Covid19_Cube</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.MiningStructure</Type>
-        <TimeStamp>VKy5170NXsscbZ+T9FDQ3YZnDLk=12/18/2022 10:18:18 AM12/17/2022 10:09:54 PM</TimeStamp>
+        <TimeStamp>VKy5170NXsscbZ+T9FDQ3YZnDLk=12/21/2022 8:52:22 AM12/21/2022 8:52:22 AM</TimeStamp>
         <ID>
           <String>CasePattern</String>
         </ID>
@@ -97,7 +97,7 @@
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
-      <TimeStamp>z5+i0HtPLiu4bCMWE+K31D/Rsyo=12/5/2022 8:00:45 PM12/5/2022 8:00:45 PM</TimeStamp>
+      <TimeStamp>z5+i0HtPLiu4bCMWE+K31D/Rsyo=12/2/2022 7:58:28 AM12/2/2022 7:58:28 AM</TimeStamp>
       <ID>
         <String>DATH_OLAP</String>
       </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-12-20T16:02:31.736667Z</LastDeployed>
+  <LastDeployed>2022-12-21T08:58:49.556667Z</LastDeployed>
 </DeploymentSnapshot>
