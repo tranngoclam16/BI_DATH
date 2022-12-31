@@ -33,6 +33,9 @@
       <Dimension>
         <ID>Dim Severity</ID>
       </Dimension>
+      <Dimension>
+        <ID>Dim Outbreak</ID>
+      </Dimension>
     </Dimensions>
     <MiningStructures>
       <MiningStructure>
@@ -56,6 +59,14 @@
             <Partitions>
               <Partition>
                 <ID>Fact Vaccine Detail</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+          <MeasureGroup>
+            <ID>Fact Outbreak Detail</ID>
+            <Partitions>
+              <Partition>
+                <ID>Fact Outbreak Detail</ID>
               </Partition>
             </Partitions>
           </MeasureGroup>

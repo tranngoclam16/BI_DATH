@@ -2,6 +2,22 @@
 select non empty [Measures].[Total Case] on columns,
 	non empty crossjoin ([Dim Date].[Year].[Year], [Dim PHU].[PHU Name].[PHU Name],[Dim Outcome].[Outcome].[Outcome]) on rows
 from [Covid19_Cube];
+-----
+with member [Measures].Active AS 
+	SUM ( [Dim Outcome].[Outcome].&[Active],
+	[Measures].[Total Case]
+	)
+	member [Measures].Deceased AS 
+	SUM ( [Dim Outcome].[Outcome].&[Deceased],
+	[Measures].[Total Case]
+	)
+	member [Measures].Recovered AS 
+	SUM ( [Dim Outcome].[Outcome].&[Recovered],
+	[Measures].[Total Case]
+	)
+SELECT {[Measures].Active, [Measures].Deceased, [Measures].Recovered} on 0,
+	non empty [Dim Date].[Year].[Year]*[Dim PHU].[PHU Name].[PHU Name] on 1
+FROM [Covid19_Cube];
 //2. Thống kê Mức Độ Nghiêm Trọng (tiêu chí nghiêm trọng sinh viên tự định nghĩa) của dịch Covid-19 theo PHU và theo các Quý trong từng năm.
 select non empty [Measures].[Total Case] on columns,
 	non empty crossjoin ([Dim Date].[Date Hierarchy].[Year], [Dim Date].[Quarter].[Quarter], [Dim PHU].[PHU Name].[PHU Name],[Dim Severity].[Severity].[Severity]) on rows
@@ -22,11 +38,24 @@ from [Covid19_Cube];
 select non empty [Measures].[Total Case] on columns,
 	non empty crossjoin ([Dim PHU].[GeographyNameHierarchy].[Group Name], [Dim PHU].[City Name].[City Name], [Dim Severity].[Severity].[Severity], {[Dim Outcome].[Outcome], [Dim Outcome].[Outcome].&[Deceased]}) on rows
 from [Covid19_Cube];
-WITH MEMBER Measures.x AS Max   
-   ([Dim Date].[Year].CurrentMember*[Dim Date].[Month Name].Members*[Dim Date].[Day].[Day]
+WITH MEMBER Measures.One_Dose_Vaccinated AS Max 
+   ([Dim Date].[Year].CurrentMember*[Dim Date].[Month Name].[Month Name]*[Dim Date].[Day].[Day]
+      , [Measures].[One Dose Cumulative]
+   )
+MEMBER Measures.Second_Dose_Vaccinated AS Max 
+   ([Dim Date].[Year].CurrentMember*[Dim Date].[Month Name].[Month Name]*[Dim Date].[Day].[Day]
+      , [Measures].[Second Dose Cumulative]
+   )
+MEMBER Measures.Third_Dose_Vaccinated AS Max 
+   ([Dim Date].[Year].CurrentMember*[Dim Date].[Month Name].[Month Name]*[Dim Date].[Day].[Day]
+      , [Measures].[Third Dose Cumulative]
+   )
+MEMBER Measures.Fully_Vaccinated AS Max 
+   ([Dim Date].[Year].CurrentMember*[Dim Date].[Month Name].[Month Name]*[Dim Date].[Day].[Day]
       , [Measures].[Fully Vaccinated]
-   )  
-SELECT Measures.x ON 0  
+   )
+SELECT {Measures.One_Dose_Vaccinated, Measures.Second_Dose_Vaccinated, 
+		Measures.Third_Dose_Vaccinated, Measures.Fully_Vaccinated} ON 0  
 ,NON EMPTY [Dim Date].[Year].[Year]
 ON 1  
 FROM [Covid19_Cube];
@@ -35,3 +64,12 @@ select non empty [Measures].[Total Case] on columns,
 	non empty crossjoin ([Dim Date].[Year].[Year], [Dim PHU].[Group Name].[Group Name], [Dim Severity].[Severity].[Severity]) on rows
 from [Covid19_Cube]
 where [Dim Exposure].[Exposure Name].&[OB];
+-----
+select non empty [Measures].[Number Ongoing Outbreaks] on 0,
+	non empty crossjoin ([Dim Date].[Year].[Year], [Dim PHU].[Group Name].[Group Name], [Dim Outbreak].[Outbreak Group].[Outbreak Group]) on 1
+from [Covid19_Cube];
+// Visual map:  Dùng regional map để biểu diễn trực quan (bằng màu sắc) số lượng ca nhiễm, số ca tử vong ở các vùng trong năm. Ví dụ tham khảo:
+select non empty [Measures].[Total Case] on 0,
+	non empty {[Dim Date].[Year].[Year] * [Dim PHU].[PHU Latitude].[PHU Latitude]* [Dim PHU].[PHU Longitude].[PHU Longitude]*[Dim PHU].[Group Name].[Group Name]*[Dim PHU].[City Name].[City Name]*[Dim PHU].[PHU Name].[PHU Name]*{[Dim Outcome].[Outcome], [Dim Outcome].[Outcome].&[Deceased]}} on 1
+from [Covid19_Cube];
+

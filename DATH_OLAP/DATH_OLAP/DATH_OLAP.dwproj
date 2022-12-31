@@ -47,6 +47,10 @@
       <Name>Dim Severity.dim</Name>
       <FullPath>Dim Severity.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Outbreak.dim</Name>
+      <FullPath>Dim Outbreak.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

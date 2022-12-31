@@ -4,7 +4,6 @@ CREATE DATABASE [NDS]
 GO
 USE [NDS]
 GO
-
 SET ANSI_NULLS ON
 GO
 
@@ -69,6 +68,10 @@ GO
 /****** Drop:  Table [dbo].[DataSource]*/
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DataSource]') AND type in (N'U'))
 DROP TABLE [dbo].[DataSource]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Outbreak]') AND type in (N'U'))
+DROP TABLE [dbo].[Outbreak]
 GO
 
 /**
@@ -141,7 +144,7 @@ CREATE TABLE [dbo].[OngoingOutbreaksPHU](
 	[PHU_ID] [int] NOT NULL,
 	[Date] [datetime] NULL,
 	--[PHUNum] [int] NULL,
-	[OutbreakGroup] [nvarchar](255) NULL,
+	[OutbreakGroup] [int] NULL,
 	[NumberOngoingOutbreaks] [int] NULL,
 	[Status] [int] NULL,
 	[CreatedDate] [datetime] NULL,
@@ -236,6 +239,14 @@ CREATE TABLE [dbo].[DataSource](
 )
 GO
 
+CREATE TABLE [dbo].[Outbreak](
+	[OutbreakID] [int] NOT NULL PRIMARY KEY,
+	[OutbreakGroup] [nvarchar](255) NOT NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedDate] [datetime] NULL
+) 
+GO
+
 INSERT INTO [dbo].DataSource VALUES (1, 'Cases Report'), (2, 'Compile Covid-19 Case Details Canada')
 GO
 
@@ -265,6 +276,13 @@ ADD CONSTRAINT [FK_Outbreaks_PHU] FOREIGN KEY ([PHU_ID])
   REFERENCES [dbo].[PublicHealthUnit] ([PHUID]) 
   ON UPDATE NO ACTION
   ON DELETE NO ACTION
+GO
+
+ALTER TABLE [dbo].[OngoingOutbreaksPHU]
+ADD CONSTRAINT [FK_OO_Outbreak] FOREIGN KEY ([OutbreakGroup])
+	REFERENCES [dbo].[Outbreak] ([OutbreakID])
+	ON UPDATE NO ACTION
+	ON DELETE NO ACTION
 GO
 
 ALTER TABLE [dbo].[PublicHealthUnit]

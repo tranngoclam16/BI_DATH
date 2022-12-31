@@ -41,6 +41,14 @@ IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[FactVaccineDetai
   DROP TABLE [dbo].[FactVaccineDetail]
 GO
 
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[FactVaccineDetail]') AND type in (N'U'))
+  DROP TABLE [dbo].[FactOutbreakDetail]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[DimOutbreak]') AND type in (N'U'))
+  DROP TABLE [dbo].[DimOutbreak]
+GO
+
 CREATE TABLE [dbo].[DimPHU] (
 	PHUID_SK int identity (1,1) not null primary key
 ,	PHUID int not null
@@ -83,6 +91,11 @@ CREATE TABLE [dbo].[DimSeverity](
 ,	Severity nvarchar(255) null
 )
 
+CREATE TABLE [dbo].[DimOutbreak](
+	OutbreakID int not null primary key
+,	OutbreakGroup nvarchar(255) null
+)
+
 CREATE TABLE [dbo].[FactCaseDetail](
 	PHUID int not null
 ,	DateID int not null
@@ -106,6 +119,13 @@ CREATE TABLE [dbo].[FactVaccineDetail](
 ,	primary key (DateID, PHUID, AgeID)
 )
 
+CREATE TABLE [dbo].[FactOutbreakDetail](
+	DateID int not null
+,	PHUID int not null
+,	OutbreakID int not null
+,	NumberOngoingOutbreaks int null
+,	primary key (DateID, PHUID, OutbreakID)
+)
 GO
 
 INSERT INTO [dbo].[DimSeverity] VALUES ('Low'), ('Moderate'), ('High'), ('Critical')
@@ -193,4 +213,19 @@ ALTER TABLE [dbo].[FactVaccineDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactVaccin
 REFERENCES [dbo].[DimPHU] ([PHUID_SK])
 GO
 ALTER TABLE [dbo].[FactVaccineDetail] CHECK CONSTRAINT [FK_FactVaccineDetail_DimPHU]
+GO
+ALTER TABLE [dbo].[FactOutbreakDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactOutbreakDetail_DimDate] FOREIGN KEY([DateID])
+REFERENCES [dbo].[DimDate] ([DateID])
+GO
+ALTER TABLE [dbo].[FactOutbreakDetail] CHECK CONSTRAINT [FK_FactOutbreakDetail_DimDate]
+GO
+ALTER TABLE [dbo].[FactOutbreakDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactOutbreakDetail_DimPHU] FOREIGN KEY([PHUID])
+REFERENCES [dbo].[DimPHU] ([PHUID_SK])
+GO
+ALTER TABLE [dbo].[FactOutbreakDetail] CHECK CONSTRAINT [FK_FactOutbreakDetail_DimPHU]
+GO
+ALTER TABLE [dbo].[FactOutbreakDetail]  WITH CHECK ADD  CONSTRAINT [FK_FactOutbreakDetail_DimOutbreak] FOREIGN KEY([OutbreakID])
+REFERENCES [dbo].[DimOutbreak] ([OutbreakID])
+GO
+ALTER TABLE [dbo].[FactOutbreakDetail] CHECK CONSTRAINT [FK_FactOutbreakDetail_DimOutbreak]
 GO

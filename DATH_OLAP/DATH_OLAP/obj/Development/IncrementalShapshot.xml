@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>2C0U+L6ZgW7e+E3xE/mRcK5bhw4=12/21/2022 2:26:40 PM12/2/2022 10:26:43 AM</TimeStamp>
+        <TimeStamp>/4o9Jvdx3fmWYPsi/nGVfrCg5/E=12/24/2022 6:56:08 AM12/2/2022 10:26:43 AM</TimeStamp>
         <ID>
           <String>Covid19_View</String>
         </ID>
@@ -61,14 +61,14 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>1rle8LUbD1s5ixGXntf47xAJzH8=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AM</TimeStamp>
+        <TimeStamp>zpiEoCoD3xP6hRdp0F2SzSDgpqE=12/24/2022 5:27:12 PM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim Date</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>55wrnBiCKGW7ZyA/D+M2yIGq+Uk=12/2/2022 10:52:27 AM12/2/2022 10:35:01 AM</TimeStamp>
+        <TimeStamp>6/099Ce8chA5a1IZqRsCrWsUTBE=12/22/2022 3:38:09 PM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Dim PHU</String>
         </ID>
@@ -81,8 +81,15 @@
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>gfwdkd8m0mzaM/YrudYemhGGRcs=12/24/2022 6:56:08 AM12/24/2022 6:56:08 AM</TimeStamp>
+        <ID>
+          <String>Dim Outbreak</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>NdnEYTejeHB7fpDIFe17QiINUxw=12/21/2022 8:52:22 AM12/2/2022 10:35:01 AMlc7VIzUKzOBuBIOGp7OdIjWHlRg=12/2/2022 10:35:01 AM12/2/2022 10:35:01 AM</TimeStamp>
+        <TimeStamp>3RAOYKgUQj+CdVGdcFNMO+njjL4=12/24/2022 7:02:28 AM12/2/2022 10:35:01 AMN96u4MumK7EtH9dx4PVEnpK2ekc=12/24/2022 6:56:09 AM12/2/2022 10:35:01 AM</TimeStamp>
         <ID>
           <String>Covid19_Cube</String>
         </ID>
@@ -106,5 +113,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-12-21T08:58:49.556667Z</LastDeployed>
+  <LastDeployed>2022-12-24T10:27:20.843333Z</LastDeployed>
 </DeploymentSnapshot>
