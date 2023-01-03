@@ -38,6 +38,9 @@
       <MiningStructure>
         <ID>CasePattern</ID>
       </MiningStructure>
+      <MiningStructure>
+        <ID>Mining Case Trend</ID>
+      </MiningStructure>
     </MiningStructures>
     <Cubes>
       <Cube>

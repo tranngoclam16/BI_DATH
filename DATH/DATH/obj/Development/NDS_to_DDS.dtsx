@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="NDS_to_DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{8FC66FD5-E721-4BE9-A858-4230AEF585F4}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{643005EF-C4C0-481F-94B8-59C1C2EDD834}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,12 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=DDS;Provider=SQLNCLI11.1;Application Name=SSIS-Package1-{92951D42-E0AE-44C1-9EA5-AC52BACA3F35}localhost.DDS.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC5jY8IN9RvDN0wfs5wV6zC/I1VDUSYUNl5UuRCeHKxSQAAAAAOgAAAAAIAACAAAADiovMidjFvUTW1VLsuKIKbCVIv3qPIifkSP0gd37I3ARAAAAC5l7rtUCGxUklQbGRp9VI9QAAAAFUL4ldmrZN4PVSf9piI/Hd3/SyL7NQ1/Y3XCdbzb2WOmblvQZ7oO81qMe/w9qQSeGVcpzqJz1GRBbK/L0lMpBo</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=DDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{92951D42-E0AE-44C1-9EA5-AC52BACA3F35}localhost.DDS.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -42,12 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=METADATA;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{72127A13-6EE3-4B5F-A802-2248AFC55C85}localhost.METADATA.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACCrSYChTpKLtmySFV6tHLg7dMvPk/uGMEHaqeYNqeQMAAAAAAOgAAAAAIAACAAAADVAi8dO9+lFRV5Hn94foABIwjRyVp/qJHu2xWEfznLBRAAAADW6Q9FovoBvkZeGi4FR79RQAAAANoFLug/+nleISPbjIVWu9bTHOi4I8VaF5MVx2VCuGxNKP2cNGFPeMgooxmN2zcHK1XbOTeeOf4De2a3fGwlHiY</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{72127A13-6EE3-4B5F-A802-2248AFC55C85}localhost.METADATA.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -59,12 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=NDS;Provider=SQLNCLI11.1;Application Name=SSIS-Package1-{7380F3F3-9890-47CC-8420-6726373C2CC0}localhost.NDS.sa;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAApvPduJT5qgXQ/K6toVHjkAPEDVL0mJ/q6xeXasreEXwAAAAAOgAAAAAIAACAAAAAqvPr8z75yRgu3u2ImAS1jaMeIEoX0N+A2l+CgVS9PZxAAAADhbV+eg3bjqKul3y8Pl3AAQAAAAAdPLHqvljXvgThDTYJqlo2iCIpM09yj02bPtxb6i5+XrvnNL7ebSbX1wKRvCIXD8nTFJajWbnc7IrvnD9cTPQg</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{7380F3F3-9890-47CC-8420-6726373C2CC0}localhost.NDS.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -133,7 +118,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Age LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -154,7 +139,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Exposure LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -175,7 +160,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Gender LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -196,7 +181,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Outcome LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -217,7 +202,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PHU LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5076,7 +5061,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Age LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5120,7 +5105,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Exposure LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5143,7 +5128,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Gender LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5380,82 +5365,82 @@ where [refTable].[GroupID] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142,42"
           Id="Package\Get Age LSET"
           TopLeft="560.7,107.1" />
         <NodeLayout
-          Size="168,41.6"
+          Size="168,42"
           Id="Package\Get Exposure LSET"
           TopLeft="763.9,107.1" />
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\Get Gender LSET"
           TopLeft="341.3,107.1" />
         <NodeLayout
-          Size="167.2,41.6"
+          Size="167,42"
           Id="Package\Get Outcome LSET"
           TopLeft="992.3,107.1" />
         <NodeLayout
-          Size="144.8,41.6"
+          Size="145,42"
           Id="Package\Get PHU LSET"
           TopLeft="135.5,107.1" />
         <NodeLayout
-          Size="192.8,41.6"
+          Size="193,42"
           Id="Package\Populate Age Dimension"
           TopLeft="535.5,208.7" />
         <NodeLayout
-          Size="218.4,41.6"
+          Size="218,42"
           Id="Package\Populate Exposure Dimension"
           TopLeft="788.7,208.7" />
         <NodeLayout
-          Size="208.8,41.6"
+          Size="209,42"
           Id="Package\Populate Gender Dimension"
           TopLeft="266.5,208.7" />
         <NodeLayout
-          Size="217.6,41.6"
+          Size="218,42"
           Id="Package\Populate Outcome Dimension"
           TopLeft="1068.1,208.7" />
         <NodeLayout
-          Size="200.8,41.6"
+          Size="201,42"
           Id="Package\Populated PHU Dimension"
           TopLeft="5.50000000000031,208.7" />
         <NodeLayout
-          Size="198.4,41.6"
+          Size="198,42"
           Id="Package\Sequence Container\Populate Fact Case Detail"
           TopLeft="5.49999999999999,5.50000000000007" />
         <NodeLayout
-          Size="211.2,41.6"
+          Size="211,42"
           Id="Package\Sequence Container\Populate Fact Vaccine Detail"
           TopLeft="264.1,5.50000000000007" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="480.8,102.4"
-          Size="480.8,145.6"
+          PanelSize="481,103"
+          Size="481,146"
           Id="Package\Sequence Container"
           TopLeft="391.5,310.3" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Set Age LSET"
           TopLeft="559.9,515.9" />
         <NodeLayout
-          Size="115.2,41.6"
+          Size="115,42"
           Id="Package\Set CET"
           TopLeft="574.3,5.49999999999973" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Set Exposure LSET"
           TopLeft="764.9,515.9" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Set Gender LSET"
           TopLeft="354.9,515.9" />
         <NodeLayout
-          Size="166.4,41.6"
+          Size="166,42"
           Id="Package\Set Outcome LSET"
           TopLeft="969.7,515.9" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\Set PHU LSET"
           TopLeft="149.9,515.9" />
         <EdgeLayout

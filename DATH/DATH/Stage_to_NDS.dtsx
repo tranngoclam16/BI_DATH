@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Stage_to_NDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{3B4C4E76-B23F-48B1-A039-AF9772C6B43A}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{21D3ECD4-3049-43FC-9ADE-9D8579C6897A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -651,7 +651,7 @@ where [refTable].[AgeGroup] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT AgeGroup\377:invalid};</property>
+                  name="ParameterMap">#{Package\DFT AgeGroup\361:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12828,47 +12828,47 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147.2,41.6"
+          Size="147,42"
           Id="Package\DFT AgeGroup"
           TopLeft="5.50000000000003,5.49999999999995" />
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\DFT CasesReport"
           TopLeft="419.5,615.099999999999" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\DFT CaseStatus"
           TopLeft="213.7,5.49999999999995" />
         <NodeLayout
-          Size="164,41.6"
+          Size="164,42"
           Id="Package\DFT CompileCovid"
           TopLeft="417.1,716.699999999999" />
         <NodeLayout
-          Size="144,41.6"
+          Size="144,42"
           Id="Package\DFT Exposure"
           TopLeft="427.1,5.49999999999995" />
         <NodeLayout
-          Size="134.4,41.6"
+          Size="134,42"
           Id="Package\DFT Gender"
           TopLeft="631.9,5.49999999999995" />
         <NodeLayout
-          Size="192,41.6"
+          Size="192,42"
           Id="Package\DFT Ongoing Outbreaks"
           TopLeft="403.1,513.5" />
         <NodeLayout
-          Size="120.8,41.6"
+          Size="121,42"
           Id="Package\DFT PHU"
           TopLeft="438.7,310.3" />
         <NodeLayout
-          Size="141.6,41.6"
+          Size="142,42"
           Id="Package\DFT PHU City"
           TopLeft="428.3,208.7" />
         <NodeLayout
-          Size="152.8,41.6"
+          Size="153,42"
           Id="Package\DFT PHU Group"
           TopLeft="422.7,107.1" />
         <NodeLayout
-          Size="141.6,41.6"
+          Size="142,42"
           Id="Package\DFT Vaccines"
           TopLeft="428.3,411.9" />
         <EdgeLayout
@@ -16210,52 +16210,6 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           Id="Package\DFT Vaccines\Xét xem Vaccines có nằm trong NDS chưa"
           TopLeft="241.7,310.3" />
         <EdgeLayout
-          Id="Package\DFT Vaccines.Paths[OLE DB Source Output]"
-          TopLeft="380.1,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Vaccines.Paths[Lookup Match Output2]"
-          TopLeft="380.1,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\DFT Vaccines.Paths[Lookup Match Output1]"
           TopLeft="380.1,148.7">
           <EdgeLayout.Curve>
@@ -16370,7 +16324,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16392,7 +16348,57 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Vaccines.Paths[OLE DB Source Output]"
+          TopLeft="380.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Vaccines.Paths[Lookup Match Output2]"
+          TopLeft="380.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
