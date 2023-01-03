@@ -2,23 +2,39 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DATH</Name>
+<<<<<<< HEAD
     <LastWriteTime>2022-12-31T02:49:52.6863535Z</LastWriteTime>
+=======
+    <LastWriteTime>2022-12-22T06:28:45.447963Z</LastWriteTime>
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Source_to_Stage.dtsx</Name>
+<<<<<<< HEAD
       <LastWriteTime>2022-12-31T02:40:08.7973239Z</LastWriteTime>
+=======
+      <LastWriteTime>2022-12-22T06:27:36.9375158Z</LastWriteTime>
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Stage_to_NDS.dtsx</Name>
+<<<<<<< HEAD
       <LastWriteTime>2022-12-31T02:44:22.4852267Z</LastWriteTime>
+=======
+      <LastWriteTime>2022-12-23T14:43:19.6786844Z</LastWriteTime>
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>NDS_to_DDS.dtsx</Name>
+<<<<<<< HEAD
       <LastWriteTime>2022-12-31T02:49:52.6385328Z</LastWriteTime>
+=======
+      <LastWriteTime>2022-12-23T23:50:18.33433Z</LastWriteTime>
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>

@@ -11,8 +11,13 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Stage_to_NDS"
   DTS:PackageType="5"
+<<<<<<< HEAD
   DTS:VersionBuild="46"
   DTS:VersionGUID="{21D3ECD4-3049-43FC-9ADE-9D8579C6897A}">
+=======
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{CCFA9C25-97E9-4B4D-A339-846F4FB6F2C4}">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7373,13 +7378,6 @@ where [refTable].[Gender] = ?</property>
                       externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                       lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[Date]" />
                     <inputColumn
-                      refId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[OutbreakGroup]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="OutbreakGroup"
-                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakGroup]"
-                      lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[OutbreakGroup]" />
-                    <inputColumn
                       refId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[NumberOngoingOutbreaks]"
                       cachedDataType="i4"
                       cachedName="NumberOngoingOutbreaks"
@@ -7409,6 +7407,12 @@ where [refTable].[Gender] = ?</property>
                       cachedName="Status"
                       externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[OutbreakID_NDS]"
+                      cachedDataType="i4"
+                      cachedName="OutbreakID_NDS"
+                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakGroup]"
+                      lineageId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -7647,6 +7651,165 @@ where [refTable].[Gender] = ?</property>
                       refId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Outbreak id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select *, CONCAT(OutbreakID,' ',OutbreakGroup) as IDGroup from Outbreak</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select *, CONCAT(OutbreakID,' ',OutbreakGroup) as IDGroup from Outbreak) [refTable]
+where [refTable].[IDGroup] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="OutbreakID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutbreakGroup" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IDGroup" dataType="DT_WSTR" length="268" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[OutbreakGroup]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.NDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.NDS.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Inputs[Lookup Input].Columns[OutbreakGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup"
+                      lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[OutbreakGroup]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">IDGroup</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]"
+                      name="OutbreakID_NDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">OutbreakID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -8043,12 +8206,11 @@ where [refTable].[PHUID] = ?</property>
                       externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[PHUNum]" />
                     <inputColumn
-                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[OutbreakGroup]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="OutbreakGroup"
+                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[OutbreakID_NDS]"
+                      cachedDataType="i4"
+                      cachedName="OutbreakID_NDS"
                       externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[OutbreakGroup]" />
+                      lineageId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -8332,19 +8494,973 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
               startId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Outputs[Lookup Error Output]" />
             <path
               refId="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output]"
-              endId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\DFT Ongoing Outbreaks\Tìm xem PHUNum trong dòng dữ liệu ứng với id nào trong PHU trong NDS.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output1]"
               endId="Package\DFT Ongoing Outbreaks\Thêm cột UpdatedDate.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output1]"
+              endId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Ongoing Outbreaks\Tìm xem PHUNum trong dòng dữ liệu ứng với id nào trong PHU trong NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output2]"
+              endId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output]" />
             <path
               refId="Package\DFT Ongoing Outbreaks.Paths[OLE DB Source Output]"
               endId="Package\DFT Ongoing Outbreaks\Tìm xem PHUNum trong dòng dữ liệu ứng với id nào trong PHU trong NDS.Inputs[Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT Outbreak"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BA0F5E1A-43B9-4FBB-A010-97F3DFE37422}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Outbreak"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Outbreak\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Outbreak\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Derived Column.Inputs[Derived Column Input].Columns[OutbreakGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Outbreak\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakID_d]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="1"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakID_d]"
+                      name="OutbreakID_d"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEFT](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]},1)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(OutbreakGroup,1)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakGroup_d]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakGroup_d]"
+                      name="OutbreakGroup_d"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[RIGHT](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]},[LEN](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]}) - 2)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">RIGHT(OutbreakGroup,LEN(OutbreakGroup) - 2)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Outbreak\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Outbreak\Insert dữ liệu"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert dữ liệu"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Outbreak]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Outbreak\Insert dữ liệu.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.NDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.NDS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[OutbreakGroup_d]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup_d"
+                      externalMetadataColumnId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakGroup]"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakGroup_d]" />
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[OutbreakID_d]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="OutbreakID_d"
+                      externalMetadataColumnId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakID]"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakID_d]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakID]"
+                      dataType="i4"
+                      name="OutbreakID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      name="OutbreakGroup" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Insert dữ liệu.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Insert dữ liệu.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Insert dữ liệu.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Insert dữ liệu.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Outbreak\Load dữ liệu Outbreak"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Load dữ liệu Outbreak"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[OngoingOutbreaksPHU_Stage]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct(OutbreakGroup) from OngoingOutbreaksPHU_Stage</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Stage.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Stage.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].ExternalColumns[OutbreakGroup]"
+                      length="255"
+                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]"
+                      name="OutbreakGroup"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].ExternalColumns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      name="OutbreakGroup" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Error Output].Columns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Error Output].Columns[OutbreakGroup]"
+                      name="OutbreakGroup" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Outbreak\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT Outbreak\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Sort.Inputs[Sort Input].Columns[OutbreakGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup"
+                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]"
+                      name="OutbreakGroup"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Thêm cột CreatedDate, UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Outbreak\Thêm cột UpdatedDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Thêm cột UpdatedDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Outbreak\Thêm cột UpdatedDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Outbreak\Thêm cột UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Outbreak\Thêm cột UpdatedDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Outbreak\Update dữ liệu"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Update dữ liệu"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Outbreak]
+   SET [OutbreakGroup] = ?
+      ,[UpdatedDate] = ?
+ WHERE [OutbreakID] = ?
+
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Outbreak\Update dữ liệu.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.NDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.NDS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].Columns[OutbreakGroup_d]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup_d"
+                      externalMetadataColumnId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakGroup_d]" />
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].Columns[OutbreakID_NDS]"
+                      cachedDataType="i4"
+                      cachedName="OutbreakID_NDS"
+                      externalMetadataColumnId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="dbTimeStamp"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Update dữ liệu.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Outbreak\Update dữ liệu.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Update dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Update dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Update dữ liệu.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Xét xem OutbreakGroup có nằm trong NDS chưa"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Outbreak]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Outbreak]) [refTable]
+where [refTable].[OutbreakGroup] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="OutbreakID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutbreakGroup" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakGroup_d]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.NDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.NDS.sa]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input].Columns[OutbreakGroup_d]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup_d"
+                      lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakGroup_d]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">OutbreakGroup</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]"
+                      name="OutbreakID_NDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">OutbreakID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Outbreak.Paths[Derived Column Output]"
+              endId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Outbreak.Paths[Derived Column Output1]"
+              endId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Outbreak.Paths[Derived Column Output2]"
+              endId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Outbreak.Paths[Lookup Error Output]"
+              endId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\DFT Outbreak.Paths[Lookup Match Output]"
+              endId="Package\DFT Outbreak\Thêm cột UpdatedDate.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT Outbreak.Paths[OLE DB Source Output]"
+              endId="Package\DFT Outbreak\Sort.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT Outbreak.Paths[Sort Output]"
+              endId="Package\DFT Outbreak\Derived Column.Inputs[Derived Column Input]"
+              name="Sort Output"
+              startId="Package\DFT Outbreak\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -11472,17 +12588,17 @@ where [refTable].[PHUGroup] = ?</property>
                       externalMetadataColumnId="Package\DFT Vaccines\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       lineageId="Package\DFT Vaccines\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                     <inputColumn
-                      refId="Package\DFT Vaccines\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[PHUID_NDS]"
-                      cachedDataType="i4"
-                      cachedName="PHUID_NDS"
-                      externalMetadataColumnId="Package\DFT Vaccines\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[PHU_ID]"
-                      lineageId="Package\DFT Vaccines\Tìm xem PHU_ID trong dòng dữ liệu có ứng với PHUID nằm trong NDS không.Outputs[Lookup Match Output].Columns[PHUID_NDS]" />
-                    <inputColumn
                       refId="Package\DFT Vaccines\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[Status]"
                       cachedDataType="i4"
                       cachedName="Status"
                       externalMetadataColumnId="Package\DFT Vaccines\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       lineageId="Package\DFT Vaccines\Load dữ liệu Vaccines.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\DFT Vaccines\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[PHUID]"
+                      cachedDataType="i4"
+                      cachedName="PHUID"
+                      externalMetadataColumnId="Package\DFT Vaccines\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[PHU_ID]"
+                      lineageId="Package\DFT Vaccines\Load dữ liệu Vaccines.Outputs[OLE DB Source Output].Columns[PHUID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12134,13 +13250,13 @@ where [refTable].[AgeGroup] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select PHUID from PublicHealthUnit</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[PublicHealthUnit]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select PHUID from PublicHealthUnit) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[PublicHealthUnit]) [refTable]
 where [refTable].[PHUID] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -12172,7 +13288,7 @@ where [refTable].[PHUID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PHUID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PHUID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReportingPHU" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReportingPHUAddress" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReportingPHUPostalCode" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReportingPHUWebsite" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReportingPHULatitude" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReportingPHULongitude" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -12751,6 +13867,14 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\DFT PHU Group" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{8344BCE4-F498-4B6D-936B-22CC705D8F7E}"
+      DTS:From="Package\DFT Outbreak"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\DFT PHU Group" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{9B30F7CC-E569-40AC-8C0B-FC815C0F7CBA}"
@@ -12877,26 +14001,26 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="376.56,59.9999999999999"
+              EndConnector="371.733333333333,59.9999999999999"
               Start="0,0"
-              End="376.56,52.4999999999999">
+              End="371.733333333333,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.9166057059253" />
+                    End="0,39.8520408163265" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.9166057059253"
-                    Point2="0,41.9166057059253"
-                    Point3="4,41.9166057059253" />
+                    Point1="0,39.8520408163265"
+                    Point2="0,43.8520408163265"
+                    Point3="4,43.8520408163265" />
                   <mssgle:LineSegment
-                    End="372.56,41.9166057059253" />
+                    End="367.733333333333,43.8520408163265" />
                   <mssgle:CubicBezierSegment
-                    Point1="372.56,41.9166057059253"
-                    Point2="376.56,41.9166057059253"
-                    Point3="376.56,45.9166057059253" />
+                    Point1="367.733333333333,43.8520408163265"
+                    Point2="371.733333333333,43.8520408163265"
+                    Point3="371.733333333333,47.8520408163265" />
                   <mssgle:LineSegment
-                    End="376.56,52.4999999999999" />
+                    End="371.733333333333,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12911,26 +14035,26 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="194.52,59.9999999999999"
+              EndConnector="184.866666666667,59.9999999999999"
               Start="0,0"
-              End="194.52,52.4999999999999">
+              End="184.866666666667,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.1405436668594" />
+                    End="0,31.6269430051813" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.1405436668594"
-                    Point2="0,33.1405436668594"
-                    Point3="4,33.1405436668594" />
+                    Point1="0,31.6269430051813"
+                    Point2="0,35.6269430051813"
+                    Point3="4,35.6269430051813" />
                   <mssgle:LineSegment
-                    End="190.52,33.1405436668594" />
+                    End="180.866666666667,35.6269430051813" />
                   <mssgle:CubicBezierSegment
-                    Point1="190.52,33.1405436668594"
-                    Point2="194.52,33.1405436668594"
-                    Point3="194.52,37.1405436668594" />
+                    Point1="180.866666666667,35.6269430051813"
+                    Point2="184.866666666667,35.6269430051813"
+                    Point3="184.866666666667,39.6269430051813" />
                   <mssgle:LineSegment
-                    End="194.52,52.4999999999999" />
+                    End="184.866666666667,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12945,26 +14069,14 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="14.48,59.9999999999999"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="14.48,52.4999999999999">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.1405436668594" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.1405436668594"
-                    Point2="0,33.1405436668594"
-                    Point3="4,33.1405436668594" />
-                  <mssgle:LineSegment
-                    End="10.48,33.1405436668594" />
-                  <mssgle:CubicBezierSegment
-                    Point1="10.48,33.1405436668594"
-                    Point2="14.48,33.1405436668594"
-                    Point3="14.48,37.1405436668594" />
-                  <mssgle:LineSegment
-                    End="14.48,52.4999999999999" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13045,14 +14157,14 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13111,26 +14223,64 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-156.56,59.9999999999999"
+              EndConnector="-175.866666666667,59.9999999999999"
               Start="0,0"
-              End="-156.56,52.4999999999999">
+              End="-175.866666666667,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.9166057059253" />
+                    End="0,31.6269430051813" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.9166057059253"
-                    Point2="0,41.9166057059253"
-                    Point3="-4,41.9166057059253" />
+                    Point1="0,31.6269430051813"
+                    Point2="0,35.6269430051813"
+                    Point3="-4,35.6269430051813" />
                   <mssgle:LineSegment
-                    End="-152.56,41.9166057059253" />
+                    End="-171.866666666667,35.6269430051813" />
                   <mssgle:CubicBezierSegment
-                    Point1="-152.56,41.9166057059253"
-                    Point2="-156.56,41.9166057059253"
-                    Point3="-156.56,45.9166057059253" />
+                    Point1="-171.866666666667,35.6269430051813"
+                    Point2="-175.866666666667,35.6269430051813"
+                    Point3="-175.866666666667,39.6269430051813" />
                   <mssgle:LineSegment
-                    End="-156.56,52.4999999999999" />
+                    End="-175.866666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\DFT Outbreak"
+          TopLeft="827.1,5.49999999999995" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="899.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-351.733333333333,59.9999999999999"
+              Start="0,0"
+              End="-351.733333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8520408163265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.8520408163265"
+                    Point2="0,43.8520408163265"
+                    Point3="-4,43.8520408163265" />
+                  <mssgle:LineSegment
+                    End="-347.733333333333,43.8520408163265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-347.733333333333,43.8520408163265"
+                    Point2="-351.733333333333,43.8520408163265"
+                    Point3="-351.733333333333,47.8520408163265" />
+                  <mssgle:LineSegment
+                    End="-351.733333333333,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13190,9 +14340,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13286,9 +14434,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13310,9 +14456,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14914,9 +16058,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15010,9 +16152,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15034,9 +16174,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15138,13 +16276,11 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output1]"
+          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output]"
           TopLeft="447.4,293.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15176,30 +16312,6 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-110.09138671875,37,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output]"
-          TopLeft="446.3,191.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.4"
-              Start="0,0"
-              End="0,52.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.6453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15270,9 +16382,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15306,8 +16416,82 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DFT Ongoing Outbreaks\Lookup Outbreak id"
+          TopLeft="710.714297817678,207.011767194015" />
+        <EdgeLayout
+          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output1]"
+          TopLeft="660.4,170.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.314297817678,51.4117671940154"
+              Start="0,0"
+              End="42.814297817678,51.4117671940154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.0704831835473,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.0704831835473,0"
+                    Point2="29.0704831835473,0"
+                    Point3="29.0704831835473,4" />
+                  <mssgle:LineSegment
+                    End="29.0704831835473,47.4117671940154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.0704831835473,47.4117671940154"
+                    Point2="29.0704831835473,51.4117671940154"
+                    Point3="33.0704831835473,51.4117671940154" />
+                  <mssgle:LineSegment
+                    End="42.814297817678,51.4117671940154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-19.1209035352027,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output2]"
+          TopLeft="710.714297817678,233.411767194015">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.914297817678,39.3882328059846"
+              Start="0,0"
+              End="-113.414297817678,39.3882328059846">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-47.0527035230196,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-47.0527035230196,0"
+                    Point2="-51.0527035230196,0"
+                    Point3="-51.0527035230196,4" />
+                  <mssgle:LineSegment
+                    End="-51.0527035230196,35.3882328059846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.0527035230196,35.3882328059846"
+                    Point2="-51.0527035230196,39.3882328059846"
+                    Point3="-55.0527035230196,39.3882328059846" />
+                  <mssgle:LineSegment
+                    End="-113.414297817678,39.3882328059846" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.2440902417696,-17.609375,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15438,9 +16622,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15570,9 +16752,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15606,9 +16786,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15733,9 +16911,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15853,9 +17029,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15877,9 +17051,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16000,9 +17172,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16096,9 +17266,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16120,9 +17288,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16401,6 +17567,52 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Vaccines.Paths[OLE DB Source Output]"
+          TopLeft="380.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Vaccines.Paths[Lookup Match Output2]"
+          TopLeft="380.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -16433,17 +17645,17 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string"></Value>
+          type="q3:string">[dbo].[PublicHealthUnit]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16493,6 +17705,324 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT Outbreak">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\DFT Outbreak\Load dữ liệu Outbreak"
+          TopLeft="318,65" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\DFT Outbreak\Derived Column"
+          TopLeft="337,161" />
+        <NodeLayout
+          Size="308,41.6"
+          Id="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa"
+          TopLeft="260,260" />
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Derived Column Output]"
+          TopLeft="413.7,202.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.4"
+              Start="0,0"
+              End="0,49.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\DFT Outbreak\Thêm cột UpdatedDate"
+          TopLeft="177,373" />
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Lookup Match Output]"
+          TopLeft="364,301.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-93.4000000000001,71.4"
+              Start="0,0"
+              End="-93.4000000000001,63.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7813953488372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.7813953488372"
+                    Point2="0,28.7813953488372"
+                    Point3="-4,28.7813953488372" />
+                  <mssgle:LineSegment
+                    End="-89.4000000000001,28.7813953488372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-89.4000000000001,28.7813953488372"
+                    Point2="-93.4000000000001,28.7813953488372"
+                    Point3="-93.4000000000001,32.7813953488372" />
+                  <mssgle:LineSegment
+                    End="-93.4000000000001,63.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.8913867187501,33.7813953488372,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate"
+          TopLeft="546,374" />
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Lookup Error Output]"
+          TopLeft="464,301.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="208.4,72.4"
+              Start="0,0"
+              End="208.4,64.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.184496124031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.184496124031"
+                    Point2="0,29.184496124031"
+                    Point3="4,29.184496124031" />
+                  <mssgle:LineSegment
+                    End="204.4,29.184496124031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="204.4,29.184496124031"
+                    Point2="208.4,29.184496124031"
+                    Point3="208.4,33.184496124031" />
+                  <mssgle:LineSegment
+                    End="208.4,64.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.3336132812499,34.184496124031,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\DFT Outbreak\Update dữ liệu"
+          TopLeft="190,475" />
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Derived Column Output1]"
+          TopLeft="267.1,414.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4000000000001"
+              Start="0,0"
+              End="0,52.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\DFT Outbreak\Insert dữ liệu"
+          TopLeft="604,467" />
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Derived Column Output2]"
+          TopLeft="673.6,415.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.4"
+              Start="0,0"
+              End="0,43.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\DFT Outbreak\Sort"
+          TopLeft="657,122" />
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[OLE DB Source Output]"
+          TopLeft="501.2,85.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.8,57"
+              Start="0,0"
+              End="148.3,57">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.9,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.9,0"
+                    Point2="77.9,0"
+                    Point3="77.9,4" />
+                  <mssgle:LineSegment
+                    End="77.9,53" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.9,53"
+                    Point2="77.9,57"
+                    Point3="81.9,57" />
+                  <mssgle:LineSegment
+                    End="148.3,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Sort Output]"
+          TopLeft="657,148.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-167.2,33.3999999999999"
+              Start="0,0"
+              End="-159.7,33.3999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-66.5955555555554,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.5955555555554,0"
+                    Point2="-70.5955555555554,0"
+                    Point3="-70.5955555555554,4" />
+                  <mssgle:LineSegment
+                    End="-70.5955555555554,29.3999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.5955555555554,29.3999999999999"
+                    Point2="-70.5955555555554,33.3999999999999"
+                    Point3="-74.5955555555554,33.3999999999999" />
+                  <mssgle:LineSegment
+                    End="-159.7,33.3999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Outbreak\Load dữ liệu Outbreak">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Outbreak]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Outbreak\Insert dữ liệu">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Ongoing Outbreaks\Lookup Outbreak id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

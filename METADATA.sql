@@ -66,6 +66,7 @@ INSERT INTO [dbo].[DDS]
 		   ('DimAge', '1990-01-01'),
 		   ('DimOutcome', '1990-01-01'),
 		   ('DimSeverity', '1990-01-01'),
+		   ('DimOutbreak', '1990-01-01'),
 		   ('FactCaseDetail', '1990-01-01'),
 		   ('FactVaccineDetail', '1990-01-01')
 GO

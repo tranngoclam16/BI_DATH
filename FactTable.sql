@@ -71,3 +71,18 @@ where dp.Status = 1 and dp.ExpiryDate IS NULL
 	and not exists (select DateID, PHUID, AgeID from FactVaccineDetail f where f.AgeID = da.AgeID and f.DateID = dd.DateID and f.PHUID = dp.PHUID_SK)
 group by dd.DateID, dp.PHUID_SK, da.AgeID, vc.At_least_one_dose_cumulative, vc.Second_dose_cumulative, vc.fully_vaccinated_cumulative, vc.third_dose_cumulative
 order by dd.DateID
+
+---- FactOutbreakDetail
+
+insert into FactOutbreakDetail(DateID, PHUID, OutbreakID, NumberOngoingOutbreaks)
+select coalesce(dd.DateID, 0) as DateID
+	, coalesce(dp.PHUID_SK, 0) as PHUID
+	, coalesce(do.OutbreakID, 0) as OutbreakID
+	, oo.NumberOngoingOutbreaks as NumberOngoingOutbreaks
+from nds.dbo.OngoingOutbreaksPHU oo
+	left join DimDate dd on dd.Date = convert(date, oo.Date)
+	left join DimPHU dp on dp.PHUID = oo.PHU_ID
+	left join DimOutbreak do on do.OutbreakID = oo.OutbreakGroup
+where dp.[Status] = 1 and dp.ExpiryDate IS NULL
+	and not exists (select DateID, PHUID, OutbreakID from FactOutbreakDetail f where f.DateID = dd.DateID and f.PHUID = dp.PHUID_SK and f.OutbreakID = do.OutbreakID)
+group by dd.DateID, dp.PHUID_SK, do.OutbreakID, oo.NumberOngoingOutbreaks

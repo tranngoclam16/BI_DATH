@@ -11,8 +11,13 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="NDS_to_DDS"
   DTS:PackageType="5"
+<<<<<<< HEAD
   DTS:VersionBuild="14"
   DTS:VersionGUID="{643005EF-C4C0-481F-94B8-59C1C2EDD834}">
+=======
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{D9CC1526-1A5F-45EB-9B5C-E266D02DA418}">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -92,6 +97,15 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{864A3AB3-3316-4301-95CC-357A9ACDB830}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET_Outbreak">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/1990</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{A7B6620C-2F91-4FAE-9B84-F2ABF31E5CCE}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
@@ -118,7 +132,11 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Age LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="0">
+=======
+      DTS:ThreadHint="1">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -139,7 +157,11 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Exposure LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="1">
+=======
+      DTS:ThreadHint="2">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -160,7 +182,11 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Gender LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="2">
+=======
+      DTS:ThreadHint="0">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -174,6 +200,27 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Get Outbreak LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4F8D4B0C-9320-4268-9E4A-3AEFE28DC535}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Outbreak LSET"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{72127A13-6EE3-4B5F-A802-2248AFC55C85}"
+          SQLTask:SqlStatementSource="select LSET from DDS where TenBang = 'DimOutbreak'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="LSET"
+            SQLTask:DtsVariableName="User::LSET_Outbreak" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Get Outcome LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -181,7 +228,11 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Outcome LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="3">
+=======
+      DTS:ThreadHint="4">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -202,7 +253,11 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PHU LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="4">
+=======
+      DTS:ThreadHint="3">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1981,6 +2036,596 @@
               endId="Package\Populate Gender Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="OLE DB Source Output"
               startId="Package\Populate Gender Dimension\Gender NDS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate Outbreak Dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4FB938A4-F0DC-47C4-B59A-254BDE6FA0B7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate Outbreak Dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate Outbreak Dimension\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimOutbreak]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Outbreak Dimension\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DDS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[OutbreakID]"
+                      cachedDataType="i4"
+                      cachedName="OutbreakID"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakID]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakID]" />
+                    <inputColumn
+                      refId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[OutbreakGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakGroup]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakGroup]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakID]"
+                      dataType="i4"
+                      name="OutbreakID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      name="OutbreakGroup" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Outbreak Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Outbreak Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Outbreak Dimension\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[DimOutbreak] SET [OutbreakGroup] = ? WHERE [OutbreakID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Outbreak Dimension\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DDS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input].Columns[OutbreakGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakGroup]" />
+                    <inputColumn
+                      refId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input].Columns[OutbreakID]"
+                      cachedDataType="i4"
+                      cachedName="OutbreakID"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Outbreak Dimension\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Outbreak Dimension\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Outbreak Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Outbreak Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Outbreak Dimension\Outbreak NDS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Outbreak NDS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from Outbreak where (CreatedDate &gt;= ? and CreatedDate &lt; ?) or (UpdatedDate &gt;= ? and UpdatedDate &lt; ?)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{864A3AB3-3316-4301-95CC-357A9ACDB830};"Parameter1:Input",{040341D6-D307-4D5C-9BC9-039F668325DE};"Parameter2:Input",{864A3AB3-3316-4301-95CC-357A9ACDB830};"Parameter3:Input",{040341D6-D307-4D5C-9BC9-039F668325DE};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Outbreak Dimension\Outbreak NDS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.NDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.NDS.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakGroup]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[OutbreakGroup]"
+                      length="255"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakGroup]"
+                      name="OutbreakGroup"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[OutbreakID]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakID]"
+                      name="OutbreakID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      name="OutbreakGroup" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].ExternalColumns[OutbreakID]"
+                      dataType="i4"
+                      name="OutbreakID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[OutbreakID]"
+                      dataType="i4"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[OutbreakID]"
+                      name="OutbreakID" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[OutbreakGroup]"
+                      name="OutbreakGroup" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[UpdatedDate]"
+                      name="UpdatedDate" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [OutbreakGroup], [OutbreakID] FROM [dbo].[DimOutbreak]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.DDS.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.DDS.sa]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[OutbreakGroup]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="OutbreakGroup"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[OutbreakGroup]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakGroup]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[OutbreakID]"
+                      cachedDataType="i4"
+                      cachedName="OutbreakID"
+                      externalMetadataColumnId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[OutbreakID]"
+                      lineageId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[OutbreakGroup]"
+                      dataType="wstr"
+                      length="255"
+                      name="OutbreakGroup" />
+                    <externalMetadataColumn
+                      refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[OutbreakID]"
+                      dataType="i4"
+                      name="OutbreakID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate Outbreak Dimension.Paths[Inferred Member Updates Output]"
+              endId="Package\Populate Outbreak Dimension\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Inferred Member Updates Output"
+              startId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
+            <path
+              refId="Package\Populate Outbreak Dimension.Paths[New Output]"
+              endId="Package\Populate Outbreak Dimension\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="New Output"
+              startId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Populate Outbreak Dimension.Paths[OLE DB Source Output]"
+              endId="Package\Populate Outbreak Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate Outbreak Dimension\Outbreak NDS.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5036,6 +5681,22 @@ where [refTable].[GroupID] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Sequence Container\Populate Fact Outbreak"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0FCD48CB-5751-41D2-928F-EFBE41C599FF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Populate Fact Outbreak"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{92951D42-E0AE-44C1-9EA5-AC52BACA3F35}"
+              SQLTask:SqlStatementSource="insert into FactOutbreakDetail(DateID, PHUID, OutbreakID, NumberOngoingOutbreaks)&#xA;select coalesce(dd.DateID, 0) as DateID&#xA;&#x9;, coalesce(dp.PHUID_SK, 0) as PHUID&#xA;&#x9;, coalesce(do.OutbreakID, 0) as OutbreakID&#xA;&#x9;, oo.NumberOngoingOutbreaks as NumberOngoingOutbreaks&#xA;from nds.dbo.OngoingOutbreaksPHU oo&#xA;&#x9;left join DimDate dd on dd.Date = convert(date, oo.Date)&#xA;&#x9;left join DimPHU dp on dp.PHUID = oo.PHU_ID&#xA;&#x9;left join DimOutbreak do on do.OutbreakID = oo.OutbreakGroup&#xA;where dp.[Status] = 1 and dp.ExpiryDate IS NULL&#xA;&#x9;and not exists (select DateID, PHUID, OutbreakID from FactOutbreakDetail f where f.DateID = dd.DateID and f.PHUID = dp.PHUID_SK and f.OutbreakID = do.OutbreakID)&#xA;group by dd.DateID, dp.PHUID_SK, do.OutbreakID, oo.NumberOngoingOutbreaks" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Sequence Container\Populate Fact Vaccine Detail"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
@@ -5061,7 +5722,11 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Age LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="0">
+=======
+      DTS:ThreadHint="3">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5105,7 +5770,11 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Exposure LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="1">
+=======
+      DTS:ThreadHint="4">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5128,12 +5797,39 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Gender LSET"
+<<<<<<< HEAD
       DTS:ThreadHint="2">
+=======
+      DTS:ThreadHint="5">
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{72127A13-6EE3-4B5F-A802-2248AFC55C85}"
           SQLTask:SqlStatementSource="update DDS set LSET = ? where TenBang = 'DimGender'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::CETResult"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Outbreak LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{bd97ed92-2764-4bae-906e-47e35948cd2c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Outbreak LSET"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{72127A13-6EE3-4B5F-A802-2248AFC55C85}"
+          SQLTask:SqlStatementSource="update DDS set LSET = ? where TenBang = 'DimOutbreak'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::CETResult"
@@ -5151,7 +5847,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Outcome LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5174,7 +5870,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set PHU LSET"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5296,6 +5992,38 @@ where [refTable].[GroupID] = ?</property>
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Get Gender LSET" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 20]"
+      DTS:CreationName=""
+      DTS:DTSID="{94527A17-ACB0-47B7-9BE3-D23992F83551}"
+      DTS:From="Package\Set CET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 20"
+      DTS:To="Package\Get Outbreak LSET" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 21]"
+      DTS:CreationName=""
+      DTS:DTSID="{7E7B9142-7C0A-45DF-BB0F-5176B94E26CE}"
+      DTS:From="Package\Get Outbreak LSET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 21"
+      DTS:To="Package\Populate Outbreak Dimension" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 22]"
+      DTS:CreationName=""
+      DTS:DTSID="{346B7BD0-D0C8-4A2B-B2D6-010D35F99940}"
+      DTS:From="Package\Populate Outbreak Dimension"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 22"
+      DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 23]"
+      DTS:CreationName=""
+      DTS:DTSID="{BF5955B1-99F7-490E-BE28-114753243673}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 23"
+      DTS:To="Package\Set Outbreak LSET" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
       DTS:DTSID="{A3D141BE-FF83-449D-8A39-9D5147BBAF09}"
@@ -5367,39 +6095,51 @@ where [refTable].[GroupID] = ?</property>
         <NodeLayout
           Size="142,42"
           Id="Package\Get Age LSET"
-          TopLeft="560.7,107.1" />
+          TopLeft="839.7,107.1" />
         <NodeLayout
           Size="168,42"
           Id="Package\Get Exposure LSET"
-          TopLeft="763.9,107.1" />
+          TopLeft="1042.9,107.1" />
         <NodeLayout
           Size="159,42"
           Id="Package\Get Gender LSET"
-          TopLeft="341.3,107.1" />
+          TopLeft="391.3,107.1" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Get Outbreak LSET"
+          TopLeft="610.9,107.1" />
         <NodeLayout
           Size="167,42"
           Id="Package\Get Outcome LSET"
-          TopLeft="992.3,107.1" />
+          TopLeft="1271.3,107.1" />
         <NodeLayout
           Size="145,42"
           Id="Package\Get PHU LSET"
-          TopLeft="135.5,107.1" />
+          TopLeft="185.5,107.1" />
         <NodeLayout
           Size="193,42"
           Id="Package\Populate Age Dimension"
-          TopLeft="535.5,208.7" />
+          TopLeft="814.5,208.7" />
         <NodeLayout
           Size="218,42"
           Id="Package\Populate Exposure Dimension"
-          TopLeft="788.7,208.7" />
+          TopLeft="1067.7,208.7" />
         <NodeLayout
           Size="209,42"
           Id="Package\Populate Gender Dimension"
           TopLeft="266.5,208.7" />
         <NodeLayout
+<<<<<<< HEAD
           Size="218,42"
+=======
+          Size="218.4,41.6"
+          Id="Package\Populate Outbreak Dimension"
+          TopLeft="535.7,208.7" />
+        <NodeLayout
+          Size="217.6,41.6"
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
           Id="Package\Populate Outcome Dimension"
-          TopLeft="1068.1,208.7" />
+          TopLeft="1347.1,208.7" />
         <NodeLayout
           Size="201,42"
           Id="Package\Populated PHU Dimension"
@@ -5407,68 +6147,77 @@ where [refTable].[GroupID] = ?</property>
         <NodeLayout
           Size="198,42"
           Id="Package\Sequence Container\Populate Fact Case Detail"
-          TopLeft="5.49999999999999,5.50000000000007" />
+          TopLeft="5.50000000000004,5.50000000000007" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Sequence Container\Populate Fact Outbreak"
+          TopLeft="264.3,5.49999999999995" />
         <NodeLayout
           Size="211,42"
           Id="Package\Sequence Container\Populate Fact Vaccine Detail"
-          TopLeft="264.1,5.50000000000007" />
+          TopLeft="514.1,5.49999999999995" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
+<<<<<<< HEAD
           PanelSize="481,103"
           Size="481,146"
+=======
+          PanelSize="731.2,102.4"
+          Size="731.2,145.6"
+>>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
           Id="Package\Sequence Container"
-          TopLeft="391.5,310.3" />
+          TopLeft="545.3,310.3" />
         <NodeLayout
           Size="144,42"
           Id="Package\Set Age LSET"
-          TopLeft="559.9,515.9" />
+          TopLeft="633.9,515.9" />
         <NodeLayout
           Size="115,42"
           Id="Package\Set CET"
-          TopLeft="574.3,5.49999999999973" />
+          TopLeft="853.3,5.49999999999973" />
         <NodeLayout
           Size="144,42"
           Id="Package\Set Exposure LSET"
-          TopLeft="764.9,515.9" />
+          TopLeft="838.9,515.9" />
         <NodeLayout
           Size="144,42"
           Id="Package\Set Gender LSET"
-          TopLeft="354.9,515.9" />
+          TopLeft="428.9,515.9" />
         <NodeLayout
           Size="166,42"
           Id="Package\Set Outcome LSET"
-          TopLeft="969.7,515.9" />
+          TopLeft="1043.7,515.9" />
         <NodeLayout
           Size="144,42"
           Id="Package\Set PHU LSET"
-          TopLeft="149.9,515.9" />
+          TopLeft="223.9,515.9" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="596.166666666667,47.0999999999997">
+          TopLeft="872.614285714286,47.0999999999997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-388.266666666667,60"
+              EndConnector="-614.714285714286,60"
               Start="0,0"
-              End="-388.266666666667,52.5">
+              End="-614.714285714286,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.510067114094" />
+                    End="0,11.0668647845468" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.510067114094"
-                    Point2="0,16.510067114094"
-                    Point3="-4,16.510067114094" />
+                    Point1="0,11.0668647845468"
+                    Point2="0,15.0668647845468"
+                    Point3="-4,15.0668647845468" />
                   <mssgle:LineSegment
-                    End="-384.266666666667,16.510067114094" />
+                    End="-610.714285714286,15.0668647845468" />
                   <mssgle:CubicBezierSegment
-                    Point1="-384.266666666667,16.510067114094"
-                    Point2="-388.266666666667,16.510067114094"
-                    Point3="-388.266666666667,20.510067114094" />
+                    Point1="-610.714285714286,15.0668647845468"
+                    Point2="-614.714285714286,15.0668647845468"
+                    Point3="-614.714285714286,19.0668647845468" />
                   <mssgle:LineSegment
-                    End="-388.266666666667,52.5" />
+                    End="-614.714285714286,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5479,13 +6228,13 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="207.9,148.7">
+          TopLeft="257.9,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-102,60"
+              EndConnector="-152,60"
               Start="0,0"
-              End="-102,52.5">
+              End="-152,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5496,13 +6245,13 @@ where [refTable].[GroupID] = ?</property>
                     Point2="0,30"
                     Point3="-4,30" />
                   <mssgle:LineSegment
-                    End="-97.9999999999999,30" />
+                    End="-148,30" />
                   <mssgle:CubicBezierSegment
-                    Point1="-97.9999999999999,30"
-                    Point2="-102,30"
-                    Point3="-102,34" />
+                    Point1="-148,30"
+                    Point2="-152,30"
+                    Point3="-152,34" />
                   <mssgle:LineSegment
-                    End="-102,52.5" />
+                    End="-152,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5517,26 +6266,26 @@ where [refTable].[GroupID] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="368.4,60.0000000000001"
+              EndConnector="546.714285714286,60.0000000000001"
               Start="0,0"
-              End="368.4,52.5000000000001">
+              End="546.714285714286,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.6287128712872" />
+                    End="0,42.3847269212181" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.6287128712872"
-                    Point2="0,44.6287128712872"
-                    Point3="4,44.6287128712872" />
+                    Point1="0,42.3847269212181"
+                    Point2="0,46.3847269212181"
+                    Point3="4,46.3847269212181" />
                   <mssgle:LineSegment
-                    End="364.4,44.6287128712872" />
+                    End="542.714285714286,46.3847269212181" />
                   <mssgle:CubicBezierSegment
-                    Point1="364.4,44.6287128712872"
-                    Point2="368.4,44.6287128712872"
-                    Point3="368.4,48.6287128712872" />
+                    Point1="542.714285714286,46.3847269212181"
+                    Point2="546.714285714286,46.3847269212181"
+                    Point3="546.714285714286,50.3847269212181" />
                   <mssgle:LineSegment
-                    End="368.4,52.5000000000001" />
+                    End="546.714285714286,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5551,26 +6300,26 @@ where [refTable].[GroupID] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="182.2,60.0000000000001"
+              EndConnector="385.028571428571,60.0000000000001"
               Start="0,0"
-              End="182.2,52.5000000000001">
+              End="385.028571428571,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.8805970149254" />
+                    End="0,34.0682268940897" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.8805970149254"
-                    Point2="0,35.8805970149254"
-                    Point3="4,35.8805970149254" />
+                    Point1="0,34.0682268940897"
+                    Point2="0,38.0682268940897"
+                    Point3="4,38.0682268940897" />
                   <mssgle:LineSegment
-                    End="178.2,35.8805970149254" />
+                    End="381.028571428571,38.0682268940897" />
                   <mssgle:CubicBezierSegment
-                    Point1="178.2,35.8805970149254"
-                    Point2="182.2,35.8805970149254"
-                    Point3="182.2,39.8805970149254" />
+                    Point1="381.028571428571,38.0682268940897"
+                    Point2="385.028571428571,38.0682268940897"
+                    Point3="385.028571428571,42.0682268940897" />
                   <mssgle:LineSegment
-                    End="182.2,52.5000000000001" />
+                    End="385.028571428571,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5581,18 +6330,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="631.9,250.3">
+          TopLeft="910.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="51.6571428571428,60.0000000000001"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="51.6571428571428,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,28.2805247225026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.2805247225026"
+                    Point2="0,32.2805247225026"
+                    Point3="4,32.2805247225026" />
+                  <mssgle:LineSegment
+                    End="47.6571428571428,32.2805247225026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.6571428571428,32.2805247225026"
+                    Point2="51.6571428571428,32.2805247225026"
+                    Point3="51.6571428571428,36.2805247225026" />
+                  <mssgle:LineSegment
+                    End="51.6571428571428,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5603,30 +6364,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="897.9,250.3">
+          TopLeft="1176.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-187.2,60.0000000000003"
+              EndConnector="-111.028571428571,60.0000000000003"
               Start="0,0"
-              End="-187.2,52.5000000000003">
+              End="-111.028571428571,52.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.8805970149255" />
+                    End="0,34.0682268940898" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.8805970149255"
-                    Point2="0,35.8805970149255"
-                    Point3="-4,35.8805970149255" />
+                    Point1="0,34.0682268940898"
+                    Point2="0,38.0682268940898"
+                    Point3="-4,38.0682268940898" />
                   <mssgle:LineSegment
-                    End="-183.2,35.8805970149255" />
+                    End="-107.028571428571,38.0682268940898" />
                   <mssgle:CubicBezierSegment
-                    Point1="-183.2,35.8805970149255"
-                    Point2="-187.2,35.8805970149255"
-                    Point3="-187.2,39.8805970149255" />
+                    Point1="-107.028571428571,38.0682268940898"
+                    Point2="-111.028571428571,38.0682268940898"
+                    Point3="-111.028571428571,42.0682268940898" />
                   <mssgle:LineSegment
-                    End="-187.2,52.5000000000003" />
+                    End="-111.028571428571,52.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5637,30 +6398,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="1176.9,250.3">
+          TopLeft="1455.9,250.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-387.4,60.0000000000003"
+              EndConnector="-286.714285714286,60.0000000000003"
               Start="0,0"
-              End="-387.4,52.5000000000003">
+              End="-286.714285714286,52.5000000000003">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.6287128712873" />
+                    End="0,42.3847269212182" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.6287128712873"
-                    Point2="0,44.6287128712873"
-                    Point3="-4,44.6287128712873" />
+                    Point1="0,42.3847269212182"
+                    Point2="0,46.3847269212182"
+                    Point3="-4,46.3847269212182" />
                   <mssgle:LineSegment
-                    End="-383.4,44.6287128712873" />
+                    End="-282.714285714286,46.3847269212182" />
                   <mssgle:CubicBezierSegment
-                    Point1="-383.4,44.6287128712873"
-                    Point2="-387.4,44.6287128712873"
-                    Point3="-387.4,48.6287128712873" />
+                    Point1="-282.714285714286,46.3847269212182"
+                    Point2="-286.714285714286,46.3847269212182"
+                    Point3="-286.714285714286,50.3847269212182" />
                   <mssgle:LineSegment
-                    End="-387.4,52.5000000000003" />
+                    End="-286.714285714286,52.5000000000003" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5671,30 +6432,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="474.3,455.9">
+          TopLeft="652.614285714286,455.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-252.4,60.0000000000001"
+              EndConnector="-356.714285714286,60.0000000000001"
               Start="0,0"
-              End="-252.4,52.5000000000001">
+              End="-356.714285714286,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.3712871287129" />
+                    End="0,9.61527307878204" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.3712871287129"
-                    Point2="0,15.3712871287129"
-                    Point3="-4,15.3712871287129" />
+                    Point1="0,9.61527307878204"
+                    Point2="0,13.615273078782"
+                    Point3="-4,13.615273078782" />
                   <mssgle:LineSegment
-                    End="-248.4,15.3712871287129" />
+                    End="-352.714285714286,13.615273078782" />
                   <mssgle:CubicBezierSegment
-                    Point1="-248.4,15.3712871287129"
-                    Point2="-252.4,15.3712871287129"
-                    Point3="-252.4,19.3712871287129" />
+                    Point1="-352.714285714286,13.615273078782"
+                    Point2="-356.714285714286,13.615273078782"
+                    Point3="-356.714285714286,17.615273078782" />
                   <mssgle:LineSegment
-                    End="-252.4,52.5000000000001" />
+                    End="-356.714285714286,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5705,30 +6466,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="553.1,455.9">
+          TopLeft="755.928571428572,455.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-126.2,60.0000000000001"
+              EndConnector="-255.028571428571,60.0000000000001"
               Start="0,0"
-              End="-126.2,52.5000000000001">
+              End="-255.028571428571,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.1194029850747" />
+                    End="0,17.9317731059104" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.1194029850747"
-                    Point2="0,24.1194029850747"
-                    Point3="-4,24.1194029850747" />
+                    Point1="0,17.9317731059104"
+                    Point2="0,21.9317731059104"
+                    Point3="-4,21.9317731059104" />
                   <mssgle:LineSegment
-                    End="-122.2,24.1194029850747" />
+                    End="-251.028571428571,21.9317731059104" />
                   <mssgle:CubicBezierSegment
-                    Point1="-122.2,24.1194029850747"
-                    Point2="-126.2,24.1194029850747"
-                    Point3="-126.2,28.1194029850747" />
+                    Point1="-251.028571428571,21.9317731059104"
+                    Point2="-255.028571428571,21.9317731059104"
+                    Point3="-255.028571428571,25.9317731059104" />
                   <mssgle:LineSegment
-                    End="-126.2,52.5000000000001" />
+                    End="-255.028571428571,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5739,18 +6500,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="631.9,455.9">
+          TopLeft="859.242857142857,455.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="-153.342857142857,60.0000000000001"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="-153.342857142857,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,23.7194752774975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7194752774975"
+                    Point2="0,27.7194752774975"
+                    Point3="-4,27.7194752774975" />
+                  <mssgle:LineSegment
+                    End="-149.342857142857,27.7194752774975" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-149.342857142857,27.7194752774975"
+                    Point2="-153.342857142857,27.7194752774975"
+                    Point3="-153.342857142857,31.7194752774975" />
+                  <mssgle:LineSegment
+                    End="-153.342857142857,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5761,30 +6534,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 18]"
-          TopLeft="710.7,455.9">
+          TopLeft="962.557142857143,455.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="126.2,60"
+              EndConnector="-51.6571428571428,60.0000000000001"
               Start="0,0"
-              End="126.2,52.5">
+              End="-51.6571428571428,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.1194029850746" />
+                    End="0,23.7194752774975" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.1194029850746"
-                    Point2="0,24.1194029850746"
-                    Point3="4,24.1194029850746" />
+                    Point1="0,23.7194752774975"
+                    Point2="0,27.7194752774975"
+                    Point3="-4,27.7194752774975" />
                   <mssgle:LineSegment
-                    End="122.2,24.1194029850746" />
+                    End="-47.6571428571428,27.7194752774975" />
                   <mssgle:CubicBezierSegment
-                    Point1="122.2,24.1194029850746"
-                    Point2="126.2,24.1194029850746"
-                    Point3="126.2,28.1194029850746" />
+                    Point1="-47.6571428571428,27.7194752774975"
+                    Point2="-51.6571428571428,27.7194752774975"
+                    Point3="-51.6571428571428,31.7194752774975" />
                   <mssgle:LineSegment
-                    End="126.2,52.5" />
+                    End="-51.6571428571428,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5795,30 +6568,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 19]"
-          TopLeft="789.5,455.9">
+          TopLeft="1065.87142857143,455.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="263.4,60"
+              EndConnector="61.0285714285715,60"
               Start="0,0"
-              End="263.4,52.5">
+              End="61.0285714285715,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.3712871287129" />
+                    End="0,17.9317731059103" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.3712871287129"
-                    Point2="0,15.3712871287129"
-                    Point3="4,15.3712871287129" />
+                    Point1="0,17.9317731059103"
+                    Point2="0,21.9317731059103"
+                    Point3="4,21.9317731059103" />
                   <mssgle:LineSegment
-                    End="259.4,15.3712871287129" />
+                    End="57.0285714285715,21.9317731059103" />
                   <mssgle:CubicBezierSegment
-                    Point1="259.4,15.3712871287129"
-                    Point2="263.4,15.3712871287129"
-                    Point3="263.4,19.3712871287129" />
+                    Point1="57.0285714285715,21.9317731059103"
+                    Point2="61.0285714285715,21.9317731059103"
+                    Point3="61.0285714285715,25.9317731059103" />
                   <mssgle:LineSegment
-                    End="263.4,52.5" />
+                    End="61.0285714285715,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5829,30 +6602,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="614.033333333334,47.0999999999997">
+          TopLeft="887.928571428572,47.0999999999997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-193.133333333333,60"
+              EndConnector="-417.028571428571,60"
               Start="0,0"
-              End="-193.133333333333,52.5">
+              End="-417.028571428571,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4931506849315" />
+                    End="0,18.5278810408922" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.4931506849315"
-                    Point2="0,24.4931506849315"
-                    Point3="-4,24.4931506849315" />
+                    Point1="0,18.5278810408922"
+                    Point2="0,22.5278810408922"
+                    Point3="-4,22.5278810408922" />
                   <mssgle:LineSegment
-                    End="-189.133333333333,24.4931506849315" />
+                    End="-413.028571428571,22.5278810408922" />
                   <mssgle:CubicBezierSegment
-                    Point1="-189.133333333333,24.4931506849315"
-                    Point2="-193.133333333333,24.4931506849315"
-                    Point3="-193.133333333333,28.4931506849315" />
+                    Point1="-413.028571428571,22.5278810408922"
+                    Point2="-417.028571428571,22.5278810408922"
+                    Point3="-417.028571428571,26.5278810408922" />
                   <mssgle:LineSegment
-                    End="-193.133333333333,52.5" />
+                    End="-417.028571428571,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5862,8 +6635,42 @@ where [refTable].[GroupID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="420.9,148.7">
+          Id="Package.PrecedenceConstraints[Constraint 20]"
+          TopLeft="903.242857142857,47.0999999999997">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-208.342857142857,60"
+              Start="0,0"
+              End="-208.342857142857,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8639744952179" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8639744952179"
+                    Point2="0,27.8639744952179"
+                    Point3="-4,27.8639744952179" />
+                  <mssgle:LineSegment
+                    End="-204.342857142857,27.8639744952179" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-204.342857142857,27.8639744952179"
+                    Point2="-208.342857142857,27.8639744952179"
+                    Point3="-208.342857142857,31.8639744952179" />
+                  <mssgle:LineSegment
+                    End="-208.342857142857,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 21]"
+          TopLeft="694.9,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5896,8 +6703,76 @@ where [refTable].[GroupID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 22]"
+          TopLeft="644.9,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="214.342857142857,60.0000000000001"
+              Start="0,0"
+              End="214.342857142857,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.2805247225026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.2805247225026"
+                    Point2="0,32.2805247225026"
+                    Point3="4,32.2805247225026" />
+                  <mssgle:LineSegment
+                    End="210.342857142857,32.2805247225026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="210.342857142857,32.2805247225026"
+                    Point2="214.342857142857,32.2805247225026"
+                    Point3="214.342857142857,36.2805247225026" />
+                  <mssgle:LineSegment
+                    End="214.342857142857,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="470.9,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-99.9999999999999,60"
+              Start="0,0"
+              End="-99.9999999999999,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-95.9999999999999,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-95.9999999999999,30"
+                    Point2="-99.9999999999999,30"
+                    Point3="-99.9999999999999,34" />
+                  <mssgle:LineSegment
+                    End="-99.9999999999999,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="631.9,47.0999999999997">
+          TopLeft="914.728571428572,47.0999999999997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5919,30 +6794,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="649.766666666667,47.0999999999997">
+          TopLeft="933.871428571429,47.0999999999997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="198.133333333333,59.9999999999999"
+              EndConnector="193.028571428571,59.9999999999999"
               Start="0,0"
-              End="198.133333333333,52.4999999999999">
+              End="193.028571428571,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4931506849315" />
+                    End="0,18.5278810408922" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.4931506849315"
-                    Point2="0,24.4931506849315"
-                    Point3="4,24.4931506849315" />
+                    Point1="0,18.5278810408922"
+                    Point2="0,22.5278810408922"
+                    Point3="4,22.5278810408922" />
                   <mssgle:LineSegment
-                    End="194.133333333333,24.4931506849315" />
+                    End="189.028571428571,22.5278810408922" />
                   <mssgle:CubicBezierSegment
-                    Point1="194.133333333333,24.4931506849315"
-                    Point2="198.133333333333,24.4931506849315"
-                    Point3="198.133333333333,28.4931506849315" />
+                    Point1="189.028571428571,22.5278810408922"
+                    Point2="193.028571428571,22.5278810408922"
+                    Point3="193.028571428571,26.5278810408922" />
                   <mssgle:LineSegment
-                    End="198.133333333333,52.4999999999999" />
+                    End="193.028571428571,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5953,30 +6828,30 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="667.633333333334,47.0999999999997">
+          TopLeft="949.185714285714,47.0999999999997">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="408.266666666667,59.9999999999999"
+              EndConnector="405.714285714286,59.9999999999999"
               Start="0,0"
-              End="408.266666666667,52.4999999999999">
+              End="405.714285714286,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5100671140939" />
+                    End="0,11.0668647845468" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5100671140939"
-                    Point2="0,16.5100671140939"
-                    Point3="4,16.5100671140939" />
+                    Point1="0,11.0668647845468"
+                    Point2="0,15.0668647845468"
+                    Point3="4,15.0668647845468" />
                   <mssgle:LineSegment
-                    End="404.266666666667,16.5100671140939" />
+                    End="401.714285714286,15.0668647845468" />
                   <mssgle:CubicBezierSegment
-                    Point1="404.266666666667,16.5100671140939"
-                    Point2="408.266666666667,16.5100671140939"
-                    Point3="408.266666666667,20.5100671140939" />
+                    Point1="401.714285714286,15.0668647845468"
+                    Point2="405.714285714286,15.0668647845468"
+                    Point3="405.714285714286,19.0668647845468" />
                   <mssgle:LineSegment
-                    End="408.266666666667,52.4999999999999" />
+                    End="405.714285714286,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5987,7 +6862,7 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="631.9,148.7">
+          TopLeft="910.9,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6009,7 +6884,7 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="847.9,148.7">
+          TopLeft="1126.9,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6043,7 +6918,7 @@ where [refTable].[GroupID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="1075.9,148.7">
+          TopLeft="1354.9,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6067,6 +6942,44 @@ where [refTable].[GroupID] = ?</property>
                     Point3="101,34" />
                   <mssgle:LineSegment
                     End="101,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Set Outbreak LSET"
+          TopLeft="1270.3,515.9" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 23]"
+          TopLeft="1169.18571428571,455.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="184.714285714286,60"
+              Start="0,0"
+              End="184.714285714286,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.61527307878204" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.61527307878204"
+                    Point2="0,13.615273078782"
+                    Point3="4,13.615273078782" />
+                  <mssgle:LineSegment
+                    End="180.714285714286,13.615273078782" />
+                  <mssgle:CubicBezierSegment
+                    Point1="180.714285714286,13.615273078782"
+                    Point2="184.714285714286,13.615273078782"
+                    Point3="184.714285714286,17.615273078782" />
+                  <mssgle:LineSegment
+                    End="184.714285714286,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6590,6 +7503,132 @@ where [refTable].[GroupID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Populate Outbreak Dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\Populate Outbreak Dimension\Outbreak NDS"
+          TopLeft="237.9,5.49999999999995" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Populate Outbreak Dimension\Slowly Changing Dimension"
+          TopLeft="206.7,107.1" />
+        <EdgeLayout
+          Id="Package\Populate Outbreak Dimension.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Populate Outbreak Dimension\Insert Destination"
+          TopLeft="5.50000000000004,208.7" />
+        <EdgeLayout
+          Id="Package\Populate Outbreak Dimension.Paths[New Output]"
+          TopLeft="277.366666666667,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-190.666666666667,60"
+              Start="0,0"
+              End="-190.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-186.666666666667,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.666666666667,24.2748091603053"
+                    Point2="-190.666666666667,24.2748091603053"
+                    Point3="-190.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-190.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Populate Outbreak Dimension\OLE DB Command"
+          TopLeft="228.3,208.7" />
+        <EdgeLayout
+          Id="Package\Populate Outbreak Dimension.Paths[Inferred Member Updates Output]"
+          TopLeft="344.033333333333,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.3333333333333,60"
+              Start="0,0"
+              End="-33.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603054"
+                    Point2="0,24.2748091603054"
+                    Point3="-4,24.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-29.3333333333333,24.2748091603054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.3333333333333,24.2748091603054"
+                    Point2="-33.3333333333333,24.2748091603054"
+                    Point3="-33.3333333333333,28.2748091603054" />
+                  <mssgle:LineSegment
+                    End="-33.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.0696549479167,29.2748091603054,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Outbreak Dimension\Outbreak NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Populate Outcome Dimension">
     <LayoutInfo>
       <GraphLayout
@@ -6984,7 +8023,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7006,7 +8047,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7064,7 +8107,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7086,7 +8131,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7120,7 +8167,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7277,6 +8326,49 @@ where [refTable].[GroupID] = ?</property>
   &lt;StartDateColumn&gt;EffectiveDate&lt;/StartDateColumn&gt;
   &lt;EndDateColumn&gt;ExpiryDate&lt;/EndDateColumn&gt;
   &lt;DateVariable&gt;User::CETResult&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate Outbreak Dimension\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{92951D42-E0AE-44C1-9EA5-AC52BACA3F35}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimOutbreak]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakGroup]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;OutbreakGroup&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Outbreak NDS.Outputs[OLE DB Source Output].Columns[OutbreakID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;OutbreakID&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
       </Property>
