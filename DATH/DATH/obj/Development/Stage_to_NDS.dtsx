@@ -11,13 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Stage_to_NDS"
   DTS:PackageType="5"
-<<<<<<< HEAD
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{21D3ECD4-3049-43FC-9ADE-9D8579C6897A}">
-=======
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{CCFA9C25-97E9-4B4D-A339-846F4FB6F2C4}">
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{3E258A81-C5BD-437D-8998-186D1EA491A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -656,11 +651,7 @@ where [refTable].[AgeGroup] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-<<<<<<< HEAD
-                  name="ParameterMap">#{Package\DFT AgeGroup\362:invalid};</property>
-=======
-                  name="ParameterMap">#{Package\DFT AgeGroup\382:invalid};</property>
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
+                  name="ParameterMap">#{Package\DFT AgeGroup\377:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1534,7 +1525,7 @@ where [refTable].[AgeGroup] = ?</property>
       ,[OutbreakRelated] = ?
       ,[Gender] = ?
       ,[UpdatedDate] = ? , [Status] = ?
- WHERE [ObjectID] = ? and [DataSource] = ?
+ WHERE [CaseID] = ? and [DataSource] = ?
 
 </property>
                 <property
@@ -1632,17 +1623,17 @@ where [refTable].[AgeGroup] = ?</property>
                       externalMetadataColumnId="Package\DFT CasesReport\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                       lineageId="Package\DFT CasesReport\Load dữ liệu Cases Report.Outputs[OLE DB Source Output].Columns[Status]" />
                     <inputColumn
-                      refId="Package\DFT CasesReport\OLE DB Command.Inputs[OLE DB Command Input].Columns[ObjectID]"
-                      cachedDataType="i4"
-                      cachedName="ObjectID"
-                      externalMetadataColumnId="Package\DFT CasesReport\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      lineageId="Package\DFT CasesReport\Load dữ liệu Cases Report.Outputs[OLE DB Source Output].Columns[ObjectID]" />
-                    <inputColumn
                       refId="Package\DFT CasesReport\OLE DB Command.Inputs[OLE DB Command Input].Columns[DataSource]"
                       cachedDataType="i4"
                       cachedName="DataSource"
                       externalMetadataColumnId="Package\DFT CasesReport\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                       lineageId="Package\DFT CasesReport\Thêm cột DataSource.Outputs[Derived Column Output].Columns[DataSource]" />
+                    <inputColumn
+                      refId="Package\DFT CasesReport\OLE DB Command.Inputs[OLE DB Command Input].Columns[CaseID_NDS]"
+                      cachedDataType="i4"
+                      cachedName="CaseID_NDS"
+                      externalMetadataColumnId="Package\DFT CasesReport\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\DFT CasesReport\Xét xem CaseReport có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[CaseID_NDS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2886,13 +2877,13 @@ where [refTable].[ReportingPHU] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select ObjectID from Covid19Cases where DataSource = 1</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select CaseID, ObjectID from Covid19Cases where DataSource = 1</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select ObjectID from Covid19Cases where DataSource = 1) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select CaseID, ObjectID from Covid19Cases where DataSource = 1) [refTable]
 where [refTable].[ObjectID] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -2924,7 +2915,7 @@ where [refTable].[ObjectID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ObjectID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CaseID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ObjectID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -2980,6 +2971,22 @@ where [refTable].[ObjectID] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\DFT CasesReport\Xét xem CaseReport có nằm trong NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT CasesReport\Xét xem CaseReport có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[CaseID_NDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT CasesReport\Xét xem CaseReport có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[CaseID_NDS]"
+                      name="CaseID_NDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CaseID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -5389,7 +5396,7 @@ where [refTable].[ReportingPHU] = ?</property>
       ,[Gender] = ?
       ,[Province] = ?
       ,[UpdatedDate] = ?, [Status]=?
- WHERE [ObjectID] = ?
+ WHERE [CaseID] = ?
       and [DataSource] = ?
 
 </property>
@@ -5470,17 +5477,17 @@ where [refTable].[ReportingPHU] = ?</property>
                       externalMetadataColumnId="Package\DFT CompileCovid\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                       lineageId="Package\DFT CompileCovid\Load dữ liệu Compile Covid.Outputs[OLE DB Source Output].Columns[Status]" />
                     <inputColumn
-                      refId="Package\DFT CompileCovid\Update dữ liệu.Inputs[OLE DB Command Input].Columns[ObjectId]"
-                      cachedDataType="i4"
-                      cachedName="ObjectId"
-                      externalMetadataColumnId="Package\DFT CompileCovid\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      lineageId="Package\DFT CompileCovid\Load dữ liệu Compile Covid.Outputs[OLE DB Source Output].Columns[ObjectId]" />
-                    <inputColumn
                       refId="Package\DFT CompileCovid\Update dữ liệu.Inputs[OLE DB Command Input].Columns[DataSource]"
                       cachedDataType="i4"
                       cachedName="DataSource"
                       externalMetadataColumnId="Package\DFT CompileCovid\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                       lineageId="Package\DFT CompileCovid\Thêm cột DataSource.Outputs[Derived Column Output].Columns[DataSource]" />
+                    <inputColumn
+                      refId="Package\DFT CompileCovid\Update dữ liệu.Inputs[OLE DB Command Input].Columns[CaseID_NDS]"
+                      cachedDataType="i4"
+                      cachedName="CaseID_NDS"
+                      externalMetadataColumnId="Package\DFT CompileCovid\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\DFT CompileCovid\Xét xem CovidCase có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[CaseID_NDS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5655,13 +5662,13 @@ where [refTable].[ReportingPHU] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select ObjectID from Covid19Cases where DataSource = 2</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select CaseID, ObjectID from Covid19Cases where DataSource = 2</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select ObjectID from Covid19Cases where DataSource = 2) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select CaseID, ObjectID from Covid19Cases where DataSource = 2) [refTable]
 where [refTable].[ObjectID] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -5693,7 +5700,7 @@ where [refTable].[ObjectID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ObjectID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CaseID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ObjectID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -5749,6 +5756,22 @@ where [refTable].[ObjectID] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\DFT CompileCovid\Xét xem CovidCase có nằm trong NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT CompileCovid\Xét xem CovidCase có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[CaseID_NDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT CompileCovid\Xét xem CovidCase có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[CaseID_NDS]"
+                      name="CaseID_NDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">CaseID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -7434,8 +7457,7 @@ where [refTable].[Gender] = ?</property>
                       name="Date" />
                     <externalMetadataColumn
                       refId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakGroup]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i4"
                       name="OutbreakGroup" />
                     <externalMetadataColumn
                       refId="Package\DFT Ongoing Outbreaks\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[NumberOngoingOutbreaks]"
@@ -8151,11 +8173,10 @@ where [refTable].[PHUID] = ?</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[OngoingOutbreaksPHU]
    SET 
-      [Date] = ?
-      ,[NumberOngoingOutbreaks] = ?
+      [NumberOngoingOutbreaks] = ?
       ,[Status]=?
       ,[UpdatedDate] = ?
- WHERE [PHU_ID] = ? AND [OutbreakGroup] = ?
+ WHERE [ID] = ?
 
 </property>
                 <property
@@ -8180,47 +8201,35 @@ where [refTable].[PHUID] = ?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[Date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[Date]" />
-                    <inputColumn
                       refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[NumberOngoingOutbreaks]"
                       cachedDataType="i4"
                       cachedName="NumberOngoingOutbreaks"
-                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[NumberOngoingOutbreaks]" />
                     <inputColumn
                       refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[Status]"
                       cachedDataType="i4"
                       cachedName="Status"
-                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[Status]" />
                     <inputColumn
                       refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[UpdatedDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdatedDate"
-                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\DFT Ongoing Outbreaks\Thêm cột UpdatedDate.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                     <inputColumn
-                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[PHUNum]"
+                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[ID_NDS]"
                       cachedDataType="i4"
-                      cachedName="PHUNum"
-                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[PHUNum]" />
-                    <inputColumn
-                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].Columns[OutbreakID_NDS]"
-                      cachedDataType="i4"
-                      cachedName="OutbreakID_NDS"
-                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]" />
+                      cachedName="ID_NDS"
+                      externalMetadataColumnId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[ID_NDS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       name="Param_0">
                       <properties>
                         <property
@@ -8242,7 +8251,7 @@ where [refTable].[PHUID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="i4"
+                      dataType="dbTimeStamp"
                       name="Param_2">
                       <properties>
                         <property
@@ -8253,36 +8262,13 @@ where [refTable].[PHUID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       name="Param_3">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
                           name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      dataType="i4"
-                      name="Param_4">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT Ongoing Outbreaks\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="wstr"
-                      length="255"
-                      name="Param_5">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -8341,7 +8327,7 @@ where [refTable].[PHUID] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[OngoingOutbreaksPHU]) [refTable]
-where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
+where [refTable].[Date] = ? and [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -8372,12 +8358,12 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PHU_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutbreakGroup" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumberOngoingOutbreaks" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PHU_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OutbreakGroup" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="NumberOngoingOutbreaks" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Status" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[PHUNum]};#{Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[OutbreakGroup]};</property>
+                  name="ParameterMap">#{Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[Date]};#{Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[PHUNum]};#{Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8417,11 +8403,26 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Inputs[Lookup Input].Columns[OutbreakGroup]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="OutbreakGroup"
-                      lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[OutbreakGroup]">
+                      refId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Inputs[Lookup Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Inputs[Lookup Input].Columns[OutbreakID_NDS]"
+                      cachedDataType="i4"
+                      cachedName="OutbreakID_NDS"
+                      lineageId="Package\DFT Ongoing Outbreaks\Lookup Outbreak id.Outputs[Lookup Match Output].Columns[OutbreakID_NDS]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -8445,6 +8446,22 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[ID_NDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[ID_NDS]"
+                      name="ID_NDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -8548,12 +8565,12 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT Outbreak\Derived Column.Inputs[Derived Column Input].Columns[OutbreakGroup]"
+                      refId="Package\DFT Outbreak\Derived Column.Inputs[Derived Column Input].Columns[OutbreakGroup_Stage]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="OutbreakGroup"
+                      cachedName="OutbreakGroup_Stage"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]" />
+                      lineageId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup_Stage]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -8568,10 +8585,9 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakID_d]"
-                      dataType="wstr"
+                      dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="1"
                       lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakID_d]"
                       name="OutbreakID_d"
                       truncationRowDisposition="FailComponent">
@@ -8580,13 +8596,13 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]},1)</property>
+                          name="Expression">(DT_I4)[LEFT](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup_Stage]},1)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">LEFT(OutbreakGroup,1)</property>
+                          name="FriendlyExpression">(DT_I4)LEFT(OutbreakGroup_Stage,1)</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -8603,13 +8619,13 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[RIGHT](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]},[LEN](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]}) - 2)</property>
+                          name="Expression">(DT_WSTR,255)[RIGHT](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup_Stage]},[LEN](#{Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup_Stage]}) - 2)</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">RIGHT(OutbreakGroup,LEN(OutbreakGroup) - 2)</property>
+                          name="FriendlyExpression">(DT_WSTR,255)RIGHT(OutbreakGroup_Stage,LEN(OutbreakGroup_Stage) - 2)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -8733,8 +8749,7 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                       lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakGroup_d]" />
                     <inputColumn
                       refId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].Columns[OutbreakID_d]"
-                      cachedDataType="wstr"
-                      cachedLength="1"
+                      cachedDataType="i4"
                       cachedName="OutbreakID_d"
                       externalMetadataColumnId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input].ExternalColumns[OutbreakID]"
                       lineageId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output].Columns[OutbreakID_d]" />
@@ -8848,14 +8863,14 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]"
+                      refId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup_Stage]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].ExternalColumns[OutbreakGroup]"
                       length="255"
-                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]"
-                      name="OutbreakGroup"
+                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup_Stage]"
+                      name="OutbreakGroup_Stage"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -8919,11 +8934,11 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT Outbreak\Sort.Inputs[Sort Input].Columns[OutbreakGroup]"
+                      refId="Package\DFT Outbreak\Sort.Inputs[Sort Input].Columns[OutbreakGroup_Stage]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="OutbreakGroup"
-                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]">
+                      cachedName="OutbreakGroup_Stage"
+                      lineageId="Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup_Stage]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -8946,18 +8961,18 @@ where [refTable].[PHU_ID] = ? and [refTable].[OutbreakGroup] = ?</property>
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]"
+                      refId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup_Stage]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup]"
-                      name="OutbreakGroup"
+                      lineageId="Package\DFT Outbreak\Sort.Outputs[Sort Output].Columns[OutbreakGroup_Stage]"
+                      name="OutbreakGroup_Stage"
                       sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup]}</property>
+                          name="SortColumnId">#{Package\DFT Outbreak\Load dữ liệu Outbreak.Outputs[OLE DB Source Output].Columns[OutbreakGroup_Stage]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -9432,19 +9447,19 @@ where [refTable].[OutbreakGroup] = ?</property>
           <paths>
             <path
               refId="Package\DFT Outbreak.Paths[Derived Column Output]"
-              endId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input]"
-              name="Derived Column Output"
-              startId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\DFT Outbreak.Paths[Derived Column Output1]"
               endId="Package\DFT Outbreak\Update dữ liệu.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\DFT Outbreak\Thêm cột UpdatedDate.Outputs[Derived Column Output]" />
             <path
-              refId="Package\DFT Outbreak.Paths[Derived Column Output2]"
+              refId="Package\DFT Outbreak.Paths[Derived Column Output1]"
               endId="Package\DFT Outbreak\Insert dữ liệu.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Outbreak.Paths[Derived Column Output2]"
+              endId="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Outbreak\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT Outbreak.Paths[Lookup Error Output]"
               endId="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
@@ -13423,8 +13438,7 @@ where [refTable].[PHUID] = ?</property>
       ,[third_dose_cumulative] = ?
       ,[Status] = ?
       ,[UpdatedDate] = ?
- WHERE [Date] = ? AND [PHU_ID] = ?
-      AND [AgeID] = ?</property>
+ WHERE [ID] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -13483,23 +13497,11 @@ where [refTable].[PHUID] = ?</property>
                       externalMetadataColumnId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\DFT Vaccines\Load dữ liệu Vaccines.Outputs[OLE DB Source Output].Columns[At_least_one_dose_cumulative]" />
                     <inputColumn
-                      refId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].Columns[Date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="Date"
+                      refId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].Columns[ID_NDS]"
+                      cachedDataType="i4"
+                      cachedName="ID_NDS"
                       externalMetadataColumnId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\DFT Vaccines\Load dữ liệu Vaccines.Outputs[OLE DB Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].Columns[PHUID_NDS]"
-                      cachedDataType="i4"
-                      cachedName="PHUID_NDS"
-                      externalMetadataColumnId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\DFT Vaccines\Tìm xem PHU_ID trong dòng dữ liệu có ứng với PHUID nằm trong NDS không.Outputs[Lookup Match Output].Columns[PHUID_NDS]" />
-                    <inputColumn
-                      refId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].Columns[AgeID_NDS]"
-                      cachedDataType="i4"
-                      cachedName="AgeID_NDS"
-                      externalMetadataColumnId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\DFT Vaccines\Tìm xem AgeGroup trong dòng dữ liệu ứng với id nào trong AgeGroup trong NDS.Outputs[Lookup Match Output].Columns[AgeID_NDS]" />
+                      lineageId="Package\DFT Vaccines\Xét xem Vaccines có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[ID_NDS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -13571,30 +13573,8 @@ where [refTable].[PHUID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       name="Param_6">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      dataType="i4"
-                      name="Param_7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\DFT Vaccines\Update dữ liệu.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      dataType="i4"
-                      name="Param_8">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -13777,6 +13757,22 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\DFT Vaccines\Xét xem Vaccines có nằm trong NDS chưa.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Vaccines\Xét xem Vaccines có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[ID_NDS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT Vaccines\Xét xem Vaccines có nằm trong NDS chưa.Outputs[Lookup Match Output].Columns[ID_NDS]"
+                      name="ID_NDS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
@@ -13956,47 +13952,51 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147,42"
+          Size="147.2,41.6"
           Id="Package\DFT AgeGroup"
           TopLeft="5.50000000000003,5.49999999999995" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\DFT CasesReport"
           TopLeft="419.5,615.099999999999" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\DFT CaseStatus"
           TopLeft="213.7,5.49999999999995" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.6"
           Id="Package\DFT CompileCovid"
           TopLeft="417.1,716.699999999999" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\DFT Exposure"
           TopLeft="427.1,5.49999999999995" />
         <NodeLayout
-          Size="134,42"
+          Size="134.4,41.6"
           Id="Package\DFT Gender"
           TopLeft="631.9,5.49999999999995" />
         <NodeLayout
-          Size="192,42"
+          Size="192,41.6"
           Id="Package\DFT Ongoing Outbreaks"
           TopLeft="403.1,513.5" />
         <NodeLayout
-          Size="121,42"
+          Size="144,41.6"
+          Id="Package\DFT Outbreak"
+          TopLeft="827.1,5.49999999999995" />
+        <NodeLayout
+          Size="120.8,41.6"
           Id="Package\DFT PHU"
           TopLeft="438.7,310.3" />
         <NodeLayout
-          Size="142,42"
+          Size="141.6,41.6"
           Id="Package\DFT PHU City"
           TopLeft="428.3,208.7" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\DFT PHU Group"
           TopLeft="422.7,107.1" />
         <NodeLayout
-          Size="142,42"
+          Size="141.6,41.6"
           Id="Package\DFT Vaccines"
           TopLeft="428.3,411.9" />
         <EdgeLayout
@@ -14059,6 +14059,40 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
                     Point3="184.866666666667,39.6269430051813" />
                   <mssgle:LineSegment
                     End="184.866666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="899.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-351.733333333333,59.9999999999999"
+              Start="0,0"
+              End="-351.733333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8520408163265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.8520408163265"
+                    Point2="0,43.8520408163265"
+                    Point3="-4,43.8520408163265" />
+                  <mssgle:LineSegment
+                    End="-347.733333333333,43.8520408163265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-347.733333333333,43.8520408163265"
+                    Point2="-351.733333333333,43.8520408163265"
+                    Point3="-351.733333333333,47.8520408163265" />
+                  <mssgle:LineSegment
+                    End="-351.733333333333,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14161,14 +14195,14 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14255,44 +14289,6 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="144,41.6"
-          Id="Package\DFT Outbreak"
-          TopLeft="827.1,5.49999999999995" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="899.1,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-351.733333333333,59.9999999999999"
-              Start="0,0"
-              End="-351.733333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.8520408163265" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.8520408163265"
-                    Point2="0,43.8520408163265"
-                    Point3="-4,43.8520408163265" />
-                  <mssgle:LineSegment
-                    End="-347.733333333333,43.8520408163265" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-347.733333333333,43.8520408163265"
-                    Point2="-351.733333333333,43.8520408163265"
-                    Point3="-351.733333333333,47.8520408163265" />
-                  <mssgle:LineSegment
-                    End="-351.733333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -14344,7 +14340,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-17.83447265625,11.2562678018656,35.6689453125,9.4462890625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14379,7 +14377,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-100.329482826587,23.6926772985516,96.3827734375,11.609375"
+              BoundingBox="-122.944834389087,23.6926772985516,141.6134765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14460,7 +14458,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-17.83447265625,13.1680325345597,35.6689453125,9.4462890625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14583,7 +14583,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-80.51173828125,20.4453125000001,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14607,7 +14607,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-80.51173828125,20.4453125000001,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14631,7 +14631,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-80.51173828125,20.4453125000001,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14690,9 +14690,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14715,7 +14713,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-27.8251171875,12.1166563354975,55.650234375,11.2431640625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14739,7 +14737,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-27.8251171875,20.62841796875,55.650234375,11.2431640625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14763,7 +14761,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-27.8251171875,20.62841796875,55.650234375,11.2431640625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14799,7 +14797,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-390.44138671875,28.95,96.3827734375,11.609375"
+              BoundingBox="-422.76173828125,28.95,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14835,7 +14833,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="76.85861328125,-17.609375,96.3827734375,11.609375"
+              BoundingBox="44.53826171875,-17.609375,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14871,7 +14869,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-83.1080527893701,24.4123706644902,96.3827734375,11.609375"
+              BoundingBox="-115.42840435187,24.4123706644902,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14907,7 +14905,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -14917,7 +14915,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -15335,7 +15333,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-30.51849609375,20.6357421875,61.0369921875,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15371,7 +15369,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-316.949079026442,34.05,96.3827734375,11.609375"
+              BoundingBox="-351.999430588943,34.05,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15395,7 +15393,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.3836944110577,5,96.3827734375,11.609375"
+              BoundingBox="-42.4340459735577,5,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15431,7 +15429,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-106.17215594952,37.9576923076921,96.3827734375,11.609375"
+              BoundingBox="-141.22250751202,37.9576923076921,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15455,7 +15453,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,20.4453125000001,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15479,7 +15477,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,20.4453125000001,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15503,7 +15501,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,20.4453125000001,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15574,9 +15572,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -15599,7 +15595,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-30.51849609375,10.6818960336538,61.0369921875,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15623,7 +15619,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-30.51849609375,20.6357421875,61.0369921875,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15718,7 +15714,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -15728,7 +15724,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16062,7 +16058,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16156,7 +16154,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16178,7 +16178,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16234,18 +16236,6 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="252.8,41.6"
-          Id="Package\DFT Ongoing Outbreaks\Thêm cột CreatedDate, UpdatedDate"
-          TopLeft="580,353.6" />
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks"
-          TopLeft="353,46" />
-        <NodeLayout
-          Size="284.8,41.6"
-          Id="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa"
-          TopLeft="305,252" />
-        <NodeLayout
           Size="187.2,41.6"
           Id="Package\DFT Ongoing Outbreaks\Thêm cột UpdatedDate"
           TopLeft="230,357.6" />
@@ -16254,13 +16244,29 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           Id="Package\DFT Ongoing Outbreaks\Update dữ liệu"
           TopLeft="237,443" />
         <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\DFT Ongoing Outbreaks\Insert dữ liệu"
-          TopLeft="621,437" />
+          Size="170.4,41.6"
+          Id="Package\DFT Ongoing Outbreaks\Lookup Outbreak id"
+          TopLeft="710.714297817678,207.011767194015" />
         <NodeLayout
           Size="430.4,41.6"
           Id="Package\DFT Ongoing Outbreaks\Tìm xem PHUNum trong dòng dữ liệu ứng với id nào trong PHU trong NDS"
           TopLeft="230,150" />
+        <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\DFT Ongoing Outbreaks\Thêm cột CreatedDate, UpdatedDate"
+          TopLeft="580,353.6" />
+        <NodeLayout
+          Size="284.8,41.6"
+          Id="Package\DFT Ongoing Outbreaks\Xét xem Outbreaks có nằm trong NDS chưa"
+          TopLeft="305,252" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\DFT Ongoing Outbreaks\Insert dữ liệu"
+          TopLeft="621,437" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks"
+          TopLeft="353,46" />
         <EdgeLayout
           Id="Package\DFT Ongoing Outbreaks.Paths[OLE DB Source Output]"
           TopLeft="446.1,87.6">
@@ -16280,7 +16286,81 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-27.78849609375,21.82841796875,55.5769921875,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output2]"
+          TopLeft="710.714297817678,233.411767194015">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.914297817678,39.3882328059846"
+              Start="0,0"
+              End="-113.414297817678,39.3882328059846">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-47.0527035230196,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-47.0527035230196,0"
+                    Point2="-51.0527035230196,0"
+                    Point3="-51.0527035230196,4" />
+                  <mssgle:LineSegment
+                    End="-51.0527035230196,35.3882328059846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-51.0527035230196,35.3882328059846"
+                    Point2="-51.0527035230196,39.3882328059846"
+                    Point3="-55.0527035230196,39.3882328059846" />
+                  <mssgle:LineSegment
+                    End="-113.414297817678,39.3882328059846" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-131.56444180427,-17.609375,161.0234765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output1]"
+          TopLeft="660.4,170.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.314297817678,51.4117671940154"
+              Start="0,0"
+              End="42.814297817678,51.4117671940154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="25.0704831835473,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.0704831835473,0"
+                    Point2="29.0704831835473,0"
+                    Point3="29.0704831835473,4" />
+                  <mssgle:LineSegment
+                    End="29.0704831835473,47.4117671940154" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.0704831835473,47.4117671940154"
+                    Point2="29.0704831835473,51.4117671940154"
+                    Point3="33.0704831835473,51.4117671940154" />
+                  <mssgle:LineSegment
+                    End="42.814297817678,51.4117671940154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-51.4412550977027,-17.609375,161.0234765625,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16315,7 +16395,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-110.09138671875,37,96.3827734375,11.609375"
+              BoundingBox="-142.41173828125,37,161.0234765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -16420,82 +16500,8 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\DFT Ongoing Outbreaks\Lookup Outbreak id"
-          TopLeft="710.714297817678,207.011767194015" />
-        <EdgeLayout
-          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output1]"
-          TopLeft="660.4,170.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="50.314297817678,51.4117671940154"
-              Start="0,0"
-              End="42.814297817678,51.4117671940154">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="25.0704831835473,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="25.0704831835473,0"
-                    Point2="29.0704831835473,0"
-                    Point3="29.0704831835473,4" />
-                  <mssgle:LineSegment
-                    End="29.0704831835473,47.4117671940154" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.0704831835473,47.4117671940154"
-                    Point2="29.0704831835473,51.4117671940154"
-                    Point3="33.0704831835473,51.4117671940154" />
-                  <mssgle:LineSegment
-                    End="42.814297817678,51.4117671940154" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.1209035352027,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Ongoing Outbreaks.Paths[Lookup Match Output2]"
-          TopLeft="710.714297817678,233.411767194015">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-120.914297817678,39.3882328059846"
-              Start="0,0"
-              End="-113.414297817678,39.3882328059846">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-47.0527035230196,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-47.0527035230196,0"
-                    Point2="-51.0527035230196,0"
-                    Point3="-51.0527035230196,4" />
-                  <mssgle:LineSegment
-                    End="-51.0527035230196,35.3882328059846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-51.0527035230196,35.3882328059846"
-                    Point2="-51.0527035230196,39.3882328059846"
-                    Point3="-55.0527035230196,39.3882328059846" />
-                  <mssgle:LineSegment
-                    End="-113.414297817678,39.3882328059846" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-99.2440902417696,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-34.28849609375,26.9,55.5769921875,11.2431640625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -16503,15 +16509,48 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks">
+    design-time-name="Package\DFT Ongoing Outbreaks\Lookup Outbreak id">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Ongoing Outbreaks\Tìm xem PHUNum trong dòng dữ liệu ứng với id nào trong PHU trong NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -16521,7 +16560,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -16552,25 +16591,318 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT Ongoing Outbreaks\Tìm xem PHUNum trong dòng dữ liệu ứng với id nào trong PHU trong NDS">
+    design-time-name="Package\DFT Ongoing Outbreaks\Load dữ liệu Outbreaks">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT Outbreak">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\DFT Outbreak\Insert dữ liệu"
+          TopLeft="604,467" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\DFT Outbreak\Thêm cột UpdatedDate"
+          TopLeft="177,373" />
+        <NodeLayout
+          Size="308,41.6"
+          Id="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa"
+          TopLeft="260,260" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\DFT Outbreak\Sort"
+          TopLeft="657,122" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\DFT Outbreak\Load dữ liệu Outbreak"
+          TopLeft="318,65" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\DFT Outbreak\Update dữ liệu"
+          TopLeft="190,475" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\DFT Outbreak\Derived Column"
+          TopLeft="337,161" />
+        <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate"
+          TopLeft="546,374" />
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Derived Column Output1]"
+          TopLeft="673.6,415.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.4"
+              Start="0,0"
+              End="0,43.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Derived Column Output]"
+          TopLeft="267.1,414.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4000000000001"
+              Start="0,0"
+              End="0,52.9000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.4487109375,21.670703125,30.897421875,9.55859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Sort Output]"
+          TopLeft="657,148.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-167.2,33.3999999999999"
+              Start="0,0"
+              End="-159.7,33.3999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-66.5955555555554,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-66.5955555555554,0"
+                    Point2="-70.5955555555554,0"
+                    Point3="-70.5955555555554,4" />
+                  <mssgle:LineSegment
+                    End="-70.5955555555554,29.3999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.5955555555554,29.3999999999999"
+                    Point2="-70.5955555555554,33.3999999999999"
+                    Point3="-74.5955555555554,33.3999999999999" />
+                  <mssgle:LineSegment
+                    End="-159.7,33.3999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-86.0442664930554,-15.55859375,30.897421875,9.55859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[OLE DB Source Output]"
+          TopLeft="501.2,85.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.8,57"
+              Start="0,0"
+              End="148.3,57">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.9,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.9,0"
+                    Point2="77.9,0"
+                    Point3="77.9,4" />
+                  <mssgle:LineSegment
+                    End="77.9,53" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.9,53"
+                    Point2="77.9,57"
+                    Point3="81.9,57" />
+                  <mssgle:LineSegment
+                    End="148.3,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="62.4512890625,-15.55859375,30.897421875,9.55859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Lookup Match Output]"
+          TopLeft="364,301.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-93.4,71.4"
+              Start="0,0"
+              End="-93.4,63.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7813953488372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.7813953488372"
+                    Point2="0,28.7813953488372"
+                    Point3="-4,28.7813953488372" />
+                  <mssgle:LineSegment
+                    End="-89.4,28.7813953488372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-89.4,28.7813953488372"
+                    Point2="-93.4,28.7813953488372"
+                    Point3="-93.4,32.7813953488372" />
+                  <mssgle:LineSegment
+                    End="-93.4,63.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-114.77673828125,33.7813953488372,136.1534765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Lookup Error Output]"
+          TopLeft="464,301.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="208.4,72.4"
+              Start="0,0"
+              End="208.4,64.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.184496124031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.184496124031"
+                    Point2="0,29.184496124031"
+                    Point3="4,29.184496124031" />
+                  <mssgle:LineSegment
+                    End="204.4,29.184496124031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="204.4,29.184496124031"
+                    Point2="208.4,29.184496124031"
+                    Point3="208.4,33.184496124031" />
+                  <mssgle:LineSegment
+                    End="208.4,64.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.33361328125,34.184496124031,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Outbreak.Paths[Derived Column Output2]"
+          TopLeft="413.7,202.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.4"
+              Start="0,0"
+              End="0,49.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.4487109375,20.170703125,30.897421875,9.55859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Outbreak\Insert dữ liệu">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Outbreak]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Outbreak\Load dữ liệu Outbreak">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -16626,7 +16958,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16756,7 +17090,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -16790,7 +17126,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16915,7 +17253,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17033,7 +17373,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17055,7 +17397,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17176,7 +17520,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-17.83447265625,21.46337890625,35.6689453125,9.5732421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17211,7 +17557,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-167.558053385417,29.2188449848025,96.3827734375,11.609375"
+              BoundingBox="-190.173404947917,29.2188449848025,141.6134765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17292,7 +17638,9 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-17.83447265625,21.46337890625,35.6689453125,9.5732421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17399,7 +17747,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,20.4453125000001,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17435,7 +17783,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-166.29138671875,29.2068965517242,96.3827734375,11.609375"
+              BoundingBox="-201.34173828125,29.2068965517242,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17494,9 +17842,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -17519,7 +17865,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-30.26947265625,20.6357421875001,60.5389453125,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17543,7 +17889,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-30.26947265625,20.6357421875,60.5389453125,11.228515625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17567,53 +17913,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Vaccines.Paths[OLE DB Source Output]"
-          TopLeft="380.1,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Vaccines.Paths[Lookup Match Output2]"
-          TopLeft="380.1,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125000001,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,20.4453125000001,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -17649,7 +17949,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -17659,7 +17959,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17698,7 +17998,7 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -17709,327 +18009,6 @@ where [refTable].[Date] = ? and [refTable].[AgeID] = ? and [refTable].[PHU_ID] =
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
-<<<<<<< HEAD
-=======
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DFT Outbreak">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="183.2,41.6"
-          Id="Package\DFT Outbreak\Load dữ liệu Outbreak"
-          TopLeft="318,65" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\DFT Outbreak\Derived Column"
-          TopLeft="337,161" />
-        <NodeLayout
-          Size="308,41.6"
-          Id="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa"
-          TopLeft="260,260" />
-        <EdgeLayout
-          Id="Package\DFT Outbreak.Paths[Derived Column Output]"
-          TopLeft="413.7,202.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.4"
-              Start="0,0"
-              End="0,49.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\DFT Outbreak\Thêm cột UpdatedDate"
-          TopLeft="177,373" />
-        <EdgeLayout
-          Id="Package\DFT Outbreak.Paths[Lookup Match Output]"
-          TopLeft="364,301.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-93.4000000000001,71.4"
-              Start="0,0"
-              End="-93.4000000000001,63.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.7813953488372" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.7813953488372"
-                    Point2="0,28.7813953488372"
-                    Point3="-4,28.7813953488372" />
-                  <mssgle:LineSegment
-                    End="-89.4000000000001,28.7813953488372" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-89.4000000000001,28.7813953488372"
-                    Point2="-93.4000000000001,28.7813953488372"
-                    Point3="-93.4000000000001,32.7813953488372" />
-                  <mssgle:LineSegment
-                    End="-93.4000000000001,63.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-94.8913867187501,33.7813953488372,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="252.8,41.6"
-          Id="Package\DFT Outbreak\Thêm cột CreatedDate, UpdatedDate"
-          TopLeft="546,374" />
-        <EdgeLayout
-          Id="Package\DFT Outbreak.Paths[Lookup Error Output]"
-          TopLeft="464,301.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="208.4,72.4"
-              Start="0,0"
-              End="208.4,64.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.184496124031" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.184496124031"
-                    Point2="0,29.184496124031"
-                    Point3="4,29.184496124031" />
-                  <mssgle:LineSegment
-                    End="204.4,29.184496124031" />
-                  <mssgle:CubicBezierSegment
-                    Point1="204.4,29.184496124031"
-                    Point2="208.4,29.184496124031"
-                    Point3="208.4,33.184496124031" />
-                  <mssgle:LineSegment
-                    End="208.4,64.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="58.3336132812499,34.184496124031,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\DFT Outbreak\Update dữ liệu"
-          TopLeft="190,475" />
-        <EdgeLayout
-          Id="Package\DFT Outbreak.Paths[Derived Column Output1]"
-          TopLeft="267.1,414.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.4000000000001"
-              Start="0,0"
-              End="0,52.9000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.9000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\DFT Outbreak\Insert dữ liệu"
-          TopLeft="604,467" />
-        <EdgeLayout
-          Id="Package\DFT Outbreak.Paths[Derived Column Output2]"
-          TopLeft="673.6,415.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51.4"
-              Start="0,0"
-              End="0,43.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\DFT Outbreak\Sort"
-          TopLeft="657,122" />
-        <EdgeLayout
-          Id="Package\DFT Outbreak.Paths[OLE DB Source Output]"
-          TopLeft="501.2,85.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="155.8,57"
-              Start="0,0"
-              End="148.3,57">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="73.9,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73.9,0"
-                    Point2="77.9,0"
-                    Point3="77.9,4" />
-                  <mssgle:LineSegment
-                    End="77.9,53" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.9,53"
-                    Point2="77.9,57"
-                    Point3="81.9,57" />
-                  <mssgle:LineSegment
-                    End="148.3,57" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT Outbreak.Paths[Sort Output]"
-          TopLeft="657,148.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-167.2,33.3999999999999"
-              Start="0,0"
-              End="-159.7,33.3999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-66.5955555555554,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-66.5955555555554,0"
-                    Point2="-70.5955555555554,0"
-                    Point3="-70.5955555555554,4" />
-                  <mssgle:LineSegment
-                    End="-70.5955555555554,29.3999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-70.5955555555554,29.3999999999999"
-                    Point2="-70.5955555555554,33.3999999999999"
-                    Point3="-74.5955555555554,33.3999999999999" />
-                  <mssgle:LineSegment
-                    End="-159.7,33.3999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Outbreak\Load dữ liệu Outbreak">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Outbreak\Xét xem OutbreakGroup có nằm trong NDS chưa">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Outbreak]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Outbreak\Insert dữ liệu">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Ongoing Outbreaks\Lookup Outbreak id">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

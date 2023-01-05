@@ -26,11 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-8ADCC67</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-<<<<<<< HEAD
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAADI8eFhRSEU2SGJ9Oq1IG0QAAAAACAAAAAAAQZgAAAAEAACAAAADsBgjT8yjx6OM/bpI6gJ/OBv5kX7I3TyFvZeXzVXh5YQAAAAAOgAAAAAIAACAAAABbOf23oH4LJW/7QHK3+OppBlyemUGun5epuFYmYgYdbpAAAAB0qzKBbm2mOEwQ5t6EN032f5OqAUjw+GUdtSoM0bIHoS7o9lrwBKMH73O2pFHw4Zoe56j+cSwLjSdpOPSDrKcRjXxlyOpcYFzefa50TnMGBER+skxUB2PH7rK8/cMGJ82eyNhEzWmQrkwVOEvYVl8iot85eBOVXMEopu8+zej7Ii98l06tHh3rje50+G+dRz1AAAAAjbRLswFA8V8edrGIrA/c7FdGZUHB/3CWD2bPFCCBcTYIWbYm79dDRwUtshdidgzeelpJMr9crPurS/54KjExSg==</SSIS:Property>
-=======
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAACAAAAAAAQZgAAAAEAACAAAADvD4LjF9oeM+8YUNzlQynvMTRY99XIOne5/eWBcKln1QAAAAAOgAAAAAIAACAAAABSELGVrUnnLcNjIT7n9CjnzixisfhnZbTCJc2FnTicLZAAAAAWMrkmWuQwR59oVJNctO1l8w2f67MCrctUts+xljF/VuteAAz0pfNC2pnP9KHD8xiUer+YmCHiRaHqQN0215t+ivCJ1iNn4b+22IKxFvcQl7MO2cFN3i/FNcYUbVvJD1+u0ODjSF5Q29KJirP57OOPXy0ABuJXtg2ZXMXRCSWKmYz45k4Y3E9neJurlEB1t4VAAAAAitV/EP7TCjxaokizIJsazcFbEnbNzb0khUnjNjcPy6yP5F+YAN9qe39zbe1LR5EpJe/YJ1u7HelbPrhVXEsAhA==</SSIS:Property>
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAO21sKYpSNEGoyl4M6P1FwwAAAAACAAAAAAAQZgAAAAEAACAAAABfCSHzesGe7T80KG2rvTw0mOdXqv8D7ljRNUCaGbuWlwAAAAAOgAAAAAIAACAAAACv62Ez8iR0ws9cXRMMndG7vZOi6za7S4YXtdEGqxaro5AAAAB9gald7qU318YKA4pYPIeIF91xMAx7TJdIc0hVcz46vKPDesnC4B1uPnJzldTbn56sqtcDxhKmCpXgUVH0OAPYGWVNJS5sGS+L04wA9QR+eGnBayM3xX7ox8pXgI/ChltPvPdDgimFZuynEZD30eOcCRRLRqMg2CUkDVhbwwsIReN0Fho1mv3KDpXEW8f58UhAAAAAtX7hiLdEQgYmGbWRPDXMXK8M+AAI6jaMxRKXYA2dkHSmW2LK4XLzqvA06FRSMajFwUYCkhdEITLFHpcG6mP0VA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -49,17 +45,10 @@
                 <SSIS:Property SSIS:Name="Name">Source_to_Stage</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-<<<<<<< HEAD
-                <SSIS:Property SSIS:Name="VersionBuild">59</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D6D6AD7E-8ADB-4FDB-A1ED-287FCF34F151}</SSIS:Property>
-=======
                 <SSIS:Property SSIS:Name="VersionBuild">58</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{5CE06E85-5F3D-4E69-8097-793CE6A7AD34}</SSIS:Property>
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -92,7 +81,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Github\BI_DATH\CasesReport.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\CasesReport.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -107,7 +96,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\CasesReport.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\CasesReport.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -180,7 +169,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\CasesReport.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\CasesReport.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -224,7 +213,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Github\BI_DATH\CompileCovid19CaseDetailsCanada.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\CompileCovid19CaseDetailsCanada.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -239,7 +228,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\CompileCovid19CaseDetailsCanada.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\CompileCovid19CaseDetailsCanada.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -312,7 +301,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\CompileCovid19CaseDetailsCanada.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\CompileCovid19CaseDetailsCanada.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -652,7 +641,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Github\BI_DATH\OngoingOutbreaksPHU.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\OngoingOutbreaksPHU.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -667,7 +656,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\OngoingOutbreaksPHU.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\OngoingOutbreaksPHU.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -740,7 +729,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\OngoingOutbreaksPHU.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\OngoingOutbreaksPHU.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -784,7 +773,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Github\BI_DATH\PublicHealthUnit.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\PublicHealthUnit.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -799,7 +788,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\PublicHealthUnit.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\PublicHealthUnit.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -872,7 +861,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\PublicHealthUnit.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\PublicHealthUnit.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -916,7 +905,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Github\BI_DATH\PublicHealthUnitsGroup.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\PublicHealthUnitsGroup.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -931,7 +920,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\PublicHealthUnitsGroup.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\PublicHealthUnitsGroup.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1004,7 +993,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\PublicHealthUnitsGroup.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\PublicHealthUnitsGroup.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1048,7 +1037,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Github\BI_DATH\VaccinesByAgePHU1.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\VaccinesByAgePHU1.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1063,7 +1052,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\VaccinesByAgePHU1.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\VaccinesByAgePHU1.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1136,7 +1125,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\Github\BI_DATH\VaccinesByAgePHU1.xlsx</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Public\Documents\KHTN\HTTT BI\Đồ án TH\Github\BI_DATH\VaccinesByAgePHU1.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1162,17 +1151,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage_to_NDS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-<<<<<<< HEAD
-                <SSIS:Property SSIS:Name="VersionBuild">46</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">64</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{21D3ECD4-3049-43FC-9ADE-9D8579C6897A}</SSIS:Property>
-=======
-                <SSIS:Property SSIS:Name="VersionBuild">52</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CCFA9C25-97E9-4B4D-A339-846F4FB6F2C4}</SSIS:Property>
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
+                <SSIS:Property SSIS:Name="VersionGUID">{3E258A81-C5BD-437D-8998-186D1EA491A4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1483,17 +1465,10 @@
                 <SSIS:Property SSIS:Name="Name">NDS_to_DDS</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-<<<<<<< HEAD
-                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{643005EF-C4C0-481F-94B8-59C1C2EDD834}</SSIS:Property>
-=======
                 <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{D9CC1526-1A5F-45EB-9B5C-E266D02DA418}</SSIS:Property>
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

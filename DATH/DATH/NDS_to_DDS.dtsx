@@ -11,13 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="NDS_to_DDS"
   DTS:PackageType="5"
-<<<<<<< HEAD
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{643005EF-C4C0-481F-94B8-59C1C2EDD834}">
-=======
   DTS:VersionBuild="18"
   DTS:VersionGUID="{1B85C455-7A48-4C81-A903-9068F40611B0}">
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -132,11 +127,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Age LSET"
-<<<<<<< HEAD
-      DTS:ThreadHint="1">
-=======
       DTS:ThreadHint="0">
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -157,11 +148,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Exposure LSET"
-<<<<<<< HEAD
-      DTS:ThreadHint="2">
-=======
       DTS:ThreadHint="1">
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -224,11 +211,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Outcome LSET"
-<<<<<<< HEAD
-      DTS:ThreadHint="4">
-=======
       DTS:ThreadHint="5">
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -249,7 +232,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PHU LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5827,11 +5810,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Outcome LSET"
-<<<<<<< HEAD
-      DTS:ThreadHint="3">
-=======
       DTS:ThreadHint="4">
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5854,11 +5833,7 @@ where [refTable].[GroupID] = ?</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set PHU LSET"
-<<<<<<< HEAD
-      DTS:ThreadHint="4">
-=======
       DTS:ThreadHint="5">
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6081,15 +6056,15 @@ where [refTable].[GroupID] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142,42"
+          Size="142.4,41.6"
           Id="Package\Get Age LSET"
           TopLeft="839.7,107.1" />
         <NodeLayout
-          Size="168,42"
+          Size="168,41.6"
           Id="Package\Get Exposure LSET"
           TopLeft="1042.9,107.1" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Get Gender LSET"
           TopLeft="391.3,107.1" />
         <NodeLayout
@@ -6097,43 +6072,39 @@ where [refTable].[GroupID] = ?</property>
           Id="Package\Get Outbreak LSET"
           TopLeft="610.9,107.1" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,41.6"
           Id="Package\Get Outcome LSET"
           TopLeft="1271.3,107.1" />
         <NodeLayout
-          Size="145,42"
+          Size="144.8,41.6"
           Id="Package\Get PHU LSET"
           TopLeft="185.5,107.1" />
         <NodeLayout
-          Size="193,42"
+          Size="192.8,41.6"
           Id="Package\Populate Age Dimension"
           TopLeft="814.5,208.7" />
         <NodeLayout
-          Size="218,42"
+          Size="218.4,41.6"
           Id="Package\Populate Exposure Dimension"
           TopLeft="1067.7,208.7" />
         <NodeLayout
-          Size="209,42"
+          Size="208.8,41.6"
           Id="Package\Populate Gender Dimension"
           TopLeft="266.5,208.7" />
         <NodeLayout
-<<<<<<< HEAD
-          Size="218,42"
-=======
           Size="218.4,41.6"
           Id="Package\Populate Outbreak Dimension"
           TopLeft="535.7,208.7" />
         <NodeLayout
           Size="217.6,41.6"
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
           Id="Package\Populate Outcome Dimension"
           TopLeft="1347.1,208.7" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Populated PHU Dimension"
           TopLeft="5.50000000000031,208.7" />
         <NodeLayout
-          Size="198,42"
+          Size="198.4,41.6"
           Id="Package\Sequence Container\Populate Fact Case Detail"
           TopLeft="5.50000000000004,5.50000000000007" />
         <NodeLayout
@@ -6141,35 +6112,30 @@ where [refTable].[GroupID] = ?</property>
           Id="Package\Sequence Container\Populate Fact Outbreak"
           TopLeft="264.3,5.49999999999995" />
         <NodeLayout
-          Size="211,42"
+          Size="211.2,41.6"
           Id="Package\Sequence Container\Populate Fact Vaccine Detail"
           TopLeft="514.1,5.49999999999995" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-<<<<<<< HEAD
-          PanelSize="481,103"
-          Size="481,146"
-=======
           PanelSize="731.2,102.4"
           Size="731.2,145.6"
->>>>>>> eee569744c8f2950f0ee9ee7807057d93c0f770e
           Id="Package\Sequence Container"
           TopLeft="545.3,310.3" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Set Age LSET"
           TopLeft="633.9,515.9" />
         <NodeLayout
-          Size="115,42"
+          Size="115.2,41.6"
           Id="Package\Set CET"
           TopLeft="853.3,5.49999999999973" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Set Exposure LSET"
           TopLeft="838.9,515.9" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Set Gender LSET"
           TopLeft="428.9,515.9" />
         <NodeLayout
@@ -6177,11 +6143,11 @@ where [refTable].[GroupID] = ?</property>
           Id="Package\Set Outbreak LSET"
           TopLeft="1270.3,515.9" />
         <NodeLayout
-          Size="166,42"
+          Size="166.4,41.6"
           Id="Package\Set Outcome LSET"
           TopLeft="1043.7,515.9" />
         <NodeLayout
-          Size="144,42"
+          Size="144,41.6"
           Id="Package\Set PHU LSET"
           TopLeft="223.9,515.9" />
         <EdgeLayout
