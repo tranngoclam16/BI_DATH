@@ -5,14 +5,15 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-8ADCC67"
   DTS:CreatorName="DESKTOP-8ADCC67\ADMIN"
+  DTS:DelayValidation="True"
   DTS:DTSID="{94816AE3-EAFE-4F9D-B479-E08CDF73E78D}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="NDS_to_DDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{1B85C455-7A48-4C81-A903-9068F40611B0}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{ACB1AC9A-40D1-418C-89EA-2E04E430B823}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -122,12 +123,13 @@
     <DTS:Executable
       DTS:refId="Package\Get Age LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{892CD6D3-CA7D-4CBC-A2B0-C4AA66E3E4D4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Age LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -143,12 +145,13 @@
     <DTS:Executable
       DTS:refId="Package\Get Exposure LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{B38BE1B7-9EB1-4F64-A7B5-C027A7E60989}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Exposure LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -164,6 +167,7 @@
     <DTS:Executable
       DTS:refId="Package\Get Gender LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{C7545E63-53B6-4B17-8066-8BEC6B701A31}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -185,6 +189,7 @@
     <DTS:Executable
       DTS:refId="Package\Get Outbreak LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{4F8D4B0C-9320-4268-9E4A-3AEFE28DC535}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -206,6 +211,7 @@
     <DTS:Executable
       DTS:refId="Package\Get Outcome LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{1841D6A4-D61A-4DED-99A0-60F83FC34257}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -227,12 +233,13 @@
     <DTS:Executable
       DTS:refId="Package\Get PHU LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{746252C7-080E-45BD-910B-E679523CFA5F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get PHU LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -248,6 +255,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate Age Dimension"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{8EEAC0DF-7AB5-4825-B84D-5FF5B6CD3512}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -838,6 +846,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate Exposure Dimension"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{445E4204-98E3-487D-A5C4-AFB838018827}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -1428,6 +1437,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate Gender Dimension"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{78DA7C92-4DFB-4BD9-B632-CB40BED22BAA}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -2018,6 +2028,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate Outbreak Dimension"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{4FB938A4-F0DC-47C4-B59A-254BDE6FA0B7}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -2608,6 +2619,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate Outcome Dimension"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{897B1A95-9D79-4FDB-802F-C8B97E444904}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -3198,6 +3210,7 @@
     <DTS:Executable
       DTS:refId="Package\Populated PHU Dimension"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{F31C53C4-B75F-44AC-B0DD-30BA3A021D87}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -5642,6 +5655,7 @@ where [refTable].[GroupID] = ?</property>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\Populate Fact Case Detail"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{D097531E-A84D-45B6-9BA2-5A9C4BA6F94C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -5658,6 +5672,7 @@ where [refTable].[GroupID] = ?</property>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\Populate Fact Outbreak"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{0FCD48CB-5751-41D2-928F-EFBE41C599FF}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -5674,6 +5689,7 @@ where [refTable].[GroupID] = ?</property>
         <DTS:Executable
           DTS:refId="Package\Sequence Container\Populate Fact Vaccine Detail"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DelayValidation="True"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{BAE30B7D-7B83-4522-8D31-29716AB3521E}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -5692,12 +5708,13 @@ where [refTable].[GroupID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Set Age LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{4ee85f2b-bf00-4ca4-a596-f3f036a6898e}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Age LSET"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5715,6 +5732,7 @@ where [refTable].[GroupID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Set CET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{8802BDBF-F6A4-4EA1-9362-577A68B71622}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -5736,12 +5754,13 @@ where [refTable].[GroupID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Set Exposure LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{cc329019-134e-4e1a-ae1f-1dea53f72178}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Exposure LSET"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5759,12 +5778,13 @@ where [refTable].[GroupID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Set Gender LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{99c0b630-b81a-4d85-b539-7adecab63ec0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Gender LSET"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5782,12 +5802,13 @@ where [refTable].[GroupID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Set Outbreak LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{bd97ed92-2764-4bae-906e-47e35948cd2c}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Outbreak LSET"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5805,6 +5826,7 @@ where [refTable].[GroupID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Set Outcome LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{8263f8b0-39bd-40de-80e1-e7ac7abd07cf}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -5828,6 +5850,7 @@ where [refTable].[GroupID] = ?</property>
     <DTS:Executable
       DTS:refId="Package\Set PHU LSET"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{BC739978-C660-4E2D-BD26-905CC1C7BC81}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -6145,7 +6168,7 @@ where [refTable].[GroupID] = ?</property>
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\Set Outcome LSET"
-          TopLeft="1043.7,515.9" />
+          TopLeft="1044.59285715806,515.9" />
         <NodeLayout
           Size="144,41.6"
           Id="Package\Set PHU LSET"
@@ -6530,9 +6553,9 @@ where [refTable].[GroupID] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61.0285714285715,60"
+              EndConnector="61.921428586634,60"
               Start="0,0"
-              End="61.0285714285715,52.5">
+              End="61.921428586634,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6543,13 +6566,13 @@ where [refTable].[GroupID] = ?</property>
                     Point2="0,21.9317731059103"
                     Point3="4,21.9317731059103" />
                   <mssgle:LineSegment
-                    End="57.0285714285715,21.9317731059103" />
+                    End="57.921428586634,21.9317731059103" />
                   <mssgle:CubicBezierSegment
-                    Point1="57.0285714285715,21.9317731059103"
-                    Point2="61.0285714285715,21.9317731059103"
-                    Point3="61.0285714285715,25.9317731059103" />
+                    Point1="57.921428586634,21.9317731059103"
+                    Point2="61.921428586634,21.9317731059103"
+                    Point3="61.921428586634,25.9317731059103" />
                   <mssgle:LineSegment
-                    End="61.0285714285715,52.5" />
+                    End="61.921428586634,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7021,7 +7044,9 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7361,9 +7386,7 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7469,72 +7492,14 @@ where [refTable].[GroupID] = ?</property>
           Size="208,41.6"
           Id="Package\Populate Outbreak Dimension\Slowly Changing Dimension"
           TopLeft="206.7,107.1" />
-        <EdgeLayout
-          Id="Package\Populate Outbreak Dimension.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Populate Outbreak Dimension\Insert Destination"
-          TopLeft="5.50000000000004,208.7" />
-        <EdgeLayout
-          Id="Package\Populate Outbreak Dimension.Paths[New Output]"
-          TopLeft="277.366666666667,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-190.666666666667,60"
-              Start="0,0"
-              End="-190.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2748091603053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2748091603053"
-                    Point2="0,24.2748091603053"
-                    Point3="-4,24.2748091603053" />
-                  <mssgle:LineSegment
-                    End="-186.666666666667,24.2748091603053" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-186.666666666667,24.2748091603053"
-                    Point2="-190.666666666667,24.2748091603053"
-                    Point3="-190.666666666667,28.2748091603053" />
-                  <mssgle:LineSegment
-                    End="-190.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Populate Outbreak Dimension\OLE DB Command"
           TopLeft="228.3,208.7" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Populate Outbreak Dimension\Insert Destination"
+          TopLeft="5.50000000000004,208.7" />
         <EdgeLayout
           Id="Package\Populate Outbreak Dimension.Paths[Inferred Member Updates Output]"
           TopLeft="344.033333333333,148.7">
@@ -7568,6 +7533,66 @@ where [refTable].[GroupID] = ?</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-91.0696549479167,29.2748091603054,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Outbreak Dimension.Paths[OLE DB Source Output]"
+          TopLeft="310.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Populate Outbreak Dimension.Paths[New Output]"
+          TopLeft="277.366666666667,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-190.666666666667,60"
+              Start="0,0"
+              End="-190.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2748091603053"
+                    Point2="0,24.2748091603053"
+                    Point3="-4,24.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-186.666666666667,24.2748091603053" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-186.666666666667,24.2748091603053"
+                    Point2="-190.666666666667,24.2748091603053"
+                    Point3="-190.666666666667,28.2748091603053" />
+                  <mssgle:LineSegment
+                    End="-190.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.424720052083,29.2748091603053,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8020,9 +8045,7 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8044,9 +8067,7 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8104,9 +8125,7 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8128,9 +8147,7 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8164,9 +8181,7 @@ where [refTable].[GroupID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
